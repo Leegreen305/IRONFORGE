@@ -13,8 +13,8 @@
   --tac-red:          #ef4444;
   --tac-green:        #16b960;
   --tac-border:       #1e2d3d;
-  --tac-dim:          #4a6680;
-  --tac-text:         #a0b4c8;
+  --tac-dim:          #7a9ab8;     /* was #4a6680 — boosted for readability */
+  --tac-text:         #b8cede;     /* was #a0b4c8 — slightly brighter */
 }
 
 * {
@@ -28,7 +28,7 @@ body {
   background: var(--tac-bg);
   color: var(--tac-text);
   font-family: 'Liberation Mono', 'Courier New', Courier, monospace;
-  font-size: 13px;
+  font-size: 16px;              /* was 13px */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -50,35 +50,35 @@ body {
 
 .tac-panel-label {
   color: var(--tac-gold);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-size: 0.75rem;           /* was 0.7rem */
+  letter-spacing: 0.15em;       /* was 0.2em — slightly tighter */
   text-transform: uppercase;
   font-weight: bold;
 }
 
 .tac-section-header {
   color: var(--tac-gold);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
+  font-size: 0.75rem;           /* was 0.72rem */
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   border-bottom: 1px solid var(--tac-gold-dim);
   padding-bottom: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;          /* was 8px */
 }
 
 .tac-data-field {
   color: var(--tac-text);
-  font-size: 0.72rem;
+  font-size: 0.82rem;           /* was 0.72rem */
 }
 
 .tac-value {
-  color: #c8dae8;
-  font-size: 0.75rem;
+  color: #daeaf8;               /* was #c8dae8 — brighter */
+  font-size: 0.85rem;           /* was 0.75rem */
 }
 
 .tac-dim-text {
   color: var(--tac-dim);
-  font-size: 0.68rem;
+  font-size: 0.75rem;           /* was 0.68rem */
 }
 
 .tac-green-text  { color: var(--tac-green); }
@@ -93,10 +93,10 @@ body {
   border: 1px solid var(--tac-gold);
   color: var(--tac-gold);
   font-family: inherit;
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  font-size: 0.8rem;            /* was 0.72rem */
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 8px 20px;
+  padding: 10px 20px;           /* was 8px */
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
@@ -116,10 +116,10 @@ body {
   border: 1px solid var(--tac-border);
   color: var(--tac-dim);
   font-family: inherit;
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  font-size: 0.78rem;           /* was 0.68rem */
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 6px 14px;
+  padding: 7px 16px;
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
 }
@@ -138,8 +138,8 @@ body {
   border: 1px solid var(--tac-border);
   color: var(--tac-text);
   font-family: inherit;
-  font-size: 0.72rem;
-  padding: 6px 10px;
+  font-size: 0.82rem;           /* was 0.72rem */
+  padding: 8px 10px;            /* was 6px */
   width: 100%;
   outline: none;
   transition: border-color 0.15s;
@@ -198,13 +198,13 @@ body {
 
 .coa-recommended {
   border-color: var(--tac-gold) !important;
-  box-shadow: 0 0 12px rgba(200, 168, 75, 0.15);
+  box-shadow: 0 0 16px rgba(200, 168, 75, 0.2);
 }
 
 /* ─── SCORE BARS ─────────────────────────────────────────────────────────── */
 
 .score-bar-track {
-  height: 4px;
+  height: 5px;                  /* was 4px */
   background: var(--tac-border);
   flex: 1;
 }
@@ -219,28 +219,28 @@ body {
 
 .opord-para-num {
   color: var(--tac-gold);
-  min-width: 60px;
+  min-width: 72px;              /* was 60px */
   display: inline-block;
 }
 
 .opord-para-title {
-  color: #c8dae8;
+  color: #daeaf8;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 .opord-para-text {
   color: var(--tac-text);
-  margin-left: 60px;
-  font-size: 0.72rem;
+  margin-left: 72px;
+  font-size: 0.82rem;           /* was 0.72rem */
   line-height: 1.7;
 }
 
 /* ─── STATUS DOTS ────────────────────────────────────────────────────────── */
 
 .status-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;                   /* was 6px */
+  height: 7px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -255,7 +255,7 @@ body {
 .wargame-row {
   border-left: 2px solid var(--tac-border);
   padding-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;          /* was 10px */
 }
 
 .wargame-row-friendly { border-left-color: var(--tac-blue); }
@@ -268,10 +268,10 @@ body {
   background: #004400;
   color: #00ff00;
   text-align: center;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
+  font-size: 0.72rem;           /* was 0.65rem */
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  padding: 2px 0;
+  padding: 3px 0;
   font-weight: bold;
 }
 
@@ -292,10 +292,10 @@ body {
 
 .f2t2ea-stage {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 3px 10px;            /* was 2px 8px */
   border: 1px solid var(--tac-border);
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;           /* was 0.62rem */
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 

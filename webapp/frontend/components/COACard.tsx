@@ -26,20 +26,20 @@ export function COACard({ coa, analysis, comparison, isRecommended }: Props) {
       style={{
         borderTopColor: colors.accent,
         borderTopWidth: 2,
-        ...(isRecommended ? { borderColor: '#c8a84b', boxShadow: '0 0 16px rgba(200,168,75,0.12)' } : {}),
+        ...(isRecommended ? { borderColor: '#c8a84b', boxShadow: '0 0 20px rgba(200,168,75,0.15)' } : {}),
       }}
     >
       {/* Card Header */}
       <div
-        className="flex items-center justify-between px-3 py-2"
+        className="flex items-center justify-between px-4 py-3"
         style={{ background: '#0a1018', borderBottom: '1px solid #1e2d3d' }}
       >
         <div className="flex items-center gap-2">
-          <span style={{ color: colors.accent, fontWeight: 'bold', fontSize: '0.75rem', letterSpacing: '0.15em' }}>
+          <span style={{ color: colors.accent, fontWeight: 'bold', fontSize: '0.9rem', letterSpacing: '0.1em' }}>
             ◈ {coa.coa_id}
           </span>
-          <span style={{ color: '#4a6680', fontSize: '0.62rem' }}>//</span>
-          <span style={{ color: colors.accent, fontSize: '0.62rem', letterSpacing: '0.08em' }}>
+          <span style={{ color: '#4a6680', fontSize: '0.8rem' }}>//</span>
+          <span style={{ color: colors.accent, fontSize: '0.78rem', letterSpacing: '0.06em' }}>
             {colors.label}
           </span>
         </div>
@@ -47,14 +47,14 @@ export function COACard({ coa, analysis, comparison, isRecommended }: Props) {
           {isRecommended && (
             <span
               className="px-2 py-0.5 text-xs tracking-wider"
-              style={{ border: '1px solid #c8a84b', color: '#c8a84b', fontSize: '0.58rem', letterSpacing: '0.15em' }}
+              style={{ border: '1px solid #c8a84b', color: '#c8a84b', fontSize: '0.72rem', letterSpacing: '0.12em' }}
             >
-              RECOMMENDED
+              ★ RECOMMENDED
             </span>
           )}
           <span
-            className="px-1.5 py-0.5 text-xs"
-            style={{ background: `${colors.accent}18`, color: colors.accent, fontSize: '0.58rem', border: `1px solid ${colors.dimAccent}` }}
+            className="px-2 py-0.5"
+            style={{ background: `${colors.accent}18`, color: colors.accent, fontSize: '0.7rem', border: `1px solid ${colors.dimAccent}` }}
           >
             {coa.status}
           </span>
@@ -62,11 +62,11 @@ export function COACard({ coa, analysis, comparison, isRecommended }: Props) {
       </div>
 
       {/* COA Name */}
-      <div className="px-3 pt-2 pb-1">
-        <div style={{ color: '#c8dae8', fontSize: '0.78rem', fontWeight: 'bold', letterSpacing: '0.05em' }}>
+      <div className="px-4 pt-3 pb-2">
+        <div style={{ color: '#daeaf8', fontSize: '0.95rem', fontWeight: 'bold', letterSpacing: '0.04em' }}>
           {coa.name.toUpperCase()}
         </div>
-        <div style={{ color: '#4a6680', fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+        <div style={{ color: '#7a9ab8', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 2 }}>
           {coa.type} operation
         </div>
       </div>
@@ -77,13 +77,14 @@ export function COACard({ coa, analysis, comparison, isRecommended }: Props) {
           <button
             key={t}
             onClick={() => setTab(t)}
-            className="px-3 py-1.5 text-xs tracking-wider uppercase border-b-2 transition-colors"
+            className="px-4 py-2 border-b-2 transition-colors"
             style={{
               borderBottomColor: tab === t ? colors.accent : 'transparent',
-              color: tab === t ? colors.accent : '#4a6680',
+              color: tab === t ? colors.accent : '#7a9ab8',
               background: 'transparent',
-              fontSize: '0.62rem',
-              letterSpacing: '0.12em',
+              fontSize: '0.78rem',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
             }}
           >
             {t === 'concept' ? 'Concept' : t === 'wargame' ? 'Wargame' : 'Scores'}
@@ -92,7 +93,7 @@ export function COACard({ coa, analysis, comparison, isRecommended }: Props) {
       </div>
 
       {/* Tab content */}
-      <div className="flex-1 p-3 overflow-y-auto" style={{ maxHeight: 360 }}>
+      <div className="flex-1 p-4 overflow-y-auto" style={{ maxHeight: 400 }}>
         {tab === 'concept' && (
           <ConceptTab coa={coa} accentColor={colors.accent} />
         )}
@@ -113,16 +114,16 @@ export function COACard({ coa, analysis, comparison, isRecommended }: Props) {
       {/* Card Footer */}
       {comparison && (
         <div
-          className="flex items-center justify-between px-3 py-2"
+          className="flex items-center justify-between px-4 py-2"
           style={{ borderTop: '1px solid #1e2d3d', background: '#0a1018' }}
         >
-          <span style={{ color: '#4a6680', fontSize: '0.62rem' }}>TOTAL WEIGHTED SCORE</span>
-          <span style={{ color: colors.accent, fontSize: '0.8rem', fontWeight: 'bold' }}>
+          <span style={{ color: '#7a9ab8', fontSize: '0.75rem' }}>TOTAL WEIGHTED SCORE</span>
+          <span style={{ color: colors.accent, fontSize: '1rem', fontWeight: 'bold' }}>
             {comparison.total_score.toFixed(2)} / 5.00
           </span>
           <span
-            className="px-2 py-0.5"
-            style={{ border: `1px solid ${colors.dimAccent}`, color: colors.accent, fontSize: '0.62rem' }}
+            className="px-2 py-1"
+            style={{ border: `1px solid ${colors.dimAccent}`, color: colors.accent, fontSize: '0.75rem' }}
           >
             RANK #{comparison.rank}
           </span>
@@ -134,16 +135,16 @@ export function COACard({ coa, analysis, comparison, isRecommended }: Props) {
 
 function ConceptTab({ coa, accentColor }: { coa: COA; accentColor: string }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       <DataBlock label="Concept of Operations" text={coa.description} accentColor={accentColor} />
       <DataBlock label="Decisive Operation" text={coa.decisive_operation} accentColor={accentColor} highlight />
       <div>
         <SectionLabel label="Shaping Operations" accentColor={accentColor} />
-        <ul className="space-y-1 mt-1">
+        <ul className="space-y-1 mt-2">
           {coa.shaping_operations.map((op, i) => (
-            <li key={i} className="flex gap-2" style={{ fontSize: '0.72rem' }}>
-              <span style={{ color: '#4a6680' }}>•</span>
-              <span style={{ color: '#a0b4c8' }}>{op}</span>
+            <li key={i} className="flex gap-2" style={{ fontSize: '0.85rem' }}>
+              <span style={{ color: '#7a9ab8' }}>•</span>
+              <span style={{ color: '#b8cede' }}>{op}</span>
             </li>
           ))}
         </ul>
@@ -153,7 +154,7 @@ function ConceptTab({ coa, accentColor }: { coa: COA; accentColor: string }) {
       )}
       <div>
         <SectionLabel label="Risk Assessment" accentColor="#ef4444" />
-        <div style={{ color: '#ef7777', fontSize: '0.72rem', lineHeight: 1.6, marginTop: 4 }}>
+        <div style={{ color: '#ff8888', fontSize: '0.85rem', lineHeight: 1.6, marginTop: 6 }}>
           ⚠ {coa.risk_assessment}
         </div>
       </div>
@@ -163,36 +164,34 @@ function ConceptTab({ coa, accentColor }: { coa: COA; accentColor: string }) {
 
 function WargameTab({ analysis, accentColor }: { analysis: COAAnalysisResult; accentColor: string }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       {analysis.wargame_sequences.map((seq) => (
-        <div key={seq.sequence_num} className="space-y-1.5" style={{ border: '1px solid #1e2d3d', padding: 8 }}>
-          <div style={{ color: accentColor, fontSize: '0.62rem', letterSpacing: '0.1em', marginBottom: 4 }}>
+        <div key={seq.sequence_num} style={{ border: '1px solid #1e2d3d', padding: 12 }}>
+          <div style={{ color: accentColor, fontSize: '0.75rem', letterSpacing: '0.08em', marginBottom: 8, fontWeight: 'bold' }}>
             SEQ {seq.sequence_num}{seq.key_decision ? ' — DECISION POINT' : ''}
           </div>
-          <WargameRow label="FRIENDLY ACT" text={seq.friendly_action} color="#3b82f6" />
-          <WargameRow label="ENEMY REACT"  text={seq.enemy_reaction}   color="#ef4444" />
-          <WargameRow label="COUNTER ACT"  text={seq.friendly_counteraction} color="#16b960" />
-          <div style={{ color: '#4a6680', fontSize: '0.65rem', borderTop: '1px solid #1e2d3d', paddingTop: 4, marginTop: 4 }}>
-            OUTCOME: <span style={{ color: '#a0b4c8' }}>{seq.outcome}</span>
+          <WargameRow label="FRIENDLY" text={seq.friendly_action} color="#3b82f6" />
+          <WargameRow label="ENEMY"    text={seq.enemy_reaction}   color="#ef4444" />
+          <WargameRow label="COUNTER"  text={seq.friendly_counteraction} color="#16b960" />
+          <div style={{ color: '#7a9ab8', fontSize: '0.78rem', borderTop: '1px solid #1e2d3d', paddingTop: 6, marginTop: 8 }}>
+            OUTCOME: <span style={{ color: '#b8cede' }}>{seq.outcome}</span>
           </div>
           {seq.key_decision && (
-            <div style={{ color: '#c8a84b', fontSize: '0.65rem' }}>
+            <div style={{ color: '#c8a84b', fontSize: '0.78rem', marginTop: 4 }}>
               ◈ DECISION: {seq.key_decision}
             </div>
           )}
         </div>
       ))}
 
-      {/* Assessment */}
-      <div style={{ borderTop: '1px solid #1e2d3d', paddingTop: 8 }}>
+      <div style={{ borderTop: '1px solid #1e2d3d', paddingTop: 12 }}>
         <SectionLabel label="Overall Assessment" accentColor={accentColor} />
-        <p style={{ color: '#a0b4c8', fontSize: '0.72rem', lineHeight: 1.6, marginTop: 4 }}>
+        <p style={{ color: '#b8cede', fontSize: '0.85rem', lineHeight: 1.65, marginTop: 6 }}>
           {analysis.overall_assessment}
         </p>
       </div>
 
-      {/* Strengths / Weaknesses */}
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-3">
         <ListBlock label="Strengths" items={analysis.strengths} color="#16b960" />
         <ListBlock label="Weaknesses" items={analysis.weaknesses} color="#ef4444" />
       </div>
@@ -205,21 +204,20 @@ function WargameTab({ analysis, accentColor }: { analysis: COAAnalysisResult; ac
 
 function ScoresTab({ comparison, accentColor }: { comparison: COAComparisonResult; accentColor: string }) {
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       {comparison.scores.map((s) => (
         <div key={s.criterion}>
-          <div className="flex items-center justify-between mb-0.5">
-            <span style={{ color: '#a0b4c8', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+          <div className="flex items-center justify-between mb-1">
+            <span style={{ color: '#b8cede', fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               {s.criterion}
             </span>
-            <div className="flex items-center gap-2">
-              <span style={{ color: '#4a6680', fontSize: '0.6rem' }}>w={s.weight.toFixed(2)}</span>
-              <span style={{ color: accentColor, fontSize: '0.72rem', fontWeight: 'bold' }}>
+            <div className="flex items-center gap-3">
+              <span style={{ color: '#7a9ab8', fontSize: '0.72rem' }}>w={s.weight.toFixed(2)}</span>
+              <span style={{ color: accentColor, fontSize: '0.88rem', fontWeight: 'bold' }}>
                 {s.raw_score}/5
               </span>
             </div>
           </div>
-          {/* Score bar */}
           <div className="flex items-center gap-2">
             <div className="score-bar-track flex-1">
               <div
@@ -227,11 +225,11 @@ function ScoresTab({ comparison, accentColor }: { comparison: COAComparisonResul
                 style={{ width: `${(s.raw_score / 5) * 100}%`, background: accentColor }}
               />
             </div>
-            <span style={{ color: '#4a6680', fontSize: '0.62rem', minWidth: 32, textAlign: 'right' }}>
+            <span style={{ color: '#7a9ab8', fontSize: '0.75rem', minWidth: 36, textAlign: 'right' }}>
               {s.weighted_score.toFixed(2)}
             </span>
           </div>
-          <div style={{ color: '#2d4a6a', fontSize: '0.6rem', marginTop: 2 }}>{s.rationale}</div>
+          <div style={{ color: '#4a6880', fontSize: '0.72rem', marginTop: 2 }}>{s.rationale}</div>
         </div>
       ))}
     </div>
@@ -245,11 +243,13 @@ function DataBlock({ label, text, accentColor, highlight }: { label: string; tex
     <div>
       <SectionLabel label={label} accentColor={accentColor} />
       <div
-        className="mt-1 px-2 py-1.5 text-xs leading-relaxed"
+        className="mt-1 px-3 py-2 text-sm leading-relaxed"
         style={{
-          color: highlight ? '#c8dae8' : '#a0b4c8',
-          background: highlight ? `${accentColor}08` : 'transparent',
+          color: highlight ? '#daeaf8' : '#b8cede',
+          background: highlight ? `${accentColor}0a` : 'transparent',
           border: highlight ? `1px solid ${accentColor}30` : 'none',
+          fontSize: '0.85rem',
+          lineHeight: 1.65,
         }}
       >
         {text}
@@ -260,7 +260,7 @@ function DataBlock({ label, text, accentColor, highlight }: { label: string; tex
 
 function SectionLabel({ label, accentColor }: { label: string; accentColor: string }) {
   return (
-    <div style={{ color: accentColor, fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+    <div style={{ color: accentColor, fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 'bold' }}>
       {label}
     </div>
   )
@@ -268,9 +268,9 @@ function SectionLabel({ label, accentColor }: { label: string; accentColor: stri
 
 function WargameRow({ label, text, color }: { label: string; text: string; color: string }) {
   return (
-    <div className="flex gap-2" style={{ borderLeft: `2px solid ${color}`, paddingLeft: 6 }}>
-      <span style={{ color, fontSize: '0.58rem', minWidth: 72, letterSpacing: '0.08em' }}>{label}</span>
-      <span style={{ color: '#a0b4c8', fontSize: '0.68rem', lineHeight: 1.5 }}>{text}</span>
+    <div className="flex gap-3 mb-2" style={{ borderLeft: `2px solid ${color}`, paddingLeft: 8 }}>
+      <span style={{ color, fontSize: '0.7rem', minWidth: 60, letterSpacing: '0.06em', fontWeight: 'bold', paddingTop: 1 }}>{label}</span>
+      <span style={{ color: '#b8cede', fontSize: '0.82rem', lineHeight: 1.55 }}>{text}</span>
     </div>
   )
 }
@@ -278,10 +278,10 @@ function WargameRow({ label, text, color }: { label: string; text: string; color
 function ListBlock({ label, items, color }: { label: string; items: string[]; color: string }) {
   return (
     <div>
-      <div style={{ color, fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 4 }}>{label}</div>
-      <ul className="space-y-0.5">
+      <div style={{ color, fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 6, fontWeight: 'bold' }}>{label}</div>
+      <ul className="space-y-1">
         {items.map((it, i) => (
-          <li key={i} style={{ color: '#a0b4c8', fontSize: '0.68rem' }}>
+          <li key={i} style={{ color: '#b8cede', fontSize: '0.82rem' }}>
             <span style={{ color }}>▸</span> {it}
           </li>
         ))}
@@ -291,5 +291,5 @@ function ListBlock({ label, items, color }: { label: string; items: string[]; co
 }
 
 function PlaceholderMessage({ msg }: { msg: string }) {
-  return <div style={{ color: '#4a6680', fontSize: '0.72rem' }}>{msg}</div>
+  return <div style={{ color: '#7a9ab8', fontSize: '0.85rem' }}>{msg}</div>
 }
