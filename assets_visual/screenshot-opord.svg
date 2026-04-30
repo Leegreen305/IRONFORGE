@@ -1,0 +1,219 @@
+<svg width="1440" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs><style>text { font-family: 'Courier New', 'Liberation Mono', monospace; }</style></defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1440" height="900" fill="#080d18"/>
+
+  <!-- CLASSIFICATION TOP -->
+  <rect y="0" width="1440" height="18" fill="#004d00"/>
+  <text x="720" y="13" text-anchor="middle" font-size="9" fill="#00ee00" font-weight="bold" letter-spacing="3">&#x258C; UNCLASSIFIED &#x258C; IRONFORGE MDMP SIMULATION &#x2014; TRAINING AID ONLY &#x258C; NOT FOR OPERATIONAL USE &#x258C; UNCLASSIFIED &#x258C;</text>
+
+  <!-- SYSTEM HEADER -->
+  <rect y="18" width="1440" height="40" fill="#0a0f1c"/>
+  <rect y="57" width="1440" height="1" fill="#1e2d3d"/>
+  <text x="16" y="44" font-size="15" fill="#c8a84b" font-weight="bold" letter-spacing="5">&#x25C8; IRONFORGE</text>
+  <text x="148" y="44" font-size="10" fill="#4a6680" letter-spacing="3">AI-POWERED MDMP ENGINE</text>
+  <rect x="310" y="27" width="1" height="22" fill="#1e2d3d"/>
+  <text x="322" y="44" font-size="10" fill="#2d4a6a">FM 6-0 &#xB7; FM 2-01.3 &#xB7; FM 3-60 &#xB7; FM 3-09 &#xB7; JP 3-0 &#xB7; JP 3-60</text>
+  <circle cx="1158" cy="38" r="4" fill="#16b960"/>
+  <text x="1168" y="42" font-size="10" fill="#16b960" letter-spacing="2">ONLINE</text>
+  <rect x="1216" y="27" width="1" height="22" fill="#1e2d3d"/>
+  <circle cx="1228" cy="38" r="4" fill="#c8a84b"/>
+  <text x="1238" y="42" font-size="10" fill="#c8a84b" letter-spacing="1">AI ENGINE READY</text>
+  <rect x="1350" y="27" width="1" height="22" fill="#1e2d3d"/>
+  <text x="1362" y="42" font-size="10" fill="#2d4a6a">v1.0.0</text>
+
+  <!-- LEFT SIDEBAR -->
+  <rect x="0" y="58" width="210" height="842" fill="#090e1a"/>
+  <rect x="209" y="58" width="1" height="842" fill="#1e2d3d"/>
+  <rect x="8" y="66" width="194" height="64" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="16" y="82" font-size="9" fill="#c8a84b" letter-spacing="3" font-weight="bold">ACTIVE SCENARIO</text>
+  <rect x="16" y="86" width="178" height="1" fill="#7a6420" opacity="0.4"/>
+  <text x="16" y="101" font-size="9" fill="#c8dae8">Brigade Defense &#x2014; Peer</text>
+  <text x="16" y="115" font-size="8" fill="#4a6680">2d BCT // DELIBERATE</text>
+  <circle cx="18" cy="124" r="3" fill="#16b960"/>
+  <text x="26" y="128" font-size="8" fill="#16b960">COMPLETE // RUN: 3F8A21C4</text>
+
+  <!-- MDMP steps compact -->
+  <rect x="8" y="138" width="194" height="210" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="16" y="154" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">MDMP PIPELINE</text>
+  <rect x="16" y="158" width="178" height="1" fill="#7a6420" opacity="0.4"/>
+  <text x="20" y="173" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="173" font-size="9" fill="#16b960">01. Receipt</text><text x="156" y="173" font-size="7" fill="#16b960">DONE</text>
+  <text x="20" y="188" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="188" font-size="9" fill="#16b960">02. Analysis</text><text x="156" y="188" font-size="7" fill="#16b960">DONE</text>
+  <text x="20" y="203" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="203" font-size="9" fill="#16b960">03. COA Dev</text><text x="156" y="203" font-size="7" fill="#16b960">DONE</text>
+  <text x="20" y="218" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="218" font-size="9" fill="#16b960">04. Analysis</text><text x="156" y="218" font-size="7" fill="#16b960">DONE</text>
+  <text x="20" y="233" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="233" font-size="9" fill="#16b960">05. Comparison</text><text x="156" y="233" font-size="7" fill="#16b960">DONE</text>
+  <text x="20" y="248" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="248" font-size="9" fill="#16b960">06. Approval</text><text x="156" y="248" font-size="7" fill="#16b960">DONE</text>
+  <text x="20" y="263" font-size="9" fill="#c8a84b">&#x25C8;</text><text x="32" y="263" font-size="9" fill="#c8a84b">07. Orders</text><rect x="148" y="254" width="46" height="14" fill="rgba(200,168,75,0.15)" stroke="#7a6420" stroke-width="1"/>
+  <text x="171" y="265" text-anchor="middle" font-size="7" fill="#c8a84b">ACTIVE</text>
+  <rect x="16" y="272" width="178" height="1" fill="#1e2d3d"/>
+  <text x="105" y="286" text-anchor="middle" font-size="8" fill="#16b960">&#x25C8; COMPLETE &#x25C8;</text>
+  <text x="105" y="298" text-anchor="middle" font-size="7" fill="#2d4a6a">Rec: COA-B // Score: 3.87</text>
+  <text x="105" y="310" text-anchor="middle" font-size="7" fill="#2d4a6a">FM 6-0 App C // FM 6-99</text>
+  <text x="105" y="322" text-anchor="middle" font-size="7" fill="#2d4a6a">15 sub-paragraphs</text>
+
+  <!-- OPORD quick nav -->
+  <rect x="8" y="356" width="194" height="162" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="16" y="372" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">OPORD NAVIGATION</text>
+  <rect x="16" y="376" width="178" height="1" fill="#7a6420" opacity="0.4"/>
+  <rect x="16" y="382" width="178" height="18" fill="rgba(59,130,246,0.1)" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="20" y="395" font-size="9" fill="#3b82f6">&#x25BC; 1. SITUATION</text>
+  <rect x="16" y="402" width="178" height="18" fill="rgba(200,168,75,0.08)" stroke="#7a6420" stroke-width="1"/>
+  <text x="20" y="415" font-size="9" fill="#c8a84b">&#x25BC; 2. MISSION</text>
+  <rect x="16" y="422" width="178" height="18" fill="rgba(22,185,96,0.08)" stroke="#0a3020" stroke-width="1"/>
+  <text x="20" y="435" font-size="9" fill="#16b960">&#x25BC; 3. EXECUTION</text>
+  <text x="20" y="453" font-size="9" fill="#4a6680">&#x25B7; 4. SUSTAINMENT</text>
+  <text x="20" y="469" font-size="9" fill="#4a6680">&#x25B7; 5. COMMAND AND SIGNAL</text>
+  <text x="20" y="489" font-size="8" fill="#2d4a6a">FM 6-0 App C // FM 6-99 &#xA7;3-1</text>
+  <text x="20" y="501" font-size="8" fill="#2d4a6a">15 total sub-paragraphs</text>
+
+  <!-- Download button -->
+  <rect x="8" y="526" width="194" height="28" fill="transparent" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="105" y="544" text-anchor="middle" font-size="9" fill="#4a6680" letter-spacing="2">&#x21D3; DOWNLOAD PDF</text>
+
+  <!-- ── SECTION TAB NAV ─────────────────────────────── -->
+  <rect x="210" y="58" width="1230" height="30" fill="#090e1a"/>
+  <rect x="210" y="87" width="1230" height="1" fill="#1e2d3d"/>
+  <text x="282" y="78" font-size="10" fill="#4a6680">MISSION ANALYSIS</text>
+  <text x="440" y="78" font-size="10" fill="#4a6680">COURSES OF ACTION</text>
+  <text x="606" y="78" font-size="10" fill="#4a6680">RECOMMENDATION</text>
+  <rect x="210" y="86" width="60" height="2" fill="#c8a84b"/>
+  <text x="240" y="78" text-anchor="middle" font-size="10" fill="#c8a84b" letter-spacing="1">OPORD</text>
+  <text x="370" y="78" font-size="10" fill="#4a6680">FIRES</text>
+  <circle cx="1350" cy="74" r="3" fill="#16b960"/>
+  <text x="1358" y="78" font-size="9" fill="#16b960" letter-spacing="2">COMPLETE</text>
+
+  <!-- ── OPORD MAIN PANEL ─────────────────────────────── -->
+  <rect x="210" y="88" width="1230" height="792" fill="#080d18"/>
+
+  <!-- OPORD Panel Header -->
+  <rect x="218" y="96" width="1214" height="48" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="232" y="114" font-size="9" fill="#c8a84b" letter-spacing="4" font-weight="bold">OPERATIONS ORDER (FRAGMENT)</text>
+  <text x="232" y="127" font-size="8" fill="#2d4a6a">FM 6-0 Appendix C &#x2014; FM 6-99 &#xA7;3-1 &#x2014; Based on Approved COA-B: Strongpoint Defense</text>
+  <!-- UNCLASSIFIED badge -->
+  <rect x="1095" y="100" width="130" height="22" fill="#001a00" stroke="#004400" stroke-width="1"/>
+  <text x="1160" y="115" text-anchor="middle" font-size="9" fill="#00cc00" letter-spacing="3">UNCLASSIFIED</text>
+  <!-- DTG block -->
+  <rect x="218" y="144" width="1214" height="52" fill="#0a0f1c" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="232" y="160" font-size="9" fill="#4a6680">CLASSIFICATION:</text><text x="330" y="160" font-size="9" fill="#00cc00">UNCLASSIFIED</text>
+  <text x="480" y="160" font-size="9" fill="#4a6680">DTG:</text><text x="510" y="160" font-size="9" fill="#a0b4c8">042248APR2026Z</text>
+  <text x="650" y="160" font-size="9" fill="#4a6680">FROM:</text><text x="686" y="160" font-size="9" fill="#a0b4c8">HQ 2D BCT, 3D INF DIV</text>
+  <text x="880" y="160" font-size="9" fill="#4a6680">TO:</text><text x="898" y="160" font-size="9" fill="#a0b4c8">ALL SUBORDINATE UNITS</text>
+  <text x="232" y="178" font-size="9" fill="#4a6680">OPORD:</text><text x="278" y="178" font-size="9" fill="#a0b4c8">2-BCT-001-26</text>
+  <text x="380" y="178" font-size="9" fill="#4a6680">REF:</text><text x="406" y="178" font-size="9" fill="#a0b4c8">FM 6-0 (May 2014), FM 6-99 (Aug 2006), ADRP 5-0 (May 2012)</text>
+  <text x="880" y="178" font-size="9" fill="#4a6680">SERIAL:</text><text x="928" y="178" font-size="9" fill="#a0b4c8">001 // VERSION 1.0</text>
+
+  <!-- ── PARAGRAPH 1: SITUATION ─────────────────────────────── -->
+  <rect x="218" y="204" width="1214" height="30" fill="#0a1018" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="228" y="224" font-size="13" fill="#3b82f6">1.</text>
+  <text x="248" y="224" font-size="11" fill="#c8dae8" font-weight="bold" letter-spacing="3">SITUATION</text>
+  <text x="1390" y="220" font-size="9" fill="#4a6680">&#x25BC;</text>
+  <!-- 1.a Enemy -->
+  <rect x="218" y="234" width="1214" height="62" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="246" y="250" font-size="10" fill="#3b82f6">1.a.</text>
+  <text x="292" y="250" font-size="10" fill="#c8dae8" letter-spacing="1">ENEMY FORCES</text>
+  <text x="292" y="265" font-size="10" fill="#a0b4c8">Peer-threat mechanized Battalion Tactical Group (BTG) consisting of approximately 700 personnel. Equipped with T-90M MBT,</text>
+  <text x="292" y="278" font-size="10" fill="#a0b4c8">BMP-3 IFV, and organic 122mm SP artillery. MLCOA: direct attack along AXIS BEAR from the north. MDCOA: envelopment through</text>
+  <text x="292" y="291" font-size="10" fill="#a0b4c8">northern forest to seize ROUTE HAWK bridge. Known vulnerabilities: extended LOC; limited FLIR capability at night.</text>
+  <!-- 1.b Friendly -->
+  <rect x="218" y="296" width="1214" height="50" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="246" y="312" font-size="10" fill="#3b82f6">1.b.</text>
+  <text x="292" y="312" font-size="10" fill="#c8dae8" letter-spacing="1">FRIENDLY FORCES</text>
+  <text x="292" y="327" font-size="10" fill="#a0b4c8">2d BCT with 3x IN BN(-), 1x CAV SQN, 1x FA BN (DS), 1x EN BN (-). Aviation Brigade (GS). HIMARS PLT attached. Adjacent:</text>
+  <text x="292" y="340" font-size="10" fill="#a0b4c8">1st BCT in reserve to EAST. 4th BCT screens SOUTH. CORPS FIRES: 2x MLRS BN (GS).</text>
+  <!-- 1.c Attachments -->
+  <rect x="218" y="346" width="1214" height="30" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="246" y="362" font-size="10" fill="#3b82f6">1.c.</text>
+  <text x="292" y="362" font-size="10" fill="#c8dae8" letter-spacing="1">ATTACHMENTS AND DETACHMENTS</text>
+  <text x="560" y="362" font-size="10" fill="#a0b4c8">HIMARS PLT attached effective 042000APR26. MI CO (-) attached. Signal CO (-) in DS.</text>
+
+  <!-- ── PARAGRAPH 2: MISSION ─────────────────────────────── -->
+  <rect x="218" y="384" width="1214" height="28" fill="#0a1018" stroke="#7a6420" stroke-width="1"/>
+  <text x="228" y="403" font-size="13" fill="#c8a84b">2.</text>
+  <text x="248" y="403" font-size="11" fill="#c8dae8" font-weight="bold" letter-spacing="3">MISSION</text>
+  <text x="1390" y="399" font-size="9" fill="#4a6680">&#x25BC;</text>
+  <rect x="218" y="412" width="1214" height="28" fill="rgba(200,168,75,0.04)" stroke="#7a6420" stroke-width="1"/>
+  <text x="246" y="430" font-size="11" fill="#c8dae8">2d Brigade Combat Team defends sector NORTHWEST NLT 042200APR26 to deny enemy access to OBJECTIVE RAPTOR and retain</text>
+  <text x="246" y="444" font-size="10" fill="#c8dae8">freedom of action for CORPS counterattack, on order. (FM 6-0 &#xA7;9-47)</text>
+
+  <!-- ── PARAGRAPH 3: EXECUTION ─────────────────────────────── -->
+  <rect x="218" y="452" width="1214" height="28" fill="#0a1018" stroke="#0a3020" stroke-width="1"/>
+  <text x="228" y="471" font-size="13" fill="#16b960">3.</text>
+  <text x="248" y="471" font-size="11" fill="#c8dae8" font-weight="bold" letter-spacing="3">EXECUTION</text>
+  <text x="1390" y="467" font-size="9" fill="#4a6680">&#x25BC;</text>
+  <!-- 3.a Commander's Intent -->
+  <rect x="218" y="480" width="1214" height="42" fill="rgba(22,185,96,0.03)" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="246" y="496" font-size="10" fill="#16b960">3.a.</text>
+  <text x="292" y="496" font-size="10" fill="#c8dae8" letter-spacing="1">COMMANDER'S INTENT</text>
+  <text x="292" y="511" font-size="10" fill="#a0b4c8">Purpose: Deny enemy access to OBJ RAPTOR and set conditions for CORPS counterattack. Method: Mass fires in EAs; fix</text>
+  <text x="292" y="524" font-size="10" fill="#a0b4c8">enemy on obstacle belt; defeat in detail. End state: Enemy BTG defeated N of PL FALCON; 2d BCT retains HILL 342.</text>
+  <!-- 3.b Concept -->
+  <rect x="218" y="522" width="1214" height="42" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="246" y="538" font-size="10" fill="#16b960">3.b.</text>
+  <text x="292" y="538" font-size="10" fill="#c8dae8" letter-spacing="1">CONCEPT OF OPERATIONS</text>
+  <text x="292" y="553" font-size="10" fill="#a0b4c8">2d BCT conducts strongpoint defense IAW COA-B. Main effort holds HILL 342 with all available fires. EN BN emplaces</text>
+  <text x="292" y="566" font-size="10" fill="#a0b4c8">integrated obstacle belt on AXIS BEAR. FA BN executes SEAD, counterfire, and FPF in support of main effort.</text>
+  <!-- 3.b.(1) Decisive -->
+  <rect x="218" y="564" width="1214" height="30" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="246" y="580" font-size="10" fill="#16b960">3.b.(1)</text>
+  <text x="308" y="580" font-size="10" fill="#c8dae8" letter-spacing="1">DECISIVE OPERATION (ME)</text>
+  <text x="530" y="580" font-size="10" fill="#a0b4c8">2-6 IN (-) holds HILL 342 with FPF and all FA fires. BPT counterattack EA WOLF.</text>
+
+  <!-- 3.b.(2) Shaping -->
+  <rect x="218" y="594" width="1214" height="30" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="246" y="610" font-size="10" fill="#16b960">3.b.(2)</text>
+  <text x="308" y="610" font-size="10" fill="#c8dae8" letter-spacing="1">SHAPING OPERATION 1</text>
+  <text x="490" y="610" font-size="10" fill="#a0b4c8">1-6 IN screens in security zone; draws enemy main effort; delays NLT H-6.</text>
+
+  <!-- 3.b.(3) -->
+  <rect x="218" y="624" width="1214" height="30" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="246" y="640" font-size="10" fill="#16b960">3.b.(3)</text>
+  <text x="308" y="640" font-size="10" fill="#c8dae8" letter-spacing="1">SHAPING OPERATION 2</text>
+  <text x="490" y="640" font-size="10" fill="#a0b4c8">1-10 EN (-) emplaces obstacle belt VIC ROUTE HAWK NLT H-12. Breach denial is priority.</text>
+
+  <!-- 3.e Coord -->
+  <rect x="218" y="654" width="1214" height="30" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="246" y="670" font-size="10" fill="#16b960">3.e.</text>
+  <text x="292" y="670" font-size="10" fill="#c8dae8" letter-spacing="1">COORDINATION INSTRUCTIONS</text>
+  <text x="530" y="670" font-size="10" fill="#a0b4c8">Report readiness NLT H-2. LACE reports to BDE TOC every 2 hours. PIR: enemy main effort axis.</text>
+
+  <!-- ── PARAGRAPHS 4 and 5 (compact) ─────────────────────────────── -->
+  <rect x="218" y="692" width="596" height="78" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="228" y="708" font-size="12" fill="#a0b4c8">4.</text>
+  <text x="248" y="708" font-size="10" fill="#c8dae8" font-weight="bold" letter-spacing="2">SUSTAINMENT</text>
+  <text x="246" y="724" font-size="10" fill="#a0b4c8">4.a. LOGISTICS: BSA VIC GRID 38SMB 123 456. Class III(B) push every 12 hrs.</text>
+  <text x="246" y="737" font-size="10" fill="#a0b4c8">4.b. PERSONNEL: CASEVAC via ROUTE BLUE. Role 2 at FOB ANVIL.</text>
+  <text x="246" y="750" font-size="10" fill="#a0b4c8">4.c. MEDICAL: 2-BCT FWD SURG TM at BP ALPHA.</text>
+  <text x="246" y="762" font-size="8" fill="#2d4a6a">FM 6-0 &#xA7;C-5</text>
+
+  <rect x="822" y="692" width="610" height="78" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="832" y="708" font-size="12" fill="#a0b4c8">5.</text>
+  <text x="852" y="708" font-size="10" fill="#c8dae8" font-weight="bold" letter-spacing="2">COMMAND AND SIGNAL</text>
+  <text x="850" y="724" font-size="10" fill="#a0b4c8">5.a. COMMAND: CDR with ME at HILL 342 CP. XO at BDE MAIN. Succession: XO, S3, CSM.</text>
+  <text x="850" y="737" font-size="10" fill="#a0b4c8">5.b. SIGNAL: Primary FM voice/digital (BFT/JBC-P). Alt: Messenger. Contingency: SATCOM.</text>
+  <text x="850" y="750" font-size="10" fill="#a0b4c8">Emergency: Visual signals per current SOI. NCS: BDE MAIN at GRID 38SMB 456 789.</text>
+  <text x="850" y="762" font-size="8" fill="#2d4a6a">FM 6-0 &#xA7;C-6 // FM 6-99 &#xA7;3-1</text>
+
+  <!-- UNCLASSIFIED footer of OPORD -->
+  <rect x="218" y="778" width="1214" height="18" fill="#001a00" stroke="#004400" stroke-width="1"/>
+  <text x="830" y="791" text-anchor="middle" font-size="9" fill="#00cc00" letter-spacing="6">UNCLASSIFIED</text>
+
+  <!-- Doctrine citations row -->
+  <rect x="218" y="798" width="1214" height="28" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
+  <text x="232" y="810" font-size="8" fill="#2d4a6a" letter-spacing="1">DOCTRINE BASIS:</text>
+  <text x="330" y="810" font-size="8" fill="#c8a84b">FM 6-0 App C</text>
+  <text x="420" y="810" font-size="8" fill="#4a6680">|</text>
+  <text x="430" y="810" font-size="8" fill="#c8a84b">FM 6-99 &#xA7;3-1</text>
+  <text x="510" y="810" font-size="8" fill="#4a6680">|</text>
+  <text x="520" y="810" font-size="8" fill="#c8a84b">FM 6-0 &#xA7;9-123</text>
+  <text x="620" y="810" font-size="8" fill="#4a6680">|</text>
+  <text x="630" y="810" font-size="8" fill="#c8a84b">ADRP 5-0 &#xA7;2-1</text>
+  <text x="728" y="810" font-size="8" fill="#4a6680">|</text>
+  <text x="738" y="810" font-size="8" fill="#c8a84b">JP 3-0 Ch.III</text>
+  <text x="1380" y="810" text-anchor="end" font-size="8" fill="#2d4a6a">IRONFORGE TRAINING AID // NOT FOR OPERATIONAL USE</text>
+  <text x="232" y="822" font-size="7" fill="#2d4a6a">OPORD 2-BCT-001-26 // COA-B STRONGPOINT DEFENSE // 2D BCT 3D INF DIV // 042248APR2026Z</text>
+
+  <!-- CLASSIFICATION BANNER BOTTOM -->
+  <rect y="882" width="1440" height="18" fill="#004d00"/>
+  <text x="720" y="895" text-anchor="middle" font-size="9" fill="#00ee00" font-weight="bold" letter-spacing="3">&#x258C; UNCLASSIFIED &#x258C; IRONFORGE MDMP SIMULATION &#x2014; TRAINING AID ONLY &#x258C; NOT FOR OPERATIONAL USE &#x258C; UNCLASSIFIED &#x258C;</text>
+</svg>

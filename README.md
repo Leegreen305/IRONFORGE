@@ -109,101 +109,45 @@ Or load a pre-built scenario from the frontend scenario selector.
 
 ## SCREENSHOTS
 
-> *Screenshots reflect live scenario data from the Time Sensitive Targeting and Brigade Defense demonstrations.*
+> Brigade Defense Against a Peer Threat Armored Assault — 2d BCT, deliberate MDMP, 18-hour planning cycle.
 
 ### Scenario Input with METT-TC Extraction
 
-```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ ▌ UNCLASSIFIED ▌ IRONFORGE MDMP SIMULATION — TRAINING AID ONLY ▌ UNCLASSIFIED│
-├────────────────┬─────────────────────────────────────────────────────────────┤
-│ SCENARIO       │  MISSION ANALYSIS                        FM 6-0 §9-29       │
-│ PARAMETERS     │  ──────────────────────────────────────────────────────────  │
-│ ─────────────  │  RESTATED MISSION                                            │
-│ Pre-built ▼    │  2d BCT defends sector NLT 042200APR26 to deny enemy access  │
-│                │  to OBJECTIVE RAPTOR and retain freedom of action for CORPS. │
-│ Brigade Def... │                                                              │
-│                │  METT-TC                                                     │
-│ ▶ EXECUTE      │  M — Defend sector; defeat BTG attack; retain OBJ RAPTOR    │
-│                │  E — Peer-threat mechanized BTG, ~700 pax, T-90 equipped    │
-│ MDMP PIPELINE  │  T — Restricted terrain, mixed forest/open, degraded viz    │
-│ ─────────────  │  T — 2d BCT: 3x INF BN, 1x CAV SQD, 1x FA BN (DS)         │
-│ ◈ Step 1 DONE  │  T — 18 hours to planned defensive positions                │
-│ ◈ Step 2 DONE  │  C — 3 villages in sector; avoid civilian casualties        │
-│ ◈ Step 3 DONE  │                                                              │
-│ ◈ Step 4 DONE  │  SPECIFIED TASKS              IMPLIED TASKS                  │
-│ ◈ Step 5 DONE  │  ▸ Defend sector in zone     ▸ Conduct security zone ops    │
-│ ◈ Step 6 DONE  │  ▸ Defeat BTG attack         ▸ Emplace obstacle plan        │
-│ ◈ Step 7 DONE  │  ▸ Retain OBJ RAPTOR         ▸ Synchronize fires            │
-│                │  ▸ Maintain CORPS reserve    ▸ Plan counterattack options    │
-└────────────────┴─────────────────────────────────────────────────────────────┘
-```
+![Scenario Input and METT-TC Analysis](assets_visual/screenshot-scenario.svg)
 
-### Three COA Cards with Wargaming Results
+*Brigade Defense scenario loaded. All six METT-TC factors extracted. Restated mission, specified tasks, implied tasks, and essential tasks produced. FM 6-0 §9-29 to §9-77.*
 
-```
-┌────────────────────┐  ┌────────────────────┐  ┌────────────────────┐
-│ ◈ COA-A // ALPHA   │  │ ◈ COA-B // BRAVO   │  │ ◈ COA-C // CHARLIE │
-│ ─────────────────  │  │ RECOMMENDED ★      │  │ ─────────────────  │
-│ Defense in Depth   │  │ ─────────────────  │  │ Mobile Defense     │
-│                    │  │ Strongpoint Def.   │  │                    │
-│ Concept | Wargame  │  │ Concept | Wargame  │  │ Concept | Wargame  │
-│ ─────────────────  │  │ ─────────────────  │  │ ─────────────────  │
-│ SEQ 1: Security    │  │ SEQ 1: Obstacles   │  │ SEQ 1: Fixing      │
-│  FRIENDLY: Screen  │  │  FRIENDLY: Emplace │  │  FRIENDLY: Occupy  │
-│  ENEMY: Adjusts    │  │  ENEMY: Probes     │  │  ENEMY: Commits    │
-│  COUNTER: Shift FA │  │  COUNTER: FPF plan │  │  COUNTER: Strike F │
-│                    │  │                    │  │                    │
-│ TOTAL: 3.42/5.00   │  │ TOTAL: 3.87/5.00   │  │ TOTAL: 3.71/5.00   │
-│ RANK: #3           │  │ RANK: #1           │  │ RANK: #2           │
-└────────────────────┘  └────────────────────┘  └────────────────────┘
-```
+---
 
-### OPORD Fragment
+### Seven-Step MDMP Pipeline — All Steps Complete
 
-```
-┌────────────────────────────────────────────────────────────────────────────┐
-│ OPERATIONS ORDER (FRAGMENT)                             UNCLASSIFIED        │
-│ FM 6-0 Appendix C // FM 6-99 Report Formats                                │
-├────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│ 1. SITUATION                                                                 │
-│   1.a. ENEMY FORCES                                                          │
-│        Peer-threat mechanized battalion tactical group (BTG) consisting of  │
-│        approximately 700 personnel with T-90 tanks, BMP-3 IFVs, and organic │
-│        artillery. Most likely COA: direct attack along AXIS BEAR.           │
-│   1.b. FRIENDLY FORCES                                                       │
-│        2d Brigade Combat Team with 3x Infantry Battalions, 1x Cavalry       │
-│        Squadron, 1x FA Battalion (direct support). Aviation brigade in GS.  │
-│                                                                              │
-│ 2. MISSION                                                                   │
-│   2d BCT defends sector NLT 042200APR26 to deny enemy access to            │
-│   OBJECTIVE RAPTOR and retain freedom of action for CORPS.                  │
-│                                                                              │
-│ 3. EXECUTION                                                                 │
-│   3.a. COMMANDER'S INTENT: Defeat the enemy in the security zone, draw      │
-│        them into our engagement areas, and defeat their main effort with     │
-│        fires and counterattack before they can consolidate on RAPTOR.       │
-└────────────────────────────────────────────────────────────────────────────┘
-```
+![MDMP Pipeline Execution Log](assets_visual/screenshot-mdmp.svg)
 
-### Fires Integration Panel
+*Full seven-step pipeline execution log. Step timestamps, products generated at each step, COA approval result, and total elapsed time. Decision criteria matrix with weighted scores. FM 6-0 Chapter 9.*
 
-```
-┌────────────────────────────────────────────────────────────────────────────┐
-│ FIRES INTEGRATION // TARGETING          FM 3-09 · FM 3-60 · JP 3-60        │
-│ F2T2EA: [FIND] [FIX] [TRACK] [TARGET] [ENGAGE] [ASSESS]                   │
-├──────────────┬───────────────────────────────────────────────────────────  │
-│ HPTL | AGM | FSCM | Nominate                                                │
-│                                                                              │
-│ HIGH PAYOFF TARGET LIST // FM 3-60 §4-1                                     │
-│ ID       TARGET              TYPE       PRIORITY   EFFECT   STATUS          │
-│ HPT-001  Enemy AD Radar     Air Def    HPT         Destroy  ████████ TRACK  │
-│ HPT-002  Enemy C2 Node      C2         HPT         Destroy  ██████████ TGT  │
-│ HPT-003  Enemy LOC Bridge   Infra      HVT         Interdict ████ FIX       │
-│ HPT-004  Enemy Fuel Depot   Logistics  HVT         Destroy  ██ FIND         │
-└────────────────────────────────────────────────────────────────────────────┘
-```
+---
+
+### Three Courses of Action with Wargaming Results
+
+![COA Development and Analysis](assets_visual/screenshot-coa.svg)
+
+*Three distinct COAs developed for a DEFENSE mission. Each card shows concept of operations, decisive operation, wargaming action/reaction/counteraction sequences, and six-criterion scoring. COA-B (Strongpoint Defense) recommended at 3.87/5.00. FM 6-0 §9-78 / §9-96 / §9-117.*
+
+---
+
+### Five-Paragraph Operations Order
+
+![OPORD Fragment](assets_visual/screenshot-opord.svg)
+
+*Complete OPORD fragment formatted per FM 6-0 Appendix C and FM 6-99. Five paragraphs: Situation, Mission, Execution (with decisive and shaping operations), Sustainment, Command and Signal. DTG block, classification markings, and doctrine citations. UNCLASSIFIED.*
+
+---
+
+### Fires Integration — HPTL and Attack Guidance Matrix
+
+![Fires Integration Panel](assets_visual/screenshot-fires.svg)
+
+*High Payoff Target List with F2T2EA kill chain status for five nominated targets. Attack Guidance Matrix with priority, desired effect, means, and restrictions. Fire Support Coordination Measures. FA planning factors from FM 3-09. FM 3-60 §4-1 / §4-12 / JP 3-60.*
 
 ---
 
