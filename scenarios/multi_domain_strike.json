@@ -1,0 +1,87 @@
+{
+    "title": "Multi-Domain Strike Coordination",
+    "description": "Joint task force must synchronize kinetic, cyber, electronic warfare, and space effects to disable an enemy integrated air defense network and enable follow-on bomber operations. Timing and deconfliction are critical.",
+    "mission_type": "OFFENSE",
+    "friendly_force": [
+        {
+            "name": "Joint Task Force Sword",
+            "unit_type": "SPECIAL_OPERATIONS",
+            "echelon": "JTF",
+            "size_estimate": "2500 pax",
+            "equipment": [
+                "B-2 Spirit",
+                "Tomahawk Land Attack Missile",
+                "Cyber effects platform",
+                "EW aircraft"
+            ]
+        },
+        {
+            "name": "Cyber Command Element",
+            "unit_type": "CYBER",
+            "echelon": "COMPANY",
+            "size_estimate": "60 pax",
+            "equipment": [
+                "Joint Cyber Unit",
+                "NSA support package"
+            ]
+        },
+        {
+            "name": "EW Squadron",
+            "unit_type": "ELECTRONIC_WARFARE",
+            "echelon": "SQUADRON",
+            "size_estimate": "200 pax",
+            "equipment": [
+                "EA-18G Growler",
+                "RC-135 Rivet Joint"
+            ]
+        }
+    ],
+    "enemy_force": [
+        {
+            "name": "Enemy IADS Network",
+            "threat_category": "HYBRID",
+            "disposition": "Layered air defense with early warning, acquisition, and engagement radars networked via fiber and satellite",
+            "strength_estimate": "12 SAM battalions, 40 aircraft on alert, integrated C2 node",
+            "most_likely_coa": "Shift to emission control upon detection of friendly air movement; rely on passive sensors.",
+            "most_dangerous_coa": "Preemptive missile strike on friendly airfields combined with cyber attack on C2.",
+            "known_vulnerabilities": [
+                "Fiber optic backbone has 3 known physical access points",
+                "C2 node relies on unencrypted backup radio"
+            ],
+            "high_value_targets": [
+                "Early warning radar",
+                "C2 node",
+                "Power generation for SAM sites"
+            ]
+        }
+    ],
+    "terrain": [
+        {
+            "name": "Enemy IADS Belt",
+            "terrain_type": "MOUNTAIN",
+            "description": "Mountainous terrain providing radar line of sight advantages.",
+            "is_key_terrain": true,
+            "avenues_of_approach": [
+                "Low-level penetration route north",
+                "Standoff cruise missile corridor east"
+            ]
+        }
+    ],
+    "weather": {
+        "condition": "CLEAR",
+        "temperature_c": -5,
+        "wind_kph": 20,
+        "visibility_km": 10,
+        "illumination": "night"
+    },
+    "time_available": "12 hours",
+    "civil_considerations": [
+        "Neutral shipping lanes 50nm south",
+        "International air corridor overhead"
+    ],
+    "restrictions": [
+        "No kinetic effects in neutral shipping lanes",
+        "Space effects require NCA approval"
+    ],
+    "higher_intent": "Establish air superiority by neutralizing enemy IADS to enable strategic strike campaign."
+}

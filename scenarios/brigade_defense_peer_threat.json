@@ -1,0 +1,83 @@
+{
+    "title": "Brigade Defense Against a Peer Threat Armored Assault",
+    "description": "A peer mechanized brigade is massing for an armored assault along a narrow corridor. Friendly brigade must establish a defense in depth, channel enemy forces into engagement areas, and retain the initiative through counterattack.",
+    "mission_type": "DEFENSE",
+    "friendly_force": [
+        {
+            "name": "1st Brigade Combat Team",
+            "unit_type": "ARMOR",
+            "echelon": "BRIGADE",
+            "size_estimate": "4500 pax",
+            "equipment": [
+                "M1A2 Abrams",
+                "M2 Bradley",
+                "Stryker",
+                "Javelin"
+            ]
+        },
+        {
+            "name": "1-77 Field Artillery",
+            "unit_type": "ARTILLERY",
+            "echelon": "BATTALION",
+            "size_estimate": "400 pax",
+            "equipment": [
+                "M777A2",
+                "HIMARS",
+                "Excalibur"
+            ]
+        }
+    ],
+    "enemy_force": [
+        {
+            "name": "3rd Enemy Mechanized Brigade",
+            "threat_category": "PEER_NEAR_PEER",
+            "disposition": "Massed in assembly areas 15km east, prepared to attack along axis RED",
+            "strength_estimate": "4000 pax, 120 tanks, 180 IFVs",
+            "most_likely_coa": "Combined arms breach along main avenue with follow-on exploitation.",
+            "most_dangerous_coa": "Massed rocket artillery suppression followed by armored penetration.",
+            "known_vulnerabilities": [
+                "Extended logistics tail",
+                "Limited ISR in adverse weather"
+            ],
+            "high_value_targets": [
+                "Brigade command post",
+                "Rocket artillery battalion",
+                "Forward logistics node"
+            ]
+        }
+    ],
+    "terrain": [
+        {
+            "name": "Main Battle Area",
+            "terrain_type": "OPEN",
+            "description": "Rolling open terrain with limited defilade.",
+            "is_key_terrain": true,
+            "avenues_of_approach": [
+                "Axis RED (primary)",
+                "Axis BLUE (secondary)"
+            ]
+        },
+        {
+            "name": "River Obstacle Belt",
+            "terrain_type": "RIVERINE",
+            "description": "Natural obstacle with limited crossing sites.",
+            "is_key_terrain": true
+        }
+    ],
+    "weather": {
+        "condition": "OVERCAST",
+        "temperature_c": 12,
+        "wind_kph": 15,
+        "visibility_km": 6,
+        "illumination": "day"
+    },
+    "time_available": "18 hours",
+    "civil_considerations": [
+        "Civilian population evacuated from forward villages",
+        "Agricultural infrastructure to preserve"
+    ],
+    "restrictions": [
+        "No fires east of phase line GREEN without corps approval"
+    ],
+    "higher_intent": "Defeat the enemy brigade forward of phase line GREEN and retain key terrain."
+}

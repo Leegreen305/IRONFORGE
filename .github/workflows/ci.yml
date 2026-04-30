@@ -1,0 +1,72 @@
+name: IRONFORGE CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ── Python Backend ──────────────────────────────────────────────────────────
+  test-python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e .
+
+      - name: Lint (fatal errors only)
+        run: |
+          pip install flake8
+          flake8 ironforge mdmp intelligence fires assets ai_engine webapp/backend \
+            --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Run pytest
+        env:
+          ANTHROPIC_API_KEY: "test-key-ci-placeholder"
+        run: pytest tests/ -v --tb=short
+
+  # ── Frontend Type Check ─────────────────────────────────────────────────────
+  typecheck-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: webapp/frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: webapp/frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm ci --prefer-offline || npm install
+
+      - name: TypeScript type check
+        run: npx tsc --noEmit
+
+      - name: Build frontend
+        env:
+          NEXT_PUBLIC_API_URL: "http://localhost:8000"
+        run: npm run build

@@ -1,0 +1,335 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── IRONFORGE TERMINAL THEME ─────────────────────────────────────────── */
+
+:root {
+  --tac-bg:           #080d18;
+  --tac-panel:        #0d1420;
+  --tac-gold:         #c8a84b;
+  --tac-gold-dim:     #7a6420;
+  --tac-blue:         #3b82f6;
+  --tac-red:          #ef4444;
+  --tac-green:        #16b960;
+  --tac-border:       #1e2d3d;
+  --tac-dim:          #4a6680;
+  --tac-text:         #a0b4c8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--tac-bg);
+  color: var(--tac-text);
+  font-family: 'Liberation Mono', 'Courier New', Courier, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar              { width: 6px; height: 6px; }
+::-webkit-scrollbar-track        { background: var(--tac-bg); }
+::-webkit-scrollbar-thumb        { background: var(--tac-border); }
+::-webkit-scrollbar-thumb:hover  { background: var(--tac-dim); }
+
+/* ─── UTILITY CLASSES ───────────────────────────────────────────────────── */
+
+.tac-panel {
+  background: var(--tac-panel);
+  border: 1px solid var(--tac-border);
+}
+
+.tac-panel-label {
+  color: var(--tac-gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.tac-section-header {
+  color: var(--tac-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--tac-gold-dim);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.tac-data-field {
+  color: var(--tac-text);
+  font-size: 0.72rem;
+}
+
+.tac-value {
+  color: #c8dae8;
+  font-size: 0.75rem;
+}
+
+.tac-dim-text {
+  color: var(--tac-dim);
+  font-size: 0.68rem;
+}
+
+.tac-green-text  { color: var(--tac-green); }
+.tac-gold-text   { color: var(--tac-gold); }
+.tac-blue-text   { color: var(--tac-blue); }
+.tac-red-text    { color: var(--tac-red); }
+
+/* ─── BUTTONS ───────────────────────────────────────────────────────────── */
+
+.btn-execute {
+  background: transparent;
+  border: 1px solid var(--tac-gold);
+  color: var(--tac-gold);
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-execute:hover:not(:disabled) {
+  background: var(--tac-gold);
+  color: var(--tac-bg);
+}
+
+.btn-execute:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--tac-border);
+  color: var(--tac-dim);
+  font-family: inherit;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--tac-text);
+  color: var(--tac-text);
+}
+
+/* ─── FORM INPUTS ────────────────────────────────────────────────────────── */
+
+.tac-input,
+.tac-select,
+.tac-textarea {
+  background: var(--tac-bg);
+  border: 1px solid var(--tac-border);
+  color: var(--tac-text);
+  font-family: inherit;
+  font-size: 0.72rem;
+  padding: 6px 10px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.tac-input:focus,
+.tac-select:focus,
+.tac-textarea:focus {
+  border-color: var(--tac-gold-dim);
+}
+
+.tac-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.tac-select option {
+  background: var(--tac-panel);
+  color: var(--tac-text);
+}
+
+/* ─── STEP TRACKER ──────────────────────────────────────────────────────── */
+
+.step-pending .step-dot  { color: var(--tac-dim); }
+.step-active  .step-dot  { color: var(--tac-gold); }
+.step-complete .step-dot { color: var(--tac-green); }
+
+.step-connector {
+  width: 1px;
+  background: var(--tac-border);
+  margin: 2px auto;
+  height: 12px;
+}
+
+/* ─── COA CARDS ─────────────────────────────────────────────────────────── */
+
+.coa-card {
+  background: var(--tac-panel);
+  border: 1px solid var(--tac-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.coa-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.coa-card-alpha::before { background: var(--tac-blue); }
+.coa-card-bravo::before { background: var(--tac-gold); }
+.coa-card-charlie::before { background: var(--tac-green); }
+
+.coa-recommended {
+  border-color: var(--tac-gold) !important;
+  box-shadow: 0 0 12px rgba(200, 168, 75, 0.15);
+}
+
+/* ─── SCORE BARS ─────────────────────────────────────────────────────────── */
+
+.score-bar-track {
+  height: 4px;
+  background: var(--tac-border);
+  flex: 1;
+}
+
+.score-bar-fill {
+  height: 100%;
+  background: var(--tac-blue);
+  transition: width 0.4s ease;
+}
+
+/* ─── OPORD ─────────────────────────────────────────────────────────────── */
+
+.opord-para-num {
+  color: var(--tac-gold);
+  min-width: 60px;
+  display: inline-block;
+}
+
+.opord-para-title {
+  color: #c8dae8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.opord-para-text {
+  color: var(--tac-text);
+  margin-left: 60px;
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+/* ─── STATUS DOTS ────────────────────────────────────────────────────────── */
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot-green  { background: var(--tac-green); box-shadow: 0 0 6px var(--tac-green); }
+.status-dot-gold   { background: var(--tac-gold);  box-shadow: 0 0 6px var(--tac-gold); }
+.status-dot-red    { background: var(--tac-red);   box-shadow: 0 0 6px var(--tac-red); }
+.status-dot-dim    { background: var(--tac-dim); }
+
+/* ─── WARGAME TABLE ─────────────────────────────────────────────────────── */
+
+.wargame-row {
+  border-left: 2px solid var(--tac-border);
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.wargame-row-friendly { border-left-color: var(--tac-blue); }
+.wargame-row-enemy    { border-left-color: var(--tac-red); }
+.wargame-row-counter  { border-left-color: var(--tac-green); }
+
+/* ─── CLASSIFICATION BANNERS ────────────────────────────────────────────── */
+
+.classification-banner {
+  background: #004400;
+  color: #00ff00;
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 2px 0;
+  font-weight: bold;
+}
+
+/* ─── GRID OVERLAYS (decorative corner brackets) ─────────────────────────── */
+
+.corner-bracket {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+
+.corner-tl { top: 0; left: 0; border-top: 1px solid var(--tac-gold-dim); border-left: 1px solid var(--tac-gold-dim); }
+.corner-tr { top: 0; right: 0; border-top: 1px solid var(--tac-gold-dim); border-right: 1px solid var(--tac-gold-dim); }
+.corner-bl { bottom: 0; left: 0; border-bottom: 1px solid var(--tac-gold-dim); border-left: 1px solid var(--tac-gold-dim); }
+.corner-br { bottom: 0; right: 0; border-bottom: 1px solid var(--tac-gold-dim); border-right: 1px solid var(--tac-gold-dim); }
+
+/* ─── FIRES PANEL ────────────────────────────────────────────────────────── */
+
+.f2t2ea-stage {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--tac-border);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.f2t2ea-active {
+  border-color: var(--tac-gold);
+  color: var(--tac-gold);
+  background: rgba(200, 168, 75, 0.08);
+}
+
+.f2t2ea-complete {
+  border-color: var(--tac-green);
+  color: var(--tac-green);
+  background: rgba(22, 185, 96, 0.08);
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────────────────────────── */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeIn 0.3s ease forwards; }
+
+/* ─── PRINT ──────────────────────────────────────────────────────────────── */
+
+@media print {
+  body { background: white; color: black; }
+  .no-print { display: none; }
+}

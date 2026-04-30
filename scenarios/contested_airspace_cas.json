@@ -1,0 +1,88 @@
+{
+    "title": "Contested Airspace Close Air Support Request",
+    "description": "An infantry platoon in contact has requested immediate close air support. The airspace is contested by enemy integrated air defense systems. Friendly forces must coordinate joint fires while deconflicting with air defense suppression operations.",
+    "mission_type": "OFFENSE",
+    "friendly_force": [
+        {
+            "name": "Infantry Platoon Blackjack",
+            "unit_type": "INFANTRY",
+            "echelon": "PLATOON",
+            "size_estimate": "40 pax",
+            "equipment": [
+                "M4",
+                "M240B",
+                "Javelin",
+                "SOFLAM"
+            ]
+        },
+        {
+            "name": "CAS Flight Viper",
+            "unit_type": "AVIATION",
+            "echelon": "FLIGHT",
+            "size_estimate": "4 aircrew",
+            "equipment": [
+                "F-16C",
+                "JDAM",
+                "SDB"
+            ]
+        },
+        {
+            "name": "SEAD Flight Raptor",
+            "unit_type": "AVIATION",
+            "echelon": "FLIGHT",
+            "size_estimate": "4 aircrew",
+            "equipment": [
+                "F-16CJ",
+                "HARM",
+                "DECM"
+            ]
+        }
+    ],
+    "enemy_force": [
+        {
+            "name": "Enemy Battalion with IADS",
+            "threat_category": "PEER_NEAR_PEER",
+            "disposition": "Established in defensive positions with layered IADS coverage",
+            "strength_estimate": "500 pax, 6 SAM sites, 12 AAA positions",
+            "most_likely_coa": "Engage aircraft with layered SAM and AAA as they enter weapons release parameters.",
+            "most_dangerous_coa": "Massed SAM ambush with radar activation only at terminal phase.",
+            "known_vulnerabilities": [
+                "Radar acquisition time 8 seconds",
+                "Limited reload capacity at forward sites"
+            ],
+            "high_value_targets": [
+                "SAM fire control radar",
+                "Ammo storage point"
+            ]
+        }
+    ],
+    "terrain": [
+        {
+            "name": "Target Engagement Area",
+            "terrain_type": "OPEN",
+            "description": "Open farmland with minimal cover.",
+            "is_key_terrain": false,
+            "avenues_of_approach": [
+                "Air corridor ALPHA",
+                "Air corridor BRAVO"
+            ]
+        }
+    ],
+    "weather": {
+        "condition": "PARTLY_CLOUDY",
+        "temperature_c": 18,
+        "wind_kph": 10,
+        "visibility_km": 8,
+        "illumination": "day"
+    },
+    "time_available": "30 minutes",
+    "civil_considerations": [
+        "Farmhouses within 500m of target",
+        "Livestock in engagement area"
+    ],
+    "restrictions": [
+        "Positive identification required",
+        "No engagement within 300m of civilian structures without waiver"
+    ],
+    "higher_intent": "Support ground force in contact and destroy enemy defensive positions."
+}

@@ -1,0 +1,75 @@
+{
+    "title": "Cyber-Physical Attack on a Forward Operating Base",
+    "description": "A forward operating base is experiencing simultaneous cyber intrusion into its power distribution and physical probing of its perimeter defenses. Friendly forces must defend the base, restore critical systems, and attribute the attack.",
+    "mission_type": "DEFENSE",
+    "friendly_force": [
+        {
+            "name": "FOB Defender Battalion",
+            "unit_type": "INFANTRY",
+            "echelon": "BATTALION",
+            "size_estimate": "800 pax",
+            "equipment": [
+                "C-RAM",
+                "Counter-UAS",
+                " perimeter sensors"
+            ]
+        },
+        {
+            "name": "Cyber Protection Team",
+            "unit_type": "CYBER",
+            "echelon": "PLATOON",
+            "size_estimate": "30 pax",
+            "equipment": [
+                "CWD",
+                "Defensive cyber ops toolkit"
+            ]
+        }
+    ],
+    "enemy_force": [
+        {
+            "name": "Hybrid Threat Cell",
+            "threat_category": "HYBRID",
+            "disposition": "Cyber actors remote; physical reconnaissance element observed 2km west",
+            "strength_estimate": "Unknown cyber actors; 10-15 physical reconnaissance personnel",
+            "most_likely_coa": "Cyber disruption of power and communications followed by mortar or UAS attack.",
+            "most_dangerous_coa": "Coordinated cyber-physical attack with ground assault on main gate.",
+            "known_vulnerabilities": [
+                "Commercial power grid dependency",
+                "Unpatched industrial control systems"
+            ],
+            "high_value_targets": [
+                "Power distribution center",
+                "Tactical operations center"
+            ]
+        }
+    ],
+    "terrain": [
+        {
+            "name": "FOB Perimeter",
+            "terrain_type": "DESERT",
+            "description": "Flat desert with limited natural obstacles.",
+            "is_key_terrain": true,
+            "avenues_of_approach": [
+                "Main supply route",
+                "Wadi bed to northwest"
+            ]
+        }
+    ],
+    "weather": {
+        "condition": "DUST",
+        "temperature_c": 38,
+        "wind_kph": 30,
+        "visibility_km": 3,
+        "illumination": "day"
+    },
+    "time_available": "2 hours",
+    "civil_considerations": [
+        "Local contractor workforce on base",
+        "Host nation checkpoint coordination required"
+    ],
+    "restrictions": [
+        "Minimize civilian contractor exposure",
+        "No offensive cyber outside base boundaries without JTF approval"
+    ],
+    "higher_intent": "Maintain base integrity and restore full operational capability within 4 hours."
+}
