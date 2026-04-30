@@ -9,6 +9,7 @@ import { COASection } from '@/components/COASection'
 import { RecommendationPanel } from '@/components/RecommendationPanel'
 import { OPORDPanel } from '@/components/OPORDPanel'
 import { FiresPanel } from '@/components/FiresPanel'
+import { DisclaimerModal } from '@/components/DisclaimerModal'
 import { submitScenario } from '@/lib/api'
 import type { MDMPOutput } from '@/types'
 
@@ -60,6 +61,8 @@ export default function IronForgeDashboard() {
   ]
 
   return (
+    <>
+    <DisclaimerModal />
     <div
       className="flex flex-col min-h-screen"
       style={{ background: '#080d18', color: '#a0b4c8' }}
@@ -184,6 +187,7 @@ export default function IronForgeDashboard() {
       {/* ── Classification banner bottom ── */}
       <ClassificationBanner />
     </div>
+    </>
   )
 }
 
