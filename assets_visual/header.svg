@@ -1,0 +1,354 @@
+<svg width="1440" height="480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>text { font-family: 'Courier New', 'Liberation Mono', monospace; }</style>
+
+    <!-- Dot grid -->
+    <pattern id="dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="11" r="0.55" fill="#1e2d3d" opacity="0.5"/>
+    </pattern>
+
+    <!-- Tactical line grid (large squares) -->
+    <pattern id="grid" x="0" y="0" width="88" height="88" patternUnits="userSpaceOnUse">
+      <path d="M88,0 L0,0 L0,88" fill="none" stroke="#1e2d3d" stroke-width="0.3" opacity="0.3"/>
+    </pattern>
+
+    <!-- Gold glow on IRONFORGE title -->
+    <filter id="gold-glow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+      <feFlood flood-color="#c8a84b" flood-opacity="0.25" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow for status dots -->
+    <filter id="dot-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Center warmth gradient -->
+    <radialGradient id="warm-center" cx="55%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#c8a84b" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#c8a84b" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Left panel fade -->
+    <linearGradient id="left-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#090e1a" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#090e1a" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Right panel fade -->
+    <linearGradient id="right-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#090e1a" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#090e1a" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="30%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.45"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ── BASE BACKGROUND ───────────────────────────────────────── -->
+  <rect width="1440" height="480" fill="#080d18"/>
+  <rect width="1440" height="480" fill="url(#grid)"/>
+  <rect width="1440" height="480" fill="url(#dots)"/>
+  <rect width="1440" height="480" fill="url(#warm-center)"/>
+  <rect width="1440" height="480" fill="url(#vignette)"/>
+
+  <!-- ── CLASSIFICATION BANNER TOP ────────────────────────────── -->
+  <rect y="0" width="1440" height="18" fill="#003d00"/>
+  <text x="720" y="13" text-anchor="middle" font-size="8.5" fill="#00dd00" font-weight="bold" letter-spacing="4">&#x258C; UNCLASSIFIED &#x258C; IRONFORGE MDMP SIMULATION &#x2014; TRAINING AID ONLY &#x258C; NOT FOR OPERATIONAL USE &#x258C; UNCLASSIFIED &#x258C;</text>
+
+  <!-- ── SYSTEM STATUS BAR ─────────────────────────────────────── -->
+  <rect y="18" width="1440" height="24" fill="#0a0f1c"/>
+  <rect y="41" width="1440" height="1" fill="#c8a84b" opacity="0.5"/>
+  <!-- Left: identity -->
+  <text x="14" y="34" font-size="9" fill="#c8a84b" font-weight="bold" letter-spacing="4">&#x25C8; IRONFORGE</text>
+  <rect x="102" y="24" width="1" height="16" fill="#1e2d3d"/>
+  <text x="112" y="34" font-size="9" fill="#4a6680" letter-spacing="2">MDMP ENGINE</text>
+  <rect x="206" y="24" width="1" height="16" fill="#1e2d3d"/>
+  <text x="216" y="34" font-size="8" fill="#2d4a6a" letter-spacing="1">v1.0.0</text>
+  <!-- Center: doctrine -->
+  <text x="720" y="34" text-anchor="middle" font-size="8.5" fill="#2d4a6a" letter-spacing="1.5">FM 6-0 &#xB7; FM 2-01.3 &#xB7; FM 3-60 &#xB7; FM 3-09 &#xB7; ADRP 5-0 &#xB7; JP 3-0 &#xB7; JP 3-60</text>
+  <!-- Right: status -->
+  <circle cx="1216" cy="30" r="3.5" fill="#16b960" filter="url(#dot-glow)"/>
+  <text x="1225" y="34" font-size="9" fill="#16b960" letter-spacing="2">SYSTEM ONLINE</text>
+  <rect x="1320" y="24" width="1" height="16" fill="#1e2d3d"/>
+  <circle cx="1332" cy="30" r="3.5" fill="#c8a84b" filter="url(#dot-glow)"/>
+  <text x="1341" y="34" font-size="9" fill="#c8a84b" letter-spacing="1">AI ENGINE READY</text>
+
+  <!-- ── LEFT PANEL: TARGETING RETICLE ─────────────────────────── -->
+  <rect x="0" y="42" width="420" height="420" fill="#090e1a" opacity="0.7"/>
+  <rect x="0" y="42" width="420" height="420" fill="url(#left-fade)"/>
+  <line x1="420" y1="42" x2="420" y2="462" stroke="#1e2d3d" stroke-width="1"/>
+
+  <!-- Reticle group centered at (210, 252) -->
+  <g transform="translate(210,252)">
+
+    <!-- Outer dashed azimuth ring (r=172) -->
+    <circle r="172" fill="none" stroke="#c8a84b" stroke-width="0.5" stroke-dasharray="3,9" opacity="0.12"/>
+
+    <!-- Primary rings -->
+    <circle r="155" fill="none" stroke="#c8a84b" stroke-width="1"    opacity="0.18"/>
+    <circle r="112" fill="none" stroke="#c8a84b" stroke-width="0.75" opacity="0.25"/>
+    <circle r="70"  fill="none" stroke="#c8a84b" stroke-width="0.75" opacity="0.35"/>
+    <circle r="30"  fill="none" stroke="#c8a84b" stroke-width="1"    opacity="0.55"/>
+    <circle r="10"  fill="none" stroke="#c8a84b" stroke-width="1.5"  opacity="0.75"/>
+    <circle r="3"   fill="#c8a84b"                                    opacity="0.9"/>
+
+    <!-- Targeting center box -->
+    <rect x="-13" y="-13" width="26" height="26" fill="none" stroke="#c8a84b" stroke-width="0.75" opacity="0.5"/>
+
+    <!-- Main crosshairs (horizontal, gap ±32) -->
+    <line x1="-155" y1="0" x2="-32" y2="0" stroke="#c8a84b" stroke-width="0.75" opacity="0.35"/>
+    <line x1="32"   y1="0" x2="155" y2="0" stroke="#c8a84b" stroke-width="0.75" opacity="0.35"/>
+    <!-- Main crosshairs (vertical, gap ±32) -->
+    <line x1="0" y1="-155" x2="0" y2="-32" stroke="#c8a84b" stroke-width="0.75" opacity="0.35"/>
+    <line x1="0" y1="32"   x2="0" y2="155" stroke="#c8a84b" stroke-width="0.75" opacity="0.35"/>
+
+    <!-- 45° auxiliary crosshairs (shorter) -->
+    <line x1="-88"  y1="-88"  x2="-22" y2="-22" stroke="#c8a84b" stroke-width="0.4" opacity="0.18"/>
+    <line x1="22"   y1="22"   x2="88"  y2="88"  stroke="#c8a84b" stroke-width="0.4" opacity="0.18"/>
+    <line x1="88"   y1="-88"  x2="22"  y2="-22" stroke="#c8a84b" stroke-width="0.4" opacity="0.18"/>
+    <line x1="-22"  y1="22"   x2="-88" y2="88"  stroke="#c8a84b" stroke-width="0.4" opacity="0.18"/>
+
+    <!-- MAJOR tick marks (every 90°) using rotate — longer -->
+    <g transform="rotate(0)">  <line x1="0" y1="-155" x2="0" y2="-136" stroke="#c8a84b" stroke-width="2"   opacity="0.75"/></g>
+    <g transform="rotate(90)"> <line x1="0" y1="-155" x2="0" y2="-136" stroke="#c8a84b" stroke-width="2"   opacity="0.75"/></g>
+    <g transform="rotate(180)"><line x1="0" y1="-155" x2="0" y2="-136" stroke="#c8a84b" stroke-width="2"   opacity="0.75"/></g>
+    <g transform="rotate(270)"><line x1="0" y1="-155" x2="0" y2="-136" stroke="#c8a84b" stroke-width="2"   opacity="0.75"/></g>
+
+    <!-- MINOR tick marks (every 30°) -->
+    <g transform="rotate(30)"> <line x1="0" y1="-155" x2="0" y2="-147" stroke="#c8a84b" stroke-width="1"   opacity="0.45"/></g>
+    <g transform="rotate(60)"> <line x1="0" y1="-155" x2="0" y2="-147" stroke="#c8a84b" stroke-width="1"   opacity="0.45"/></g>
+    <g transform="rotate(120)"><line x1="0" y1="-155" x2="0" y2="-147" stroke="#c8a84b" stroke-width="1"   opacity="0.45"/></g>
+    <g transform="rotate(150)"><line x1="0" y1="-155" x2="0" y2="-147" stroke="#c8a84b" stroke-width="1"   opacity="0.45"/></g>
+    <g transform="rotate(210)"><line x1="0" y1="-155" x2="0" y2="-147" stroke="#c8a84b" stroke-width="1"   opacity="0.45"/></g>
+    <g transform="rotate(240)"><line x1="0" y1="-155" x2="0" y2="-147" stroke="#c8a84b" stroke-width="1"   opacity="0.45"/></g>
+    <g transform="rotate(300)"><line x1="0" y1="-155" x2="0" y2="-147" stroke="#c8a84b" stroke-width="1"   opacity="0.45"/></g>
+    <g transform="rotate(330)"><line x1="0" y1="-155" x2="0" y2="-147" stroke="#c8a84b" stroke-width="1"   opacity="0.45"/></g>
+
+    <!-- Micro ticks (every 10°) -->
+    <g transform="rotate(10)"> <line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(20)"> <line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(40)"> <line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(50)"> <line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(70)"> <line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(80)"> <line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(100)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(110)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(130)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(140)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(160)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(170)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(190)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(200)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(220)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(230)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(250)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(260)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(280)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(290)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(310)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(320)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(340)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+    <g transform="rotate(350)"><line x1="0" y1="-155" x2="0" y2="-151" stroke="#c8a84b" stroke-width="0.5" opacity="0.3"/></g>
+
+    <!-- Cardinal azimuth labels (positioned at r=167, manually) -->
+    <text x="0"    y="-163" text-anchor="middle" font-size="8" fill="#c8a84b" opacity="0.65" letter-spacing="1">000</text>
+    <text x="163"  y="4"    text-anchor="start"  font-size="8" fill="#c8a84b" opacity="0.65" letter-spacing="1">090</text>
+    <text x="0"    y="175"  text-anchor="middle" font-size="8" fill="#c8a84b" opacity="0.65" letter-spacing="1">180</text>
+    <text x="-163" y="4"    text-anchor="end"    font-size="8" fill="#c8a84b" opacity="0.65" letter-spacing="1">270</text>
+
+    <!-- Range ring labels at 3 o'clock (r+6) -->
+    <text x="118" y="4" font-size="7" fill="#c8a84b" opacity="0.4">8K</text>
+    <text x="76"  y="4" font-size="7" fill="#c8a84b" opacity="0.4">4K</text>
+
+    <!-- Tactical data callout — upper right of reticle -->
+    <rect x="118" y="-152" width="84" height="54" fill="#080d18" stroke="#c8a84b" stroke-width="0.5" opacity="0.7"/>
+    <rect x="118" y="-152" width="84" height="8"  fill="#c8a84b" opacity="0.15"/>
+    <text x="122" y="-142" font-size="7" fill="#c8a84b" opacity="0.8" letter-spacing="1">TARGET DATA</text>
+    <text x="122" y="-129" font-size="7.5" fill="#c8a84b" opacity="0.6">GRID 38SMB</text>
+    <text x="122" y="-118" font-size="7.5" fill="#c8a84b" opacity="0.6">  2104 5217</text>
+    <text x="122" y="-107" font-size="7.5" fill="#c8a84b" opacity="0.6">AZ 045 // R 4.2K</text>
+
+    <!-- Standby indicator — lower left -->
+    <rect x="-200" y="130" width="78" height="18" fill="#080d18" stroke="#1e2d3d" stroke-width="0.5" opacity="0.8"/>
+    <circle cx="-190" cy="139" r="3" fill="#c8a84b" opacity="0.8"/>
+    <text x="-183" y="143" font-size="7.5" fill="#c8a84b" opacity="0.7" letter-spacing="1">STANDBY</text>
+
+    <!-- Sector label — upper left -->
+    <text x="-200" y="-142" font-size="7" fill="#2d4a6a" letter-spacing="1">SECTOR</text>
+    <text x="-200" y="-131" font-size="8" fill="#c8a84b" opacity="0.5">NORTHWEST</text>
+
+    <!-- Small acquisition arc (upper-right quadrant dashed) -->
+    <path d="M 0,-155 A 155,155 0 0,1 155,0" fill="none" stroke="#c8a84b" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.35"/>
+  </g>
+
+  <!-- ── CENTER PANEL: TITLE AND DESCRIPTION ───────────────────── -->
+
+  <!-- Vertical dividers to frame the center -->
+  <line x1="420" y1="42" x2="420" y2="462" stroke="#1e2d3d" stroke-width="1"/>
+  <line x1="1020" y1="42" x2="1020" y2="462" stroke="#1e2d3d" stroke-width="1"/>
+
+  <!-- IRONFORGE — the primary title element -->
+  <text x="720" y="190" text-anchor="middle" font-size="96" fill="#c8a84b" font-weight="bold" letter-spacing="12" filter="url(#gold-glow)">IRONFORGE</text>
+
+  <!-- Horizontal rule under title with corner marks -->
+  <line x1="450" y1="208" x2="990" y2="208" stroke="#c8a84b" stroke-width="0.75" opacity="0.5"/>
+  <rect x="446" y="204" width="8" height="8" fill="none" stroke="#c8a84b" stroke-width="0.75" opacity="0.5"/>
+  <rect x="986" y="204" width="8" height="8" fill="none" stroke="#c8a84b" stroke-width="0.75" opacity="0.5"/>
+
+  <!-- Subtitle -->
+  <text x="720" y="236" text-anchor="middle" font-size="13" fill="#a0b4c8" letter-spacing="4">AI-POWERED MILITARY DECISION MAKING PROCESS ENGINE</text>
+
+  <!-- Thin second rule -->
+  <line x1="520" y1="248" x2="920" y2="248" stroke="#1e2d3d" stroke-width="0.75"/>
+
+  <!-- Tagline -->
+  <text x="720" y="268" text-anchor="middle" font-size="10.5" fill="#4a6680" letter-spacing="2">Every output traceable  &#xB7;  Every reference cited  &#xB7;  Every step doctrinal</text>
+
+  <!-- ── MDMP SEVEN STEP PIPELINE VISUALIZATION ─────────────────── -->
+  <!-- Step boxes centered at y=310 -->
+  <!-- Step 1 -->
+  <rect x="455" y="294" width="72" height="30" fill="rgba(200,168,75,0.06)" stroke="#7a6420" stroke-width="1"/>
+  <text x="491" y="307" text-anchor="middle" font-size="7"  fill="#c8a84b" letter-spacing="1">01</text>
+  <text x="491" y="318" text-anchor="middle" font-size="6.5" fill="#c8a84b" letter-spacing="0.5">RECEIPT</text>
+  <!-- Connector -->
+  <line x1="527" y1="309" x2="537" y2="309" stroke="#7a6420" stroke-width="0.75"/>
+  <!-- Step 2 -->
+  <rect x="537" y="294" width="72" height="30" fill="rgba(200,168,75,0.06)" stroke="#7a6420" stroke-width="1"/>
+  <text x="573" y="307" text-anchor="middle" font-size="7"   fill="#c8a84b" letter-spacing="1">02</text>
+  <text x="573" y="318" text-anchor="middle" font-size="6.5" fill="#c8a84b" letter-spacing="0.5">ANALYSIS</text>
+  <!-- Connector -->
+  <line x1="609" y1="309" x2="619" y2="309" stroke="#7a6420" stroke-width="0.75"/>
+  <!-- Step 3 -->
+  <rect x="619" y="294" width="72" height="30" fill="rgba(200,168,75,0.06)" stroke="#7a6420" stroke-width="1"/>
+  <text x="655" y="307" text-anchor="middle" font-size="7"   fill="#c8a84b" letter-spacing="1">03</text>
+  <text x="655" y="318" text-anchor="middle" font-size="6.5" fill="#c8a84b" letter-spacing="0.5">COA DEV</text>
+  <!-- Connector -->
+  <line x1="691" y1="309" x2="701" y2="309" stroke="#7a6420" stroke-width="0.75"/>
+  <!-- Step 4 -->
+  <rect x="701" y="294" width="72" height="30" fill="rgba(200,168,75,0.06)" stroke="#c8a84b" stroke-width="1"/>
+  <text x="737" y="307" text-anchor="middle" font-size="7"   fill="#c8a84b" letter-spacing="1">04</text>
+  <text x="737" y="318" text-anchor="middle" font-size="6.5" fill="#c8a84b" letter-spacing="0.5">WARGAME</text>
+  <!-- Connector -->
+  <line x1="773" y1="309" x2="783" y2="309" stroke="#7a6420" stroke-width="0.75"/>
+  <!-- Step 5 -->
+  <rect x="783" y="294" width="72" height="30" fill="rgba(200,168,75,0.06)" stroke="#7a6420" stroke-width="1"/>
+  <text x="819" y="307" text-anchor="middle" font-size="7"   fill="#c8a84b" letter-spacing="1">05</text>
+  <text x="819" y="318" text-anchor="middle" font-size="6.5" fill="#c8a84b" letter-spacing="0.5">COMPARE</text>
+  <!-- Connector -->
+  <line x1="855" y1="309" x2="865" y2="309" stroke="#7a6420" stroke-width="0.75"/>
+  <!-- Step 6 -->
+  <rect x="865" y="294" width="72" height="30" fill="rgba(200,168,75,0.06)" stroke="#7a6420" stroke-width="1"/>
+  <text x="901" y="307" text-anchor="middle" font-size="7"   fill="#c8a84b" letter-spacing="1">06</text>
+  <text x="901" y="318" text-anchor="middle" font-size="6.5" fill="#c8a84b" letter-spacing="0.5">APPROVE</text>
+  <!-- Connector -->
+  <line x1="937" y1="309" x2="947" y2="309" stroke="#7a6420" stroke-width="0.75"/>
+  <!-- Step 7 -->
+  <rect x="947" y="294" width="72" height="30" fill="rgba(200,168,75,0.06)" stroke="#7a6420" stroke-width="1"/>
+  <text x="983" y="307" text-anchor="middle" font-size="7"   fill="#c8a84b" letter-spacing="1">07</text>
+  <text x="983" y="318" text-anchor="middle" font-size="6.5" fill="#c8a84b" letter-spacing="0.5">ORDERS</text>
+
+  <!-- MDMP step label -->
+  <text x="720" y="346" text-anchor="middle" font-size="8" fill="#2d4a6a" letter-spacing="3">SEVEN-STEP MDMP  //  FM 6-0 CHAPTER 9</text>
+
+  <!-- Thin rule -->
+  <line x1="520" y1="358" x2="920" y2="358" stroke="#1e2d3d" stroke-width="0.75"/>
+
+  <!-- Doctrine reference row -->
+  <text x="720" y="378" text-anchor="middle" font-size="9.5" fill="#2d4a6a" letter-spacing="2">FM 6-0  &#xB7;  FM 2-01.3  &#xB7;  FM 3-60  &#xB7;  FM 3-09  &#xB7;  ADRP 5-0  &#xB7;  ADP 3-0  &#xB7;  JP 3-0  &#xB7;  JP 3-60  &#xB7;  TRADOC 525-3-1</text>
+
+  <!-- Bottom module row -->
+  <text x="720" y="398" text-anchor="middle" font-size="8.5" fill="#1e2d3d" letter-spacing="2">METT-TC  &#xB7;  OCOKA  &#xB7;  F2T2EA  &#xB7;  IPB  &#xB7;  HPTL  &#xB7;  AGM  &#xB7;  FSCM  &#xB7;  OPORD  &#xB7;  COA DEVELOPMENT  &#xB7;  WARGAMING</text>
+
+  <!-- GitHub and license -->
+  <text x="720" y="440" text-anchor="middle" font-size="8" fill="#1e2d3d" letter-spacing="1">MIT License  &#xB7;  Open Source  &#xB7;  Unclassified Training Aid  &#xB7;  All References Publicly Available</text>
+
+  <!-- ── RIGHT PANEL: SYSTEM STATUS ─────────────────────────────── -->
+  <rect x="1020" y="42" width="420" height="420" fill="#090e1a" opacity="0.7"/>
+  <rect x="1020" y="42" width="420" height="420" fill="url(#right-fade)"/>
+
+  <!-- Panel label -->
+  <text x="1040" y="72" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">SYSTEM STATUS</text>
+  <rect x="1040" y="76" width="380" height="0.75" fill="#7a6420" opacity="0.5"/>
+
+  <!-- Status rows -->
+  <circle cx="1048" cy="93"  r="4" fill="#16b960" filter="url(#dot-glow)"/>
+  <text x="1058" y="97" font-size="9" fill="#16b960" letter-spacing="1">MDMP PIPELINE</text>
+  <text x="1360" y="97" text-anchor="end" font-size="9" fill="#16b960">READY</text>
+
+  <circle cx="1048" cy="113" r="4" fill="#16b960" filter="url(#dot-glow)"/>
+  <text x="1058" y="117" font-size="9" fill="#a0b4c8" letter-spacing="1">AI REASONING ENGINE</text>
+  <text x="1360" y="117" text-anchor="end" font-size="9" fill="#16b960">ONLINE</text>
+
+  <circle cx="1048" cy="133" r="4" fill="#16b960" filter="url(#dot-glow)"/>
+  <text x="1058" y="137" font-size="9" fill="#a0b4c8" letter-spacing="1">DOCTRINE DATABASE</text>
+  <text x="1360" y="137" text-anchor="end" font-size="9" fill="#16b960">LOADED</text>
+
+  <circle cx="1048" cy="153" r="4" fill="#c8a84b" filter="url(#dot-glow)"/>
+  <text x="1058" y="157" font-size="9" fill="#a0b4c8" letter-spacing="1">SCENARIOS</text>
+  <text x="1360" y="157" text-anchor="end" font-size="9" fill="#c8a84b">5 LOADED</text>
+
+  <circle cx="1048" cy="173" r="4" fill="#3b82f6" filter="url(#dot-glow)"/>
+  <text x="1058" y="177" font-size="9" fill="#a0b4c8" letter-spacing="1">BACKEND API</text>
+  <text x="1360" y="177" text-anchor="end" font-size="9" fill="#3b82f6">FASTAPI</text>
+
+  <rect x="1040" y="187" width="380" height="0.75" fill="#1e2d3d"/>
+
+  <!-- Model info -->
+  <text x="1040" y="206" font-size="8" fill="#4a6680" letter-spacing="2">MODEL</text>
+  <text x="1040" y="220" font-size="9" fill="#c8dae8">claude-sonnet-4-20250514</text>
+
+  <text x="1040" y="240" font-size="8" fill="#4a6680" letter-spacing="2">FRAMEWORK</text>
+  <text x="1040" y="254" font-size="9" fill="#c8dae8">Python 3.10+ // FastAPI // Pydantic v2</text>
+
+  <text x="1040" y="274" font-size="8" fill="#4a6680" letter-spacing="2">FRONTEND</text>
+  <text x="1040" y="288" font-size="9" fill="#c8dae8">Next.js // TypeScript // Tailwind CSS</text>
+
+  <rect x="1040" y="302" width="380" height="0.75" fill="#1e2d3d"/>
+
+  <!-- Doctrine coverage -->
+  <text x="1040" y="320" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">DOCTRINE COVERAGE</text>
+  <text x="1040" y="336" font-size="8.5" fill="#4a6680">FM 6-0 (May 2014)    Commander and Staff Org</text>
+  <text x="1040" y="351" font-size="8.5" fill="#4a6680">FM 2-01.3 (Jul 2009)  Intelligence Prep of Btlfd</text>
+  <text x="1040" y="366" font-size="8.5" fill="#4a6680">FM 3-60 (Nov 2023)   The Targeting Process</text>
+  <text x="1040" y="381" font-size="8.5" fill="#4a6680">FM 3-09 (Apr 2023)   Fire Support Operations</text>
+  <text x="1040" y="396" font-size="8.5" fill="#4a6680">JP 3-0 (Jun 2022)     Joint Operations</text>
+  <text x="1040" y="411" font-size="8.5" fill="#4a6680">JP 3-60 (Apr 2018)    Joint Targeting</text>
+  <text x="1040" y="426" font-size="8.5" fill="#4a6680">TRADOC 525-3-1        Multi-Domain Operations</text>
+
+  <!-- Build info bottom -->
+  <rect x="1040" y="440" width="380" height="0.75" fill="#1e2d3d"/>
+  <text x="1040" y="455" font-size="7.5" fill="#2d4a6a">v1.0.0 // MIT License // UNCLASSIFIED // Training Aid</text>
+
+  <!-- ── BOTTOM GOLD DIVIDER AND BANNER ─────────────────────────── -->
+  <line x1="0" y1="461" x2="1440" y2="461" stroke="#c8a84b" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- CLASSIFICATION BANNER BOTTOM -->
+  <rect y="462" width="1440" height="18" fill="#003d00"/>
+  <text x="720" y="475" text-anchor="middle" font-size="8.5" fill="#00dd00" font-weight="bold" letter-spacing="4">&#x258C; UNCLASSIFIED &#x258C; IRONFORGE MDMP SIMULATION &#x2014; TRAINING AID ONLY &#x258C; NOT FOR OPERATIONAL USE &#x258C; UNCLASSIFIED &#x258C;</text>
+
+  <!-- ── CORNER BRACKET DECORATIONS ────────────────────────────── -->
+  <!-- Top-left corner of main content -->
+  <path d="M 422,44 L 422,60 M 422,44 L 445,44" stroke="#c8a84b" stroke-width="1" fill="none" opacity="0.4"/>
+  <!-- Top-right corner -->
+  <path d="M 1018,44 L 1018,60 M 1018,44 L 995,44" stroke="#c8a84b" stroke-width="1" fill="none" opacity="0.4"/>
+  <!-- Bottom-left corner -->
+  <path d="M 422,458 L 422,442 M 422,458 L 445,458" stroke="#c8a84b" stroke-width="1" fill="none" opacity="0.4"/>
+  <!-- Bottom-right corner -->
+  <path d="M 1018,458 L 1018,442 M 1018,458 L 995,458" stroke="#c8a84b" stroke-width="1" fill="none" opacity="0.4"/>
+
+  <!-- Far corners of full image -->
+  <path d="M 0,42 L 0,60 M 0,42 L 18,42" stroke="#7a6420" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M 1440,42 L 1440,60 M 1440,42 L 1422,42" stroke="#7a6420" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M 0,461 L 0,443 M 0,461 L 18,461" stroke="#7a6420" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M 1440,461 L 1440,443 M 1440,461 L 1422,461" stroke="#7a6420" stroke-width="1" fill="none" opacity="0.4"/>
+</svg>

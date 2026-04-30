@@ -1,4 +1,8 @@
-# IRONFORGE
+<div align="center">
+
+![IRONFORGE](assets_visual/header.svg)
+
+</div>
 
 > **The hardest problem in warfare is not firepower. It is the decision.**
 
