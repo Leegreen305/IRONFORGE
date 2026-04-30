@@ -271,10 +271,15 @@ function FSCMView() {
   )
 }
 
+type NominateFormState = {
+  name: string; target_type: string; priority: string
+  location_description: string; desired_effect: string; recommended_engagement: string
+}
+
 /* ── Target Nomination form ─────────────────────────────────────── */
 interface NominateViewProps {
-  form: Record<string, string>
-  setForm: (f: Record<string, string>) => void
+  form: NominateFormState
+  setForm: (f: NominateFormState) => void
   onSubmit: () => void
   result: Record<string, unknown> | null
   error: string
@@ -282,7 +287,7 @@ interface NominateViewProps {
 }
 
 function NominateView({ form, setForm, onSubmit, result, error, submitting }: NominateViewProps) {
-  const field = (key: string, label: string, type: 'input' | 'select' = 'input', opts?: string[]) => (
+  const field = (key: keyof NominateFormState, label: string, type: 'input' | 'select' = 'input', opts?: string[]) => (
     <div key={key}>
       <div style={{ color: '#c8a84b', fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 3 }}>
         {label}
@@ -335,9 +340,9 @@ function NominateView({ form, setForm, onSubmit, result, error, submitting }: No
           <div style={{ color: '#a0b4c8', fontSize: '0.7rem' }}>
             {result.name as string} // {result.target_type as string} // Status: {result.f2t2ea_status as string}
           </div>
-          {result.citation && (
+          {result.citation != null && (
             <div style={{ color: '#2d4a6a', fontSize: '0.6rem', marginTop: 4 }}>
-              Doctrine: {(result.citation as { pub: string; paragraph: string }).pub} §{(result.citation as { pub: string; paragraph: string }).paragraph}
+              Doctrine: {String((result.citation as { pub: string; paragraph: string }).pub)} §{String((result.citation as { pub: string; paragraph: string }).paragraph)}
             </div>
           )}
         </div>
