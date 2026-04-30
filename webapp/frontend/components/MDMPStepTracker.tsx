@@ -1,83 +1,119 @@
 'use client'
 
-import type { MDMPStepInfo } from '@/types'
-
-const STEPS: Omit<MDMPStepInfo, 'status'>[] = [
-  { id: 1, key: 'RECEIPT_OF_MISSION',  label: 'Receipt of Mission',  docRef: 'FM 6-0 §9-20' },
-  { id: 2, key: 'MISSION_ANALYSIS',    label: 'Mission Analysis',    docRef: 'FM 6-0 §9-29' },
-  { id: 3, key: 'COA_DEVELOPMENT',     label: 'COA Development',     docRef: 'FM 6-0 §9-78' },
-  { id: 4, key: 'COA_ANALYSIS',        label: 'COA Analysis',        docRef: 'FM 6-0 §9-96' },
-  { id: 5, key: 'COA_COMPARISON',      label: 'COA Comparison',      docRef: 'FM 6-0 §9-117' },
-  { id: 6, key: 'COA_APPROVAL',        label: 'COA Approval',        docRef: 'FM 6-0 §9-123' },
-  { id: 7, key: 'ORDERS_PRODUCTION',   label: 'Orders Production',   docRef: 'FM 6-0 App C' },
+const STEPS = [
+  { id: 1, label: 'Receipt of Mission',  ref: 'FM 6-0 §9-20' },
+  { id: 2, label: 'Mission Analysis',    ref: 'FM 6-0 §9-29' },
+  { id: 3, label: 'COA Development',     ref: 'FM 6-0 §9-78' },
+  { id: 4, label: 'COA Analysis',        ref: 'FM 6-0 §9-96' },
+  { id: 5, label: 'COA Comparison',      ref: 'FM 6-0 §9-117' },
+  { id: 6, label: 'COA Approval',        ref: 'FM 6-0 §9-123' },
+  { id: 7, label: 'Orders Production',   ref: 'FM 6-0 App C' },
 ]
 
-interface Props {
-  completedSteps: number
-  isRunning: boolean
-}
-
-export function MDMPStepTracker({ completedSteps, isRunning }: Props) {
+export function MDMPStepTracker({ completedSteps, isRunning }: { completedSteps: number; isRunning: boolean }) {
   return (
-    <div className="tac-panel p-3">
-      <div className="tac-section-header">MDMP Pipeline // FM 6-0 Ch.9</div>
+    <div style={{ padding: '0 4px' }}>
+      <div style={{
+        fontFamily: 'var(--font-ui)',
+        fontSize: '0.68rem',
+        fontWeight: 700,
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase' as const,
+        color: '#8099b0',
+        marginBottom: 12,
+        paddingBottom: 8,
+        borderBottom: '1px solid #171f2b',
+      }}>
+        MDMP Pipeline
+      </div>
 
-      <div className="space-y-0">
-        {STEPS.map((step, idx) => {
-          const isComplete = completedSteps >= step.id
-          const isActive   = isRunning && completedSteps === step.id - 1
+      <div>
+        {STEPS.map((step) => {
+          const done   = completedSteps >= step.id
+          const active = isRunning && completedSteps === step.id - 1
 
           return (
-            <div key={step.key}>
-              <div
-                className={`flex items-start gap-2 py-2 px-1 transition-colors ${
-                  isComplete ? 'step-complete' : isActive ? 'step-active' : 'step-pending'
-                }`}
-              >
-                <div className="flex flex-col items-center" style={{ minWidth: 22 }}>
-                  <span className="step-dot text-base leading-none select-none">
-                    {isComplete ? '◈' : isActive ? '▶' : '○'}
-                  </span>
-                  {idx < STEPS.length - 1 && (
-                    <div
-                      className="step-connector"
-                      style={{ background: isComplete ? '#16b960' : '#1e2d3d' }}
-                    />
-                  )}
-                </div>
+            <div key={step.id} style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: 10,
+              padding: '5px 0',
+              borderBottom: step.id < 7 ? '1px solid #171f2b' : 'none',
+            }}>
+              {/* Step number */}
+              <span style={{
+                fontFamily: 'var(--font-data)',
+                fontSize: '0.7rem',
+                color: done ? '#1acd6e' : active ? '#c8a84b' : '#2a3a4a',
+                minWidth: 20,
+                paddingTop: 1,
+                fontWeight: done ? 'bold' : 'normal',
+              }}>
+                {String(step.id).padStart(2, '0')}
+              </span>
 
-                <div className="flex-1 min-w-0 pb-1">
-                  <div
-                    className="tracking-wide truncate"
-                    style={{
-                      fontSize: '0.82rem',
-                      color: isComplete ? '#16b960' : isActive ? '#c8a84b' : '#7a9ab8',
-                    }}
-                  >
-                    {String(step.id).padStart(2, '0')}. {step.label.toUpperCase()}
-                  </div>
-                  <div style={{ color: '#3a5a7a', fontSize: '0.7rem', marginTop: 1 }}>
-                    {step.docRef}
-                  </div>
+              {/* Step info */}
+              <div style={{ flex: 1 }}>
+                <div style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '0.82rem',
+                  fontWeight: done ? 400 : active ? 600 : 400,
+                  color: done ? '#8099b0' : active ? '#ddeeff' : '#3a5060',
+                }}>
+                  {step.label}
                 </div>
-
-                {isComplete && (
-                  <span style={{ color: '#16b960', fontSize: '0.72rem', flexShrink: 0 }}>DONE</span>
-                )}
-                {isActive && (
-                  <span className="cursor-blink" style={{ color: '#c8a84b', fontSize: '0.72rem', flexShrink: 0 }}>RUN▌</span>
-                )}
+                <div style={{
+                  fontFamily: 'var(--font-data)',
+                  fontSize: '0.62rem',
+                  color: '#1f2d3e',
+                  marginTop: 1,
+                }}>
+                  {step.ref}
+                </div>
               </div>
+
+              {/* Status */}
+              {done && (
+                <span style={{
+                  fontFamily: 'var(--font-data)',
+                  fontSize: '0.65rem',
+                  color: '#1acd6e',
+                  flexShrink: 0,
+                  paddingTop: 2,
+                  letterSpacing: '0.05em',
+                }}>
+                  DONE
+                </span>
+              )}
+              {active && (
+                <span style={{
+                  fontFamily: 'var(--font-data)',
+                  fontSize: '0.65rem',
+                  color: '#c8a84b',
+                  flexShrink: 0,
+                  paddingTop: 2,
+                  animation: 'blink 1s step-end infinite',
+                }}>
+                  RUN
+                </span>
+              )}
             </div>
           )
         })}
       </div>
 
       {completedSteps >= 7 && (
-        <div className="mt-3 pt-2" style={{ borderTop: '1px solid #1e2d3d' }}>
-          <div className="text-center" style={{ color: '#16b960', fontSize: '0.82rem', letterSpacing: '0.12em' }}>
-            ◈ ALL STEPS COMPLETE ◈
-          </div>
+        <div style={{
+          marginTop: 12,
+          paddingTop: 10,
+          borderTop: '1px solid #171f2b',
+          fontFamily: 'var(--font-data)',
+          fontSize: '0.72rem',
+          color: '#1acd6e',
+          letterSpacing: '0.08em',
+          textAlign: 'center' as const,
+        }}>
+          ALL STEPS COMPLETE
         </div>
       )}
     </div>

@@ -2,8 +2,8 @@
 
 export function ClassificationBanner() {
   return (
-    <div className="classification-banner select-none">
-      ▌&nbsp;UNCLASSIFIED&nbsp;▌&nbsp;IRONFORGE MDMP SIMULATION — TRAINING AID ONLY&nbsp;▌&nbsp;NOT FOR OPERATIONAL USE&nbsp;▌&nbsp;UNCLASSIFIED&nbsp;▌
+    <div className="classification-banner">
+      UNCLASSIFIED &nbsp;·&nbsp; IRONFORGE MDMP SIMULATION &nbsp;·&nbsp; TRAINING AID ONLY &nbsp;·&nbsp; NOT FOR OPERATIONAL USE &nbsp;·&nbsp; UNCLASSIFIED
     </div>
   )
 }

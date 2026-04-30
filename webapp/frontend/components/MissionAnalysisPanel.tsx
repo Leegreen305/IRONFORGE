@@ -2,6 +2,15 @@
 
 import type { MissionAnalysisResult } from '@/types'
 
+const METTTC_FIELDS = [
+  { key: 'mission',                     label: 'M — Mission' },
+  { key: 'enemy',                       label: 'E — Enemy' },
+  { key: 'terrain_and_weather',         label: 'T — Terrain & Weather' },
+  { key: 'troops_and_support_available', label: 'T — Troops & Support' },
+  { key: 'time_available',              label: 'T — Time Available' },
+  { key: 'civil_considerations',        label: 'C — Civil Considerations' },
+]
+
 interface Props {
   missionAnalysis: MissionAnalysisResult
   receipt?: {
@@ -17,114 +26,173 @@ export function MissionAnalysisPanel({ missionAnalysis, receipt }: Props) {
   const { mett_tc, restated_mission, specified_tasks, implied_tasks, essential_tasks } = missionAnalysis
 
   return (
-    <div className="tac-panel fade-in">
-      {/* Header */}
-      <div
-        className="flex items-center justify-between px-4 py-3"
-        style={{ borderBottom: '1px solid #1e2d3d', background: '#0a1018' }}
-      >
-        <div className="flex items-center gap-3">
-          <span className="tac-panel-label">Mission Analysis</span>
-          <span style={{ color: '#4a6880', fontSize: '0.78rem' }}>FM 6-0 §9-29 to §9-77</span>
-        </div>
-        <div className="flex items-center gap-2">
-          {receipt && (
-            <span
-              className="px-2 py-1"
-              style={{ border: '1px solid #1e3a5f', color: '#3b82f6', fontSize: '0.75rem', letterSpacing: '0.08em' }}
-            >
-              {receipt.classification.toUpperCase()}
-            </span>
-          )}
-          <span className="status-dot status-dot-green" />
+    <div className="fade-in" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+
+      {/* Restated mission — primary element, biggest, most visible */}
+      <div>
+        <PanelLabel>Restated Mission</PanelLabel>
+        <div style={{
+          padding: '14px 18px',
+          background: '#0c1118',
+          border: '1px solid #1f2d3e',
+          fontFamily: 'var(--font-ui)',
+          fontSize: '1rem',
+          fontWeight: 500,
+          color: '#ddeeff',
+          lineHeight: 1.65,
+        }}>
+          {restated_mission}
         </div>
       </div>
 
-      <div className="p-4 grid grid-cols-1 lg:grid-cols-2 gap-5">
-        {/* Restated Mission */}
-        <div className="lg:col-span-2">
-          <div className="tac-section-header">Restated Mission</div>
-          <div
-            className="px-4 py-3 leading-relaxed"
-            style={{ background: '#080d18', border: '1px solid #1e3a5f', color: '#daeaf8', fontSize: '0.95rem', lineHeight: 1.7 }}
-          >
-            {restated_mission}
-          </div>
+      {/* METT-TC grid */}
+      <div>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
+          <PanelLabel>METT-TC Analysis</PanelLabel>
+          <RefTag>FM 6-0 §9-32</RefTag>
         </div>
-
-        {/* METT-TC grid */}
-        <div className="lg:col-span-2">
-          <div className="tac-section-header">METT-TC Analysis // FM 6-0 §9-32</div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {METTTC_FIELDS.map(({ key, label }) => (
-              <div
-                key={key}
-                className="p-3"
-                style={{ background: '#080d18', border: '1px solid #1e2d3d' }}
-              >
-                <div style={{ color: '#c8a84b', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 6, fontWeight: 'bold' }}>
-                  {label}
-                </div>
-                <div style={{ color: '#b8cede', fontSize: '0.85rem', lineHeight: 1.6 }}>
-                  {mett_tc[key as keyof typeof mett_tc]}
-                </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+          {METTTC_FIELDS.map(({ key, label }) => (
+            <div key={key} style={{
+              padding: '12px 14px',
+              background: '#07090f',
+              border: '1px solid #171f2b',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-ui)',
+                fontSize: '0.68rem',
+                fontWeight: 700,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase' as const,
+                color: '#c8a84b',
+                marginBottom: 8,
+              }}>
+                {label}
               </div>
-            ))}
-          </div>
+              <div style={{
+                fontFamily: 'var(--font-ui)',
+                fontSize: '0.85rem',
+                color: '#b4c8d8',
+                lineHeight: 1.6,
+              }}>
+                {mett_tc[key as keyof typeof mett_tc]}
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        {/* Tasks */}
+      {/* Tasks — three columns */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+        <TaskList title="Specified Tasks" tasks={specified_tasks} ref_="FM 6-0 §9-53" accentColor="#4a8fff" />
+        <TaskList title="Implied Tasks"   tasks={implied_tasks}   ref_="FM 6-0 §9-54" accentColor="#c8a84b" />
+      </div>
+
+      <div>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
+          <PanelLabel>Essential Tasks</PanelLabel>
+          <RefTag>FM 6-0 §9-57</RefTag>
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 8 }}>
+          {essential_tasks.map((t, i) => (
+            <div key={i} style={{
+              padding: '6px 12px',
+              background: 'rgba(26,205,110,0.06)',
+              border: '1px solid rgba(26,205,110,0.2)',
+              fontFamily: 'var(--font-ui)',
+              fontSize: '0.85rem',
+              color: '#b4c8d8',
+            }}>
+              {t}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Initial assessment */}
+      {receipt && (
         <div>
-          <div className="tac-section-header">Specified Tasks</div>
-          <TaskList tasks={specified_tasks} color="#3b82f6" />
-        </div>
-
-        <div>
-          <div className="tac-section-header">Implied Tasks</div>
-          <TaskList tasks={implied_tasks} color="#c8a84b" />
-        </div>
-
-        <div className="lg:col-span-2">
-          <div className="tac-section-header">Essential Tasks</div>
-          <TaskList tasks={essential_tasks} color="#16b960" horizontal />
-        </div>
-
-        {/* Initial Assessment */}
-        {receipt && (
-          <div className="lg:col-span-2">
-            <div className="tac-section-header">Initial Assessment // FM 6-0 §9-20</div>
-            <div style={{ color: '#b8cede', fontSize: '0.85rem', lineHeight: 1.7 }}>
-              {receipt.initial_assessment}
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 8 }}>
+            <PanelLabel>Initial Assessment</PanelLabel>
+            <div style={{ display: 'flex', gap: 12 }}>
+              <RefTag>FM 6-0 §9-20</RefTag>
+              <span style={{
+                fontFamily: 'var(--font-data)',
+                fontSize: '0.72rem',
+                color: '#4a8fff',
+                border: '1px solid #1e3a5f',
+                padding: '1px 8px',
+              }}>
+                {receipt.classification.toUpperCase()}
+              </span>
             </div>
           </div>
-        )}
+          <div style={{
+            fontFamily: 'var(--font-ui)',
+            fontSize: '0.85rem',
+            color: '#8099b0',
+            lineHeight: 1.65,
+          }}>
+            {receipt.initial_assessment}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function TaskList({ title, tasks, ref_, accentColor }: { title: string; tasks: string[]; ref_: string; accentColor: string }) {
+  return (
+    <div>
+      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 10 }}>
+        <PanelLabel>{title}</PanelLabel>
+        <RefTag>{ref_}</RefTag>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 4 }}>
+        {tasks.map((t, i) => (
+          <div key={i} style={{
+            display: 'flex',
+            gap: 10,
+            padding: '6px 0',
+            borderBottom: '1px solid #171f2b',
+            fontFamily: 'var(--font-ui)',
+            fontSize: '0.85rem',
+            color: '#b4c8d8',
+          }}>
+            <span style={{ color: accentColor, flexShrink: 0, marginTop: 1 }}>▸</span>
+            {t}
+          </div>
+        ))}
       </div>
     </div>
   )
 }
 
-function TaskList({ tasks, color, horizontal }: { tasks: string[]; color: string; horizontal?: boolean }) {
+function PanelLabel({ children }: { children: React.ReactNode }) {
   return (
-    <ul className={`space-y-2 ${horizontal ? 'flex flex-wrap gap-3' : ''}`}>
-      {tasks.map((t, i) => (
-        <li
-          key={i}
-          className={horizontal ? 'flex items-start gap-2 px-3 py-1.5' : 'flex items-start gap-2'}
-          style={horizontal ? { border: `1px solid ${color}25`, fontSize: '0.85rem' } : { fontSize: '0.85rem' }}
-        >
-          <span style={{ color, marginTop: 2 }}>▸</span>
-          <span style={{ color: '#b8cede' }}>{t}</span>
-        </li>
-      ))}
-    </ul>
+    <div style={{
+      fontFamily: 'var(--font-ui)',
+      fontSize: '0.68rem',
+      fontWeight: 700,
+      letterSpacing: '0.1em',
+      textTransform: 'uppercase' as const,
+      color: '#8099b0',
+      marginBottom: 10,
+    }}>
+      {children}
+    </div>
   )
 }
 
-const METTTC_FIELDS = [
-  { key: 'mission',                     label: 'M — Mission' },
-  { key: 'enemy',                       label: 'E — Enemy' },
-  { key: 'terrain_and_weather',         label: 'T — Terrain & Weather' },
-  { key: 'troops_and_support_available', label: 'T — Troops & Support' },
-  { key: 'time_available',              label: 'T — Time Available' },
-  { key: 'civil_considerations',        label: 'C — Civil Considerations' },
-]
+function RefTag({ children }: { children: React.ReactNode }) {
+  return (
+    <span style={{
+      fontFamily: 'var(--font-data)',
+      fontSize: '0.65rem',
+      color: '#2a3a4a',
+      letterSpacing: '0.04em',
+    }}>
+      {children}
+    </span>
+  )
+}

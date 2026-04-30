@@ -4,175 +4,15 @@ import { useState } from 'react'
 import { loadScenario } from '@/lib/api'
 import { MDMPStepTracker } from './MDMPStepTracker'
 
-const SCENARIO_KEYS: Record<string, string> = {
-  time_sensitive_targeting:    'Time Sensitive Targeting',
-  brigade_defense_peer_threat: 'Brigade Defense — Peer Threat',
-  cyber_physical_fob:          'Cyber-Physical FOB Attack',
-  contested_airspace_cas:      'Contested Airspace CAS',
-  multi_domain_strike:         'Multi-Domain Strike',
+const SCENARIOS: Record<string, { label: string; summary: string }> = {
+  time_sensitive_targeting:    { label: 'Time Sensitive Targeting',       summary: 'TF Hunter · HVI logistics coordinator · 4-hr window · Urban' },
+  brigade_defense_peer_threat: { label: 'Brigade Defense — Peer Threat',  summary: '2d BCT · Peer mechanized BTG · 18-hr deliberate MDMP' },
+  cyber_physical_fob:          { label: 'Cyber-Physical FOB Attack',      summary: 'Combined cyber + physical threat · FOB C2 degradation' },
+  contested_airspace_cas:      { label: 'Contested Airspace CAS',         summary: 'A-10 CAS · Degraded comms · JTAC coordination' },
+  multi_domain_strike:         { label: 'Multi-Domain Strike',            summary: 'Joint kinetic + cyber + EW + space · IADS defeat' },
 }
 
-const ScenarioDescriptions: Record<string, string> = {
-  time_sensitive_targeting:    'TF Hunter conducts TST against HVI logistics coordinator. 4-hour window. Urban environment.',
-  brigade_defense_peer_threat: '2d BCT defends sector against peer-threat BTG. 18-hour planning cycle.',
-  cyber_physical_fob:          'Threat actor conducts combined cyber and physical attack against FOB C2 node.',
-  contested_airspace_cas:      'A-10 CAS mission in contested airspace with degraded comms. JTAC coordination.',
-  multi_domain_strike:         'Joint multi-domain strike against IADS. Kinetic, cyber, EW, and space integration.',
-}
-
-interface Props {
-  isRunning: boolean
-  completedSteps: number
-  onSubmit: (data: Record<string, unknown>) => void
-}
-
-export function ScenarioPanel({ isRunning, completedSteps, onSubmit }: Props) {
-  const [mode, setMode] = useState<'prebuilt' | 'custom'>('prebuilt')
-  const [selected, setSelected] = useState('')
-  const [customJson, setCustomJson] = useState('')
-  const [loadError, setLoadError] = useState('')
-  const [loadingScenario, setLoadingScenario] = useState(false)
-
-  const handleExecute = async () => {
-    setLoadError('')
-    if (mode === 'prebuilt') {
-      if (!selected) { setLoadError('Select a scenario first.'); return }
-      setLoadingScenario(true)
-      try {
-        const data = await loadScenario(selected)
-        onSubmit(data)
-      } catch (e: unknown) {
-        setLoadError(e instanceof Error ? e.message : 'Load failed')
-      } finally {
-        setLoadingScenario(false)
-      }
-    } else {
-      try {
-        const parsed = JSON.parse(customJson)
-        onSubmit(parsed)
-      } catch {
-        setLoadError('Invalid JSON in custom scenario.')
-      }
-    }
-  }
-
-  const busy = isRunning || loadingScenario
-
-  return (
-    <aside
-      className="flex flex-col gap-3 p-3 overflow-y-auto shrink-0"
-      style={{ width: 300, background: '#090e1a', borderRight: '1px solid #1e2d3d', minHeight: '100%' }}
-    >
-      {/* Scenario Input */}
-      <div className="tac-panel p-3 relative">
-        <div className="corner-bracket corner-tl" />
-        <div className="corner-bracket corner-tr" />
-        <div className="corner-bracket corner-bl" />
-        <div className="corner-bracket corner-br" />
-
-        <div className="tac-section-header">Scenario Parameters</div>
-
-        {/* Mode toggle */}
-        <div className="flex gap-1 mb-3">
-          {(['prebuilt', 'custom'] as const).map((m) => (
-            <button
-              key={m}
-              onClick={() => setMode(m)}
-              className="flex-1 py-2 tracking-wider uppercase border transition-colors"
-              style={{
-                fontSize: '0.78rem',
-                background: mode === m ? 'rgba(200,168,75,0.08)' : 'transparent',
-                borderColor: mode === m ? '#c8a84b' : '#1e2d3d',
-                color: mode === m ? '#c8a84b' : '#7a9ab8',
-              }}
-            >
-              {m === 'prebuilt' ? 'Pre-built' : 'Custom JSON'}
-            </button>
-          ))}
-        </div>
-
-        {mode === 'prebuilt' ? (
-          <div>
-            <div style={{ color: '#c8a84b', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>
-              Select Scenario
-            </div>
-            <select
-              className="tac-select mb-2"
-              value={selected}
-              onChange={(e) => setSelected(e.target.value)}
-            >
-              <option value="">-- SELECT --</option>
-              {Object.entries(SCENARIO_KEYS).map(([k, v]) => (
-                <option key={k} value={k}>{v}</option>
-              ))}
-            </select>
-            {selected && (
-              <div
-                className="text-sm mt-1 px-2 py-2"
-                style={{ color: '#7a9ab8', background: '#080d18', border: '1px solid #1e2d3d', fontSize: '0.78rem', lineHeight: 1.55 }}
-              >
-                {ScenarioDescriptions[selected]}
-              </div>
-            )}
-          </div>
-        ) : (
-          <div>
-            <div style={{ color: '#c8a84b', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>
-              Paste Scenario JSON
-            </div>
-            <textarea
-              className="tac-textarea"
-              style={{ minHeight: 140, fontSize: '0.78rem' }}
-              placeholder={'{\n  "title": "...",\n  "mission_type": "OFFENSE",\n  ...\n}'}
-              value={customJson}
-              onChange={(e) => setCustomJson(e.target.value)}
-            />
-          </div>
-        )}
-
-        {loadError && (
-          <div
-            className="text-sm mt-2 px-2 py-2"
-            style={{ color: '#ef4444', borderColor: '#4a1010', background: '#1a0808', border: '1px solid #4a1010', fontSize: '0.8rem' }}
-          >
-            ⚠ {loadError}
-          </div>
-        )}
-
-        <button
-          className="btn-execute w-full mt-3"
-          onClick={handleExecute}
-          disabled={busy}
-        >
-          {busy ? '▶ EXECUTING MDMP...' : '▶ EXECUTE MDMP PIPELINE'}
-        </button>
-      </div>
-
-      {/* MDMP Step Tracker */}
-      <MDMPStepTracker completedSteps={completedSteps} isRunning={isRunning} />
-
-      {/* Doctrine Quick Ref */}
-      <div className="tac-panel p-3">
-        <div className="tac-section-header">Doctrine References</div>
-        <div className="space-y-2">
-          {DOCTRINE_REFS.map((r) => (
-            <div key={r.pub} className="flex justify-between gap-2">
-              <span style={{ color: '#c8a84b', fontSize: '0.78rem' }}>{r.pub}</span>
-              <span style={{ color: '#7a9ab8', fontSize: '0.78rem', textAlign: 'right' }}>{r.desc}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="text-center" style={{ color: '#3a5a7a', fontSize: '0.7rem', letterSpacing: '0.08em' }}>
-        UNCLASSIFIED // TRAINING AID ONLY<br />
-        ALL REFERENCES PUBLICLY AVAILABLE
-      </div>
-    </aside>
-  )
-}
-
-const DOCTRINE_REFS = [
+const REFS = [
   { pub: 'FM 6-0',    desc: 'MDMP' },
   { pub: 'FM 2-01.3', desc: 'IPB' },
   { pub: 'FM 3-60',   desc: 'Targeting' },
@@ -182,3 +22,196 @@ const DOCTRINE_REFS = [
   { pub: 'JP 3-60',   desc: 'Joint Targeting' },
   { pub: 'ADP 3-0',   desc: 'Operations' },
 ]
+
+export function ScenarioPanel({ isRunning, completedSteps, onSubmit }: {
+  isRunning: boolean
+  completedSteps: number
+  onSubmit: (data: Record<string, unknown>) => void
+}) {
+  const [mode, setMode]         = useState<'prebuilt' | 'custom'>('prebuilt')
+  const [selected, setSelected] = useState('')
+  const [customJson, setCustomJson] = useState('')
+  const [error, setError]       = useState('')
+  const [loading, setLoading]   = useState(false)
+
+  const execute = async () => {
+    setError('')
+    if (mode === 'prebuilt') {
+      if (!selected) { setError('Select a scenario.'); return }
+      setLoading(true)
+      try { onSubmit(await loadScenario(selected)) }
+      catch (e: unknown) { setError(e instanceof Error ? e.message : 'Failed') }
+      finally { setLoading(false) }
+    } else {
+      try { onSubmit(JSON.parse(customJson)) }
+      catch { setError('Invalid JSON.') }
+    }
+  }
+
+  const busy = isRunning || loading
+
+  return (
+    <aside style={{
+      width: 288,
+      flexShrink: 0,
+      background: '#080b11',
+      borderRight: '1px solid #171f2b',
+      display: 'flex',
+      flexDirection: 'column',
+      overflowY: 'auto',
+    }}>
+
+      {/* ── Scenario selection ── */}
+      <div style={{ padding: '16px 16px 0' }}>
+        <div style={{
+          fontFamily: 'var(--font-ui)',
+          fontSize: '0.68rem',
+          fontWeight: 700,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase' as const,
+          color: '#8099b0',
+          marginBottom: 10,
+        }}>
+          Scenario
+        </div>
+
+        {/* Mode toggle */}
+        <div style={{ display: 'flex', gap: 4, marginBottom: 12 }}>
+          {(['prebuilt', 'custom'] as const).map(m => (
+            <button
+              key={m}
+              onClick={() => setMode(m)}
+              style={{
+                flex: 1,
+                padding: '6px 0',
+                fontFamily: 'var(--font-ui)',
+                fontSize: '0.75rem',
+                fontWeight: mode === m ? 600 : 400,
+                background: mode === m ? '#111820' : 'transparent',
+                color: mode === m ? '#ddeeff' : '#8099b0',
+                border: '1px solid',
+                borderColor: mode === m ? '#1f2d3e' : '#171f2b',
+                cursor: 'pointer',
+                transition: 'all 0.12s',
+              }}
+            >
+              {m === 'prebuilt' ? 'Pre-built' : 'Custom JSON'}
+            </button>
+          ))}
+        </div>
+
+        {mode === 'prebuilt' ? (
+          <div>
+            <select
+              className="tac-select"
+              style={{ marginBottom: 8 }}
+              value={selected}
+              onChange={e => setSelected(e.target.value)}
+            >
+              <option value="">Select scenario…</option>
+              {Object.entries(SCENARIOS).map(([k, v]) => (
+                <option key={k} value={k}>{v.label}</option>
+              ))}
+            </select>
+
+            {selected && (
+              <div style={{
+                fontFamily: 'var(--font-ui)',
+                fontSize: '0.78rem',
+                color: '#8099b0',
+                lineHeight: 1.55,
+                padding: '8px 10px',
+                background: '#07090f',
+                border: '1px solid #171f2b',
+                marginBottom: 4,
+              }}>
+                {SCENARIOS[selected]?.summary}
+              </div>
+            )}
+          </div>
+        ) : (
+          <textarea
+            className="tac-textarea"
+            style={{ fontSize: '0.75rem', minHeight: 130 }}
+            placeholder={'{\n  "title": "...",\n  "mission_type": "OFFENSE"\n}'}
+            value={customJson}
+            onChange={e => setCustomJson(e.target.value)}
+          />
+        )}
+
+        {error && (
+          <div style={{
+            fontFamily: 'var(--font-ui)',
+            fontSize: '0.78rem',
+            color: '#e84545',
+            padding: '6px 10px',
+            background: '#160a0a',
+            border: '1px solid #3a1010',
+            marginTop: 6,
+          }}>
+            {error}
+          </div>
+        )}
+
+        <button
+          className="btn-execute"
+          style={{ marginTop: 12, marginBottom: 20 }}
+          onClick={execute}
+          disabled={busy}
+        >
+          {busy ? 'EXECUTING…' : 'EXECUTE MDMP'}
+        </button>
+      </div>
+
+      <div style={{ height: 1, background: '#171f2b' }} />
+
+      {/* ── MDMP steps ── */}
+      <div style={{ padding: '16px 16px 0' }}>
+        <MDMPStepTracker completedSteps={completedSteps} isRunning={isRunning} />
+      </div>
+
+      <div style={{ height: 1, background: '#171f2b', marginTop: 16 }} />
+
+      {/* ── Doctrine refs ── */}
+      <div style={{ padding: '14px 16px', flex: 1 }}>
+        <div style={{
+          fontFamily: 'var(--font-ui)',
+          fontSize: '0.68rem',
+          fontWeight: 700,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase' as const,
+          color: '#8099b0',
+          marginBottom: 10,
+        }}>
+          Doctrine
+        </div>
+        {REFS.map(r => (
+          <div key={r.pub} style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            padding: '4px 0',
+            borderBottom: '1px solid #171f2b',
+          }}>
+            <span style={{ fontFamily: 'var(--font-data)', fontSize: '0.72rem', color: '#b4c8d8' }}>{r.pub}</span>
+            <span style={{ fontFamily: 'var(--font-ui)', fontSize: '0.72rem', color: '#3a5060' }}>{r.desc}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Footer ── */}
+      <div style={{
+        padding: '10px 16px',
+        borderTop: '1px solid #171f2b',
+        fontFamily: 'var(--font-data)',
+        fontSize: '0.62rem',
+        color: '#1f2d3e',
+        letterSpacing: '0.06em',
+        lineHeight: 1.6,
+      }}>
+        UNCLASSIFIED // TRAINING AID<br />
+        ALL REFERENCES PUBLICLY AVAILABLE
+      </div>
+    </aside>
+  )
+}

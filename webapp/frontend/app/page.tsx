@@ -2,18 +2,26 @@
 
 import { useState } from 'react'
 import { ClassificationBanner } from '@/components/ClassificationBanner'
-import { SystemHeader } from '@/components/SystemHeader'
-import { ScenarioPanel } from '@/components/ScenarioPanel'
-import { MissionAnalysisPanel } from '@/components/MissionAnalysisPanel'
-import { COASection } from '@/components/COASection'
-import { RecommendationPanel } from '@/components/RecommendationPanel'
-import { OPORDPanel } from '@/components/OPORDPanel'
-import { FiresPanel } from '@/components/FiresPanel'
-import { DisclaimerModal } from '@/components/DisclaimerModal'
-import { submitScenario } from '@/lib/api'
-import type { MDMPOutput } from '@/types'
+import { SystemHeader }          from '@/components/SystemHeader'
+import { ScenarioPanel }         from '@/components/ScenarioPanel'
+import { MissionAnalysisPanel }  from '@/components/MissionAnalysisPanel'
+import { COASection }            from '@/components/COASection'
+import { RecommendationPanel }   from '@/components/RecommendationPanel'
+import { OPORDPanel }            from '@/components/OPORDPanel'
+import { FiresPanel }            from '@/components/FiresPanel'
+import { DisclaimerModal }       from '@/components/DisclaimerModal'
+import { submitScenario }        from '@/lib/api'
+import type { MDMPOutput }       from '@/types'
 
 type AppStatus = 'idle' | 'running' | 'complete' | 'error'
+
+const SECTIONS = [
+  { id: 'mission', label: 'Mission Analysis' },
+  { id: 'coa',     label: 'Courses of Action' },
+  { id: 'rec',     label: 'Recommendation' },
+  { id: 'opord',   label: 'OPORD' },
+  { id: 'fires',   label: 'Fires & Targeting' },
+]
 
 export default function IronForgeDashboard() {
   const [status, setStatus]   = useState<AppStatus>('idle')
@@ -21,21 +29,15 @@ export default function IronForgeDashboard() {
   const [runId, setRunId]     = useState<string | null>(null)
   const [error, setError]     = useState<string | null>(null)
   const [step, setStep]       = useState(0)
-  const [activeSection, setActiveSection] = useState<string>('mission')
+  const [section, setSection] = useState('mission')
 
   const handleSubmit = async (scenarioData: Record<string, unknown>) => {
     setStatus('running')
     setError(null)
     setOutput(null)
     setRunId(null)
-
-    // Animate step counter while pipeline runs
     let s = 0
-    const tick = setInterval(() => {
-      s = Math.min(s + 1, 6)
-      setStep(s)
-    }, 400)
-
+    const tick = setInterval(() => { s = Math.min(s + 1, 6); setStep(s) }, 380)
     try {
       const res = await submitScenario(scenarioData)
       clearInterval(tick)
@@ -43,263 +45,271 @@ export default function IronForgeDashboard() {
       setRunId(res.run_id)
       setOutput(res.output)
       setStatus('complete')
-      setActiveSection('mission')
+      setSection('mission')
     } catch (e: unknown) {
       clearInterval(tick)
-      setError(e instanceof Error ? e.message : 'Pipeline execution failed.')
+      setError(e instanceof Error ? e.message : 'Pipeline failed.')
       setStatus('error')
       setStep(0)
     }
   }
 
-  const sections = [
-    { id: 'mission', label: 'Mission Analysis' },
-    { id: 'coa',     label: 'Courses of Action' },
-    { id: 'rec',     label: 'Recommendation' },
-    { id: 'opord',   label: 'OPORD' },
-    { id: 'fires',   label: 'Fires' },
-  ]
-
   return (
     <>
-    <DisclaimerModal />
-    <div
-      className="flex flex-col min-h-screen"
-      style={{ background: '#080d18', color: '#a0b4c8' }}
-    >
-      {/* ── Classification banner top ── */}
-      <ClassificationBanner />
+      <DisclaimerModal />
 
-      {/* ── System header ── */}
-      <SystemHeader isOnline={status !== 'error'} />
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
+        <ClassificationBanner />
+        <SystemHeader isOnline={status !== 'error'} />
 
-      {/* ── Main layout ── */}
-      <div className="flex flex-1 overflow-hidden" style={{ height: 'calc(100vh - 52px)' }}>
+        <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+          {/* Sidebar */}
+          <ScenarioPanel
+            isRunning={status === 'running'}
+            completedSteps={step}
+            onSubmit={handleSubmit}
+          />
 
-        {/* Left sidebar */}
-        <ScenarioPanel
-          isRunning={status === 'running'}
-          completedSteps={step}
-          onSubmit={handleSubmit}
-        />
+          {/* Main */}
+          <main style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
 
-        {/* Right main panel */}
-        <main className="flex-1 flex flex-col overflow-hidden">
-
-          {/* Section nav tabs (only when output exists) */}
-          {output && (
-            <div
-              className="flex items-center gap-0 px-4 shrink-0"
-              style={{ background: '#090e1a', borderBottom: '1px solid #1e2d3d' }}
-            >
-              {sections.map((s) => (
-                <button
-                  key={s.id}
-                  onClick={() => setActiveSection(s.id)}
-                  className="px-4 py-2 text-xs tracking-wider uppercase border-b-2 transition-colors"
-                  style={{
-                    borderBottomColor: activeSection === s.id ? '#c8a84b' : 'transparent',
-                    color: activeSection === s.id ? '#c8a84b' : '#4a6680',
-                    background: 'transparent',
-                    fontSize: '0.65rem',
-                  }}
-                >
-                  {s.label}
-                </button>
-              ))}
-              <div className="ml-auto flex items-center gap-3 text-xs" style={{ color: '#2d4a6a', fontSize: '0.62rem' }}>
-                {runId && <span>RUN: {runId.slice(0, 8).toUpperCase()}</span>}
-                <span className="status-dot status-dot-green" />
-                <span style={{ color: '#16b960' }}>PIPELINE COMPLETE</span>
-              </div>
-            </div>
-          )}
-
-          {/* Scrollable content area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-
-            {/* ── Idle splash ── */}
-            {status === 'idle' && (
-              <SplashScreen />
-            )}
-
-            {/* ── Running state ── */}
-            {status === 'running' && (
-              <RunningOverlay step={step} />
-            )}
-
-            {/* ── Error state ── */}
-            {status === 'error' && error && (
-              <div
-                className="p-4"
-                style={{ border: '1px solid #4a1010', background: '#1a0808', color: '#ef4444' }}
-              >
-                <div style={{ fontSize: '0.72rem', letterSpacing: '0.12em', marginBottom: 4 }}>
-                  ⚠ PIPELINE EXECUTION ERROR
-                </div>
-                <div style={{ fontSize: '0.8rem' }}>{error}</div>
-                <div style={{ color: '#4a6680', fontSize: '0.65rem', marginTop: 8 }}>
-                  Verify ANTHROPIC_API_KEY is set and backend is reachable at {process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}
-                </div>
-              </div>
-            )}
-
-            {/* ── Output sections ── */}
+            {/* Section nav — only when output exists */}
             {output && (
-              <>
-                {activeSection === 'mission' && (
-                  <MissionAnalysisPanel
-                    missionAnalysis={output.mission_analysis}
-                    receipt={output.receipt}
-                  />
-                )}
-
-                {activeSection === 'coa' && (
-                  <COASection
-                    coas={output.coas}
-                    analyses={output.coa_analyses}
-                    comparisons={output.coa_comparisons}
-                    recommendedCoaId={output.approval.recommended_coa_id}
-                  />
-                )}
-
-                {activeSection === 'rec' && (
-                  <RecommendationPanel
-                    approval={output.approval}
-                    coas={output.coas}
-                    runId={runId ?? undefined}
-                  />
-                )}
-
-                {activeSection === 'opord' && (
-                  <OPORDPanel opord={output.opord} />
-                )}
-
-                {activeSection === 'fires' && (
-                  <FiresPanel />
-                )}
-              </>
+              <div className="tab-bar" style={{ paddingLeft: 4, flexShrink: 0 }}>
+                {SECTIONS.map(s => (
+                  <button
+                    key={s.id}
+                    className={`tab-btn ${section === s.id ? 'active' : ''}`}
+                    onClick={() => setSection(s.id)}
+                  >
+                    {s.label}
+                  </button>
+                ))}
+                <div style={{
+                  marginLeft: 'auto',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 10,
+                  padding: '0 16px',
+                  fontFamily: 'var(--font-data)',
+                  fontSize: '0.68rem',
+                  color: '#3a5060',
+                }}>
+                  {runId && <span>RUN {runId.slice(0, 8).toUpperCase()}</span>}
+                  <span className="dot dot-green" />
+                  <span style={{ color: '#1acd6e', letterSpacing: '0.05em' }}>COMPLETE</span>
+                </div>
+              </div>
             )}
-          </div>
-        </main>
-      </div>
 
-      {/* ── Classification banner bottom ── */}
-      <ClassificationBanner />
-    </div>
+            {/* Content */}
+            <div style={{ flex: 1, overflowY: 'auto', padding: 20 }}>
+
+              {status === 'idle' && <SplashScreen />}
+
+              {status === 'running' && <RunningScreen step={step} />}
+
+              {status === 'error' && error && (
+                <div style={{
+                  padding: 16,
+                  background: '#130808',
+                  border: '1px solid #3a1010',
+                  color: '#e84545',
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: '0.85rem',
+                }}>
+                  <div style={{ fontWeight: 700, marginBottom: 6, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>
+                    Pipeline Error
+                  </div>
+                  {error}
+                  <div style={{ color: '#3a5060', fontSize: '0.75rem', marginTop: 8 }}>
+                    Verify ANTHROPIC_API_KEY and that the backend is running on port 8000.
+                  </div>
+                </div>
+              )}
+
+              {output && (
+                <div className="fade-in">
+                  {section === 'mission' && (
+                    <MissionAnalysisPanel missionAnalysis={output.mission_analysis} receipt={output.receipt} />
+                  )}
+                  {section === 'coa' && (
+                    <COASection
+                      coas={output.coas}
+                      analyses={output.coa_analyses}
+                      comparisons={output.coa_comparisons}
+                      recommendedCoaId={output.approval.recommended_coa_id}
+                    />
+                  )}
+                  {section === 'rec' && (
+                    <RecommendationPanel approval={output.approval} coas={output.coas} runId={runId ?? undefined} />
+                  )}
+                  {section === 'opord' && <OPORDPanel opord={output.opord} />}
+                  {section === 'fires' && <FiresPanel />}
+                </div>
+              )}
+            </div>
+          </main>
+        </div>
+
+        <ClassificationBanner />
+      </div>
     </>
   )
 }
 
-/* ── Sub-components ─────────────────────────────────────────────── */
-
+/* ── Splash ──────────────────────────────────────────────────────── */
 function SplashScreen() {
   return (
-    <div
-      className="flex flex-col items-center justify-center"
-      style={{ minHeight: '60vh' }}
-    >
-      <div
-        className="text-center p-8"
-        style={{ border: '1px solid #1e2d3d', background: '#0d1420', maxWidth: 520 }}
-      >
-        <div style={{ color: '#c8a84b', fontSize: '2rem', marginBottom: 16, letterSpacing: '0.3em' }}>
-          ◈ IRONFORGE
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '70vh' }}>
+      <div style={{ maxWidth: 480, width: '100%' }}>
+        <div style={{
+          fontFamily: 'var(--font-data)',
+          fontSize: '0.75rem',
+          color: '#1acd6e',
+          letterSpacing: '0.2em',
+          marginBottom: 12,
+        }}>
+          SYSTEM READY
         </div>
-        <div style={{ color: '#4a6680', fontSize: '0.7rem', letterSpacing: '0.2em', marginBottom: 24, textTransform: 'uppercase' }}>
-          AI-Powered Military Decision Making Process Engine
+
+        <div style={{
+          fontFamily: 'var(--font-ui)',
+          fontSize: '1.8rem',
+          fontWeight: 700,
+          color: '#ddeeff',
+          lineHeight: 1.2,
+          marginBottom: 20,
+        }}>
+          IRONFORGE
         </div>
-        <div
-          style={{
-            color: '#a0b4c8',
-            fontSize: '0.8rem',
-            lineHeight: 1.8,
-            fontStyle: 'italic',
-            borderLeft: '2px solid #c8a84b',
-            paddingLeft: 16,
-            marginBottom: 24,
-            textAlign: 'left',
-          }}
-        >
+
+        <div style={{
+          fontFamily: 'var(--font-ui)',
+          fontSize: '1rem',
+          color: '#8099b0',
+          fontStyle: 'italic',
+          lineHeight: 1.6,
+          paddingLeft: 16,
+          borderLeft: '2px solid #c8a84b',
+          marginBottom: 32,
+        }}>
           The hardest problem in warfare is not firepower.<br />
           It is the decision.
         </div>
-        <div className="space-y-2 text-left">
+
+        <div style={{ borderTop: '1px solid #171f2b', paddingTop: 20 }}>
           {[
-            'Select a scenario from the left panel',
+            'Select a scenario in the left panel',
             'Execute the seven-step MDMP pipeline',
             'Review three generated Courses of Action',
-            'Examine wargaming results and scoring matrix',
+            'Examine wargaming results and decision matrix',
             'Retrieve formatted OPORD fragment',
-            'Integrate fires targeting workflow',
-          ].map((step, i) => (
-            <div key={i} className="flex items-center gap-2" style={{ fontSize: '0.68rem', color: '#4a6680' }}>
-              <span style={{ color: '#1e2d3d' }}>{String(i + 1).padStart(2, '0')}.</span>
-              <span>{step}</span>
+            'Access fires targeting workflow — HPTL, AGM, TST',
+          ].map((t, i) => (
+            <div key={i} style={{
+              display: 'flex',
+              gap: 12,
+              padding: '5px 0',
+              fontFamily: 'var(--font-ui)',
+              fontSize: '0.85rem',
+              color: '#3a5060',
+            }}>
+              <span style={{ fontFamily: 'var(--font-data)', color: '#1f2d3e', minWidth: 20 }}>
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              {t}
             </div>
           ))}
         </div>
-        <div className="mt-6 pt-4" style={{ borderTop: '1px solid #1e2d3d', color: '#2d4a6a', fontSize: '0.62rem' }}>
-          FM 6-0 · FM 2-01.3 · FM 3-60 · FM 3-09 · ADRP 5-0 · JP 3-0 · JP 3-60 · ADP 3-0
+
+        <div style={{
+          marginTop: 24,
+          fontFamily: 'var(--font-data)',
+          fontSize: '0.65rem',
+          color: '#1f2d3e',
+          letterSpacing: '0.08em',
+        }}>
+          FM 6-0 · FM 2-01.3 · FM 3-60 · FM 3-09 · ADRP 5-0 · JP 3-0 · JP 3-60 · CJCSI 3160.01A
         </div>
       </div>
     </div>
   )
 }
 
-function RunningOverlay({ step }: { step: number }) {
-  const stepNames = [
+/* ── Running ─────────────────────────────────────────────────────── */
+function RunningScreen({ step }: { step: number }) {
+  const steps = [
     'Receipt of Mission',
     'Mission Analysis',
     'COA Development',
-    'COA Analysis (Wargaming)',
+    'COA Analysis — Wargaming',
     'COA Comparison',
     'COA Approval',
     'Orders Production',
   ]
 
   return (
-    <div
-      className="flex flex-col items-center justify-center"
-      style={{ minHeight: '60vh' }}
-    >
-      <div className="p-8 text-center" style={{ border: '1px solid #1e3a5f', background: '#0d1420', maxWidth: 440 }}>
-        <div style={{ color: '#3b82f6', fontSize: '0.72rem', letterSpacing: '0.2em', marginBottom: 16 }}>
-          ▶ MDMP PIPELINE EXECUTING
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '70vh' }}>
+      <div style={{ maxWidth: 400, width: '100%' }}>
+        <div style={{
+          fontFamily: 'var(--font-data)',
+          fontSize: '0.72rem',
+          color: '#c8a84b',
+          letterSpacing: '0.15em',
+          marginBottom: 20,
+        }}>
+          MDMP PIPELINE EXECUTING
         </div>
 
-        <div className="space-y-2 mb-6">
-          {stepNames.map((name, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-3 text-left px-2 py-1"
-              style={{
-                background: i < step ? 'rgba(22,185,96,0.05)' : i === step ? 'rgba(59,130,246,0.08)' : 'transparent',
-                border: i === step ? '1px solid #1e3a5f' : '1px solid transparent',
-              }}
-            >
+        {steps.map((name, i) => (
+          <div
+            key={i}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              padding: '8px 12px',
+              marginBottom: 4,
+              background: i < step ? 'rgba(26,205,110,0.04)' : i === step ? 'rgba(200,168,75,0.06)' : 'transparent',
+              border: '1px solid',
+              borderColor: i < step ? '#1a3520' : i === step ? '#4a3a10' : '#171f2b',
+            }}
+          >
+            <span style={{
+              fontFamily: 'var(--font-data)',
+              fontSize: '0.7rem',
+              color: i < step ? '#1acd6e' : i === step ? '#c8a84b' : '#1f2d3e',
+              minWidth: 20,
+            }}>
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: '0.85rem',
+              color: i < step ? '#3a5060' : i === step ? '#ddeeff' : '#1f2d3e',
+              fontWeight: i === step ? 600 : 400,
+            }}>
+              {name}
+            </span>
+            {i === step && (
               <span style={{
-                color: i < step ? '#16b960' : i === step ? '#c8a84b' : '#2d4a6a',
-                fontSize: '0.75rem',
+                marginLeft: 'auto',
+                fontFamily: 'var(--font-data)',
+                fontSize: '0.65rem',
+                color: '#c8a84b',
+                animation: 'blink 1s step-end infinite',
               }}>
-                {i < step ? '◈' : i === step ? '▶' : '○'}
+                PROCESSING
               </span>
-              <span style={{
-                color: i < step ? '#16b960' : i === step ? '#c8dae8' : '#2d4a6a',
-                fontSize: '0.68rem',
-              }}>
-                {String(i + 1).padStart(2, '0')}. {name.toUpperCase()}
+            )}
+            {i < step && (
+              <span style={{ marginLeft: 'auto', fontFamily: 'var(--font-data)', fontSize: '0.65rem', color: '#1acd6e' }}>
+                DONE
               </span>
-              {i === step && (
-                <span className="cursor-blink ml-auto" style={{ color: '#c8a84b', fontSize: '0.65rem' }}>▌</span>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div style={{ color: '#4a6680', fontSize: '0.62rem', letterSpacing: '0.12em' }}>
-          Consulting doctrine · Generating COAs · Wargaming responses
-        </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   )

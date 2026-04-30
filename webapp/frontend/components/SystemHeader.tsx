@@ -2,18 +2,11 @@
 
 import { useEffect, useState } from 'react'
 
-interface Props {
-  isOnline: boolean
-}
-
-export function SystemHeader({ isOnline }: Props) {
+export function SystemHeader({ isOnline }: { isOnline: boolean }) {
   const [utc, setUtc] = useState('')
 
   useEffect(() => {
-    const tick = () => {
-      const now = new Date()
-      setUtc(now.toISOString().replace('T', ' ').slice(0, 19) + 'Z')
-    }
+    const tick = () => setUtc(new Date().toISOString().replace('T', ' ').slice(0, 19) + 'Z')
     tick()
     const id = setInterval(tick, 1000)
     return () => clearInterval(id)
@@ -21,44 +14,94 @@ export function SystemHeader({ isOnline }: Props) {
 
   return (
     <header
-      className="flex items-center justify-between px-4 py-2 select-none"
-      style={{ background: '#0a0f1c', borderBottom: '1px solid #1e2d3d' }}
+      style={{
+        background: '#0c1118',
+        borderBottom: '1px solid #171f2b',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '0 20px',
+        height: 44,
+        flexShrink: 0,
+      }}
     >
       {/* Left — identity */}
-      <div className="flex items-center gap-4">
-        <span style={{ color: '#c8a84b', fontWeight: 'bold', letterSpacing: '0.2em', fontSize: '0.95rem' }}>
-          ◈ IRONFORGE
+      <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <span style={{
+          fontFamily: 'var(--font-data)',
+          fontSize: '0.88rem',
+          fontWeight: 'bold',
+          color: '#c8a84b',
+          letterSpacing: '0.25em',
+        }}>
+          IRONFORGE
         </span>
-        <span style={{ color: '#7a9ab8', fontSize: '0.82rem', letterSpacing: '0.1em' }} className="hidden md:inline">
+
+        <span style={{ width: 1, height: 18, background: '#1f2d3e', display: 'inline-block' }} />
+
+        <span style={{
+          fontFamily: 'var(--font-ui)',
+          fontSize: '0.72rem',
+          color: '#8099b0',
+          letterSpacing: '0.04em',
+          fontWeight: 500,
+        }}>
           AI-POWERED MDMP ENGINE
         </span>
-        <span style={{ color: '#1e2d3d', fontSize: '0.9rem' }} className="hidden lg:inline">|</span>
-        <span style={{ color: '#4a6880', fontSize: '0.78rem' }} className="hidden lg:inline">
+
+        <span className="hidden lg:inline" style={{
+          fontFamily: 'var(--font-data)',
+          fontSize: '0.65rem',
+          color: '#1f2d3e',
+          letterSpacing: '0.06em',
+        }}>
           FM 6-0 · FM 2-01.3 · FM 3-60 · JP 3-0
         </span>
       </div>
 
       {/* Right — status */}
-      <div className="flex items-center gap-5">
-        <div className="flex items-center gap-1.5">
-          <span className={`status-dot ${isOnline ? 'status-dot-green' : 'status-dot-red'}`} />
-          <span style={{ fontSize: '0.82rem', color: isOnline ? '#16b960' : '#ef4444', letterSpacing: '0.08em' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <span className={`dot ${isOnline ? 'dot-green' : 'dot-red'}`} />
+          <span style={{
+            fontFamily: 'var(--font-ui)',
+            fontSize: '0.72rem',
+            fontWeight: 600,
+            color: isOnline ? '#1acd6e' : '#e84545',
+            letterSpacing: '0.04em',
+          }}>
             {isOnline ? 'ONLINE' : 'OFFLINE'}
           </span>
         </div>
 
-        <div className="hidden sm:flex items-center gap-1.5">
-          <span className="status-dot status-dot-gold" />
-          <span style={{ fontSize: '0.82rem', color: '#c8a84b', letterSpacing: '0.06em' }}>AI ENGINE READY</span>
+        <div className="hidden sm:flex" style={{ alignItems: 'center', gap: 6 }}>
+          <span className="dot dot-gold" />
+          <span style={{
+            fontFamily: 'var(--font-ui)',
+            fontSize: '0.72rem',
+            color: '#c8a84b',
+            letterSpacing: '0.04em',
+          }}>
+            AI READY
+          </span>
         </div>
 
-        <div className="hidden md:block" style={{ fontSize: '0.78rem', color: '#7a9ab8' }}>
-          UTC {utc || '----'}
-        </div>
+        <span className="hidden md:inline" style={{
+          fontFamily: 'var(--font-data)',
+          fontSize: '0.7rem',
+          color: '#3a5060',
+          letterSpacing: '0.04em',
+        }}>
+          {utc}
+        </span>
 
-        <div className="hidden lg:block" style={{ fontSize: '0.75rem', color: '#3a5a7a' }}>
+        <span className="hidden lg:inline" style={{
+          fontFamily: 'var(--font-data)',
+          fontSize: '0.65rem',
+          color: '#1f2d3e',
+        }}>
           v1.0.0
-        </div>
+        </span>
       </div>
     </header>
   )
