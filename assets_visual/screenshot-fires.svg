@@ -1,324 +1,306 @@
-<svg width="1440" height="900" xmlns="http://www.w3.org/2000/svg">
-  <defs><style>text { font-family: 'Courier New', 'Liberation Mono', monospace; }</style></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">
+  <defs>
+    <style>
+      .ui  { font-family: 'Inter', system-ui, sans-serif; }
+      .mono{ font-family: 'Courier New', monospace; }
+    </style>
+  </defs>
 
-  <!-- BACKGROUND -->
-  <rect width="1440" height="900" fill="#080d18"/>
+  <!-- background -->
+  <rect width="1440" height="900" fill="#07090f"/>
 
-  <!-- CLASSIFICATION TOP -->
-  <rect y="0" width="1440" height="18" fill="#004d00"/>
-  <text x="720" y="13" text-anchor="middle" font-size="9" fill="#00ee00" font-weight="bold" letter-spacing="3">&#x258C; UNCLASSIFIED &#x258C; IRONFORGE MDMP SIMULATION &#x2014; TRAINING AID ONLY &#x258C; NOT FOR OPERATIONAL USE &#x258C; UNCLASSIFIED &#x258C;</text>
+  <!-- classification banner top -->
+  <rect width="1440" height="28" fill="#0a0c12"/>
+  <text x="720" y="18" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="2">UNCLASSIFIED · IRONFORGE MDMP SIMULATION · TRAINING AID ONLY · NOT FOR OPERATIONAL USE · UNCLASSIFIED</text>
 
-  <!-- SYSTEM HEADER -->
-  <rect y="18" width="1440" height="40" fill="#0a0f1c"/>
-  <rect y="57" width="1440" height="1" fill="#1e2d3d"/>
-  <text x="16" y="44" font-size="15" fill="#c8a84b" font-weight="bold" letter-spacing="5">&#x25C8; IRONFORGE</text>
-  <text x="148" y="44" font-size="10" fill="#4a6680" letter-spacing="3">AI-POWERED MDMP ENGINE</text>
-  <rect x="310" y="27" width="1" height="22" fill="#1e2d3d"/>
-  <text x="322" y="44" font-size="10" fill="#2d4a6a">FM 6-0 &#xB7; FM 2-01.3 &#xB7; FM 3-60 &#xB7; FM 3-09 &#xB7; JP 3-0 &#xB7; JP 3-60</text>
-  <circle cx="1158" cy="38" r="4" fill="#16b960"/>
-  <text x="1168" y="42" font-size="10" fill="#16b960" letter-spacing="2">ONLINE</text>
-  <rect x="1216" y="27" width="1" height="22" fill="#1e2d3d"/>
-  <circle cx="1228" cy="38" r="4" fill="#c8a84b"/>
-  <text x="1238" y="42" font-size="10" fill="#c8a84b" letter-spacing="1">AI ENGINE READY</text>
-  <rect x="1350" y="27" width="1" height="22" fill="#1e2d3d"/>
-  <text x="1362" y="42" font-size="10" fill="#2d4a6a">v1.0.0</text>
+  <!-- system header -->
+  <rect y="28" width="1440" height="44" fill="#080b11"/>
+  <rect y="72" width="1440" height="1" fill="#171f2b"/>
+  <text x="20" y="56" class="mono" font-size="18" fill="#c8a84b" letter-spacing="4" font-weight="700">IRONFORGE</text>
+  <text x="162" y="52" class="ui" font-size="10" fill="#3a5060" letter-spacing="1">MILITARY DECISION MAKING PROCESS</text>
+  <circle cx="1400" cy="50" r="4" fill="#1acd6e"/>
+  <text x="1412" y="54" class="mono" font-size="10" fill="#1acd6e" text-anchor="end" letter-spacing="1">ONLINE</text>
 
-  <!-- LEFT SIDEBAR -->
-  <rect x="0" y="58" width="210" height="842" fill="#090e1a"/>
-  <rect x="209" y="58" width="1" height="842" fill="#1e2d3d"/>
-  <rect x="8" y="66" width="194" height="64" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="16" y="82" font-size="9" fill="#c8a84b" letter-spacing="3" font-weight="bold">ACTIVE SCENARIO</text>
-  <rect x="16" y="86" width="178" height="1" fill="#7a6420" opacity="0.4"/>
-  <text x="16" y="101" font-size="9" fill="#c8dae8">Brigade Defense &#x2014; Peer</text>
-  <text x="16" y="115" font-size="8" fill="#4a6680">2d BCT // DELIBERATE</text>
-  <circle cx="18" cy="124" r="3" fill="#16b960"/>
-  <text x="26" y="128" font-size="8" fill="#16b960">COMPLETE // RUN: 3F8A21C4</text>
+  <!-- sidebar -->
+  <rect x="0" y="72" width="288" height="828" fill="#080b11"/>
+  <rect x="288" y="72" width="1" height="828" fill="#171f2b"/>
 
-  <rect x="8" y="138" width="194" height="210" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="16" y="154" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">MDMP PIPELINE</text>
-  <rect x="16" y="158" width="178" height="1" fill="#7a6420" opacity="0.4"/>
-  <text x="20" y="173" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="173" font-size="9" fill="#16b960">01. Receipt</text><text x="156" y="173" font-size="7" fill="#16b960">DONE</text>
-  <text x="20" y="188" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="188" font-size="9" fill="#16b960">02. Analysis</text><text x="156" y="188" font-size="7" fill="#16b960">DONE</text>
-  <text x="20" y="203" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="203" font-size="9" fill="#16b960">03. COA Dev</text><text x="156" y="203" font-size="7" fill="#16b960">DONE</text>
-  <text x="20" y="218" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="218" font-size="9" fill="#16b960">04. Analysis</text><text x="156" y="218" font-size="7" fill="#16b960">DONE</text>
-  <text x="20" y="233" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="233" font-size="9" fill="#16b960">05. Comparison</text><text x="156" y="233" font-size="7" fill="#16b960">DONE</text>
-  <text x="20" y="248" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="248" font-size="9" fill="#16b960">06. Approval</text><text x="156" y="248" font-size="7" fill="#16b960">DONE</text>
-  <text x="20" y="263" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="263" font-size="9" fill="#16b960">07. Orders</text><text x="156" y="263" font-size="7" fill="#16b960">DONE</text>
-  <rect x="16" y="272" width="178" height="1" fill="#1e2d3d"/>
-  <text x="105" y="286" text-anchor="middle" font-size="8" fill="#16b960">&#x25C8; COMPLETE &#x25C8;</text>
-  <text x="105" y="298" text-anchor="middle" font-size="7" fill="#2d4a6a">Rec: COA-B // Score: 3.87</text>
-  <text x="105" y="310" text-anchor="middle" font-size="7" fill="#2d4a6a">00:48 // 042248APR26</text>
+  <text x="16" y="104" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">SCENARIO</text>
+  <rect x="16" y="112" width="256" height="32" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="28" y="132" class="ui" font-size="12" fill="#ddeeff">Brigade Defense — Peer Threat</text>
 
-  <!-- Fires quick stats -->
-  <rect x="8" y="356" width="194" height="180" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="16" y="372" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">FIRES STATUS</text>
-  <rect x="16" y="376" width="178" height="1" fill="#7a6420" opacity="0.4"/>
-  <text x="16" y="392" font-size="8" fill="#4a6680">HPTL:</text><text x="60" y="392" font-size="8" fill="#ef4444">5 targets nominated</text>
-  <text x="16" y="407" font-size="8" fill="#4a6680">HPT tracked:</text><text x="100" y="407" font-size="8" fill="#c8a84b">2</text>
-  <text x="16" y="422" font-size="8" fill="#4a6680">HPT targeted:</text><text x="108" y="422" font-size="8" fill="#16b960">1</text>
-  <text x="16" y="437" font-size="8" fill="#4a6680">HVT located:</text><text x="100" y="437" font-size="8" fill="#3b82f6">3</text>
-  <rect x="16" y="446" width="178" height="1" fill="#1e2d3d"/>
-  <text x="16" y="461" font-size="8" fill="#4a6680">FA BN (DS):</text><text x="92" y="461" font-size="8" fill="#16b960">READY</text>
-  <text x="16" y="476" font-size="8" fill="#4a6680">HIMARS PLT:</text><text x="92" y="476" font-size="8" fill="#16b960">READY</text>
-  <text x="16" y="491" font-size="8" fill="#4a6680">AFATDS:</text><text x="72" y="491" font-size="8" fill="#16b960">ONLINE</text>
-  <text x="16" y="506" font-size="8" fill="#4a6680">CFL:</text><text x="42" y="506" font-size="8" fill="#c8a84b">PL DRAGON ACTIVE</text>
-  <text x="16" y="521" font-size="8" fill="#4a6680">FSCL:</text><text x="52" y="521" font-size="8" fill="#c8a84b">PL PHANTOM ACTIVE</text>
-  <text x="16" y="528" font-size="7" fill="#2d4a6a">FM 3-09 Ch.5 // FM 3-60 &#xA7;2-1</text>
+  <rect x="16" y="182" width="256" height="30" fill="#0a0f08" stroke="#c8a84b" stroke-width="1"/>
+  <text x="144" y="201" class="mono" font-size="11" fill="#c8a84b" text-anchor="middle" letter-spacing="2">EXECUTE MDMP</text>
 
-  <!-- ── SECTION TAB NAV ─────────────────────────────── -->
-  <rect x="210" y="58" width="1230" height="30" fill="#090e1a"/>
-  <rect x="210" y="87" width="1230" height="1" fill="#1e2d3d"/>
-  <text x="282" y="78" font-size="10" fill="#4a6680">MISSION ANALYSIS</text>
-  <text x="440" y="78" font-size="10" fill="#4a6680">COURSES OF ACTION</text>
-  <text x="606" y="78" font-size="10" fill="#4a6680">RECOMMENDATION</text>
-  <text x="758" y="78" font-size="10" fill="#4a6680">OPORD</text>
-  <rect x="210" y="86" width="50" height="2" fill="#c8a84b"/>
-  <text x="234" y="78" text-anchor="middle" font-size="10" fill="#c8a84b" letter-spacing="1">FIRES</text>
-  <circle cx="1350" cy="74" r="3" fill="#16b960"/>
-  <text x="1358" y="78" font-size="9" fill="#16b960" letter-spacing="2">COMPLETE</text>
+  <rect x="0" y="222" width="288" height="1" fill="#171f2b"/>
+  <text x="16" y="244" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">MDMP STEPS</text>
 
-  <!-- ── FIRES MAIN PANEL ─────────────────────────────── -->
-  <rect x="210" y="88" width="1230" height="792" fill="#080d18"/>
+  <text x="16" y="268" class="mono" font-size="11" fill="#1acd6e">01</text><text x="40" y="268" class="ui" font-size="11" fill="#3a5060">Receipt of Mission</text>  <text x="272" y="268" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="290" class="mono" font-size="11" fill="#1acd6e">02</text><text x="40" y="290" class="ui" font-size="11" fill="#3a5060">Mission Analysis</text>    <text x="272" y="290" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="312" class="mono" font-size="11" fill="#1acd6e">03</text><text x="40" y="312" class="ui" font-size="11" fill="#3a5060">COA Development</text>    <text x="272" y="312" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="334" class="mono" font-size="11" fill="#1acd6e">04</text><text x="40" y="334" class="ui" font-size="11" fill="#3a5060">COA Analysis</text>        <text x="272" y="334" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="356" class="mono" font-size="11" fill="#1acd6e">05</text><text x="40" y="356" class="ui" font-size="11" fill="#3a5060">COA Comparison</text>      <text x="272" y="356" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="378" class="mono" font-size="11" fill="#1acd6e">06</text><text x="40" y="378" class="ui" font-size="11" fill="#3a5060">COA Approval</text>        <text x="272" y="378" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="400" class="mono" font-size="11" fill="#1acd6e">07</text><text x="40" y="400" class="ui" font-size="11" fill="#3a5060">Orders Production</text>   <text x="272" y="400" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
 
-  <!-- Fires panel header -->
-  <rect x="218" y="96" width="1214" height="36" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="114" font-size="9" fill="#c8a84b" letter-spacing="4" font-weight="bold">FIRES INTEGRATION // TARGETING</text>
-  <text x="460" y="114" font-size="9" fill="#2d4a6a">FM 3-09 &#xB7; FM 3-60 &#xB7; JP 3-60</text>
-  <text x="1380" y="114" text-anchor="end" font-size="9" fill="#4a6680">F2T2EA KILL CHAIN TRACKER</text>
+  <rect x="0" y="856" width="288" height="1" fill="#171f2b"/>
+  <text x="16" y="874" class="mono" font-size="9" fill="#1f2d3e" letter-spacing="1">UNCLASSIFIED // TRAINING AID</text>
+  <text x="16" y="888" class="mono" font-size="9" fill="#1f2d3e" letter-spacing="1">ALL REFERENCES PUBLICLY AVAILABLE</text>
 
-  <!-- F2T2EA tracker -->
-  <rect x="218" y="140" width="1214" height="28" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="157" font-size="8" fill="#4a6680" letter-spacing="2">F2T2EA:</text>
-  <rect x="288" y="146" width="48" height="16" fill="rgba(22,185,96,0.1)" stroke="#0a3020" stroke-width="1"/>
-  <text x="312" y="158" text-anchor="middle" font-size="8" fill="#16b960" letter-spacing="1">FIND</text>
-  <rect x="340" y="146" width="48" height="16" fill="rgba(22,185,96,0.1)" stroke="#0a3020" stroke-width="1"/>
-  <text x="364" y="158" text-anchor="middle" font-size="8" fill="#16b960" letter-spacing="1">FIX</text>
-  <rect x="392" y="146" width="52" height="16" fill="rgba(200,168,75,0.15)" stroke="#c8a84b" stroke-width="1"/>
-  <text x="418" y="158" text-anchor="middle" font-size="8" fill="#c8a84b" letter-spacing="1">TRACK</text>
-  <rect x="448" y="146" width="56" height="16" fill="rgba(200,168,75,0.15)" stroke="#c8a84b" stroke-width="1"/>
-  <text x="476" y="158" text-anchor="middle" font-size="8" fill="#c8a84b" letter-spacing="1">TARGET</text>
-  <rect x="508" y="146" width="56" height="16" fill="transparent" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="536" y="158" text-anchor="middle" font-size="8" fill="#4a6680" letter-spacing="1">ENGAGE</text>
-  <rect x="568" y="146" width="56" height="16" fill="transparent" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="596" y="158" text-anchor="middle" font-size="8" fill="#4a6680" letter-spacing="1">ASSESS</text>
-  <text x="640" y="157" font-size="8" fill="#2d4a6a">FM 3-60 &#xA7;2-1 (November 2023)</text>
-  <text x="1350" y="157" font-size="8" fill="#2d4a6a">AFATDS: ONLINE</text>
+  <!-- tab bar -->
+  <rect x="288" y="72" width="1152" height="40" fill="#07090f"/>
+  <rect x="288" y="112" width="1152" height="1" fill="#171f2b"/>
+  <text x="361" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">Mission Analysis</text>
+  <text x="470" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">Courses of Action</text>
+  <text x="610" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">Recommendation</text>
+  <text x="720" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">OPORD</text>
+  <!-- active -->
+  <text x="820" y="97" class="ui" font-size="12" fill="#ddeeff" text-anchor="middle">Fires &amp; Targeting</text>
+  <rect x="755" y="110" width="130" height="2" fill="#c8a84b"/>
+  <text x="1420" y="97" class="mono" font-size="10" fill="#3a5060" text-anchor="end">RUN A14195E0</text>
+  <circle cx="1310" cy="92" r="4" fill="#1acd6e"/>
+  <text x="1322" y="97" class="mono" font-size="10" fill="#1acd6e" letter-spacing="1">COMPLETE</text>
 
-  <!-- Tab nav -->
-  <rect x="218" y="176" width="1214" height="28" fill="#090e1a" stroke="#1e2d3d" stroke-width="1"/>
-  <rect x="218" y="202" width="1214" height="1" fill="#1e2d3d"/>
-  <rect x="218" y="202" width="82" height="2" fill="#c8a84b"/>
-  <text x="259" y="194" text-anchor="middle" font-size="10" fill="#c8a84b">HPTL</text>
-  <text x="330" y="194" font-size="10" fill="#4a6680">AGM</text>
-  <text x="406" y="194" font-size="10" fill="#4a6680">FSCM</text>
-  <text x="498" y="194" font-size="10" fill="#4a6680">NOMINATE</text>
+  <!-- ── FIRES & TARGETING CONTENT ── -->
+  <!-- sub-tab bar -->
+  <rect x="288" y="113" width="1152" height="32" fill="#080b11"/>
+  <rect x="288" y="145" width="1152" height="1" fill="#171f2b"/>
 
-  <!-- ── HPTL TABLE ─────────────────────────────── -->
-  <rect x="218" y="210" width="1214" height="28" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="224" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">HIGH PAYOFF TARGET LIST</text>
-  <text x="420" y="224" font-size="8" fill="#2d4a6a">FM 3-60 &#xA7;4-1 (The Targeting Process)</text>
-  <text x="1380" y="224" text-anchor="end" font-size="8" fill="#4a6680">5 TARGETS NOMINATED</text>
+  <!-- active sub-tab: HPTL -->
+  <rect x="296" y="115" width="74" height="28" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <rect x="296" y="141" width="74" height="2" fill="#c8a84b"/>
+  <text x="333" y="133" class="mono" font-size="10" fill="#ddeeff" text-anchor="middle" letter-spacing="1">HPTL</text>
 
-  <!-- Table header -->
-  <rect x="218" y="238" width="1214" height="22" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="253" font-size="8" fill="#4a6680" letter-spacing="1">ID</text>
-  <text x="280" y="253" font-size="8" fill="#4a6680" letter-spacing="1">TARGET NAME</text>
-  <text x="460" y="253" font-size="8" fill="#4a6680" letter-spacing="1">TYPE</text>
-  <text x="600" y="253" font-size="8" fill="#4a6680" letter-spacing="1">PRIORITY</text>
-  <text x="760" y="253" font-size="8" fill="#4a6680" letter-spacing="1">EFFECT</text>
-  <text x="870" y="253" font-size="8" fill="#4a6680" letter-spacing="1">MEANS</text>
-  <text x="1060" y="253" font-size="8" fill="#4a6680" letter-spacing="1">F2T2EA STATUS</text>
+  <text x="403" y="133" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="1">AGM</text>
+  <text x="473" y="133" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="1">TST</text>
+  <text x="540" y="133" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="1">BOARD</text>
+  <text x="614" y="133" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="1">FSCM</text>
+  <text x="690" y="133" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="1">NOMINATE</text>
 
-  <!-- Row 1: Enemy AD Radar — TARGETED (highest priority) -->
-  <rect x="218" y="260" width="1214" height="28" fill="rgba(239,68,68,0.05)" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="278" font-size="9" fill="#c8a84b">HPT-001</text>
-  <text x="280" y="278" font-size="9" fill="#c8dae8" font-weight="bold">Enemy AD Radar // 9S18 Kupol</text>
-  <text x="460" y="278" font-size="9" fill="#a0b4c8">Air Defense System</text>
-  <rect x="596" y="264" width="120" height="18" fill="rgba(239,68,68,0.15)" stroke="#4a1010" stroke-width="1"/>
-  <text x="656" y="277" text-anchor="middle" font-size="8" fill="#ef4444" letter-spacing="1">HIGH PAYOFF TGT</text>
-  <text x="760" y="278" font-size="9" fill="#ef7777">Destroy</text>
-  <text x="870" y="278" font-size="9" fill="#a0b4c8">HIMARS / ATACMS</text>
-  <!-- F2T2EA progress -->
-  <rect x="1060" y="266" width="10" height="10" fill="#16b960"/>
-  <rect x="1074" y="266" width="10" height="10" fill="#16b960"/>
-  <rect x="1088" y="266" width="10" height="10" fill="#16b960"/>
-  <rect x="1102" y="266" width="10" height="10" fill="#c8a84b"/>
-  <rect x="1116" y="266" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1130" y="266" width="10" height="10" fill="#1e2d3d"/>
-  <text x="1150" y="278" font-size="9" fill="#c8a84b" font-weight="bold">TARGET</text>
+  <!-- HPTL header -->
+  <rect x="308" y="157" width="1112" height="22" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="320" y="172" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">HIGH-PAYOFF TARGET LIST</text>
+  <text x="420" y="172" class="mono" font-size="9" fill="#2a3a4a">FM 3-60 §4-1</text>
+  <text x="880" y="172" class="mono" font-size="9" fill="#2a3a4a">JIPTL REF: JP 3-60 §II-1</text>
+  <text x="1412" y="172" class="mono" font-size="9" fill="#3a5060" text-anchor="end">3 APPROVED · 1 TST · 2 COLLECTING</text>
 
-  <!-- Row 2: Enemy C2 Node — TARGETED -->
-  <rect x="218" y="288" width="1214" height="28" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="306" font-size="9" fill="#c8a84b">HPT-002</text>
-  <text x="280" y="306" font-size="9" fill="#c8dae8">Enemy BTG TAC CP // Vicinity GRID 38SMB 234 567</text>
-  <text x="460" y="306" font-size="9" fill="#a0b4c8">Command and Control</text>
-  <rect x="596" y="292" width="120" height="18" fill="rgba(239,68,68,0.15)" stroke="#4a1010" stroke-width="1"/>
-  <text x="656" y="305" text-anchor="middle" font-size="8" fill="#ef4444" letter-spacing="1">HIGH PAYOFF TGT</text>
-  <text x="760" y="306" font-size="9" fill="#ef7777">Destroy</text>
-  <text x="870" y="306" font-size="9" fill="#a0b4c8">HIMARS GMLRS / JDAM</text>
-  <rect x="1060" y="294" width="10" height="10" fill="#16b960"/>
-  <rect x="1074" y="294" width="10" height="10" fill="#16b960"/>
-  <rect x="1088" y="294" width="10" height="10" fill="#16b960"/>
-  <rect x="1102" y="294" width="10" height="10" fill="#c8a84b"/>
-  <rect x="1116" y="294" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1130" y="294" width="10" height="10" fill="#1e2d3d"/>
-  <text x="1150" y="306" font-size="9" fill="#c8a84b" font-weight="bold">TARGET</text>
+  <!-- table header -->
+  <rect x="308" y="179" width="1112" height="22" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="320" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">PRI</text>
+  <text x="348" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">TARGET</text>
+  <text x="500" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">TYPE</text>
+  <text x="600" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">EFFECT</text>
+  <text x="720" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">AUTHORITY</text>
+  <text x="840" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">CDE</text>
+  <text x="900" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">PID</text>
+  <text x="960" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">ROE</text>
+  <text x="1050" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">STATUS</text>
+  <text x="1200" y="194" class="ui" font-size="9" fill="#8099b0" font-weight="600">BDA</text>
 
-  <!-- Row 3: Bridge ROUTE HAWK — TRACKED -->
-  <rect x="218" y="316" width="1214" height="28" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="334" font-size="9" fill="#c8a84b">HPT-003</text>
-  <text x="280" y="334" font-size="9" fill="#c8dae8">Bridge VIC ROUTE HAWK // GRID 38SMB 678 901</text>
-  <text x="460" y="334" font-size="9" fill="#a0b4c8">LOC / Infrastructure</text>
-  <rect x="596" y="320" width="100" height="18" fill="rgba(245,158,11,0.1)" stroke="#7a4010" stroke-width="1"/>
-  <text x="646" y="333" text-anchor="middle" font-size="8" fill="#f59e0b" letter-spacing="1">HIGH VALUE TGT</text>
-  <text x="760" y="334" font-size="9" fill="#a0b4c8">Interdict</text>
-  <text x="870" y="334" font-size="9" fill="#a0b4c8">M109A7 / MLRS</text>
-  <rect x="1060" y="322" width="10" height="10" fill="#16b960"/>
-  <rect x="1074" y="322" width="10" height="10" fill="#16b960"/>
-  <rect x="1088" y="322" width="10" height="10" fill="#c8a84b"/>
-  <rect x="1102" y="322" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1116" y="322" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1130" y="322" width="10" height="10" fill="#1e2d3d"/>
-  <text x="1150" y="334" font-size="9" fill="#c8a84b">TRACK</text>
+  <!-- target rows -->
+  <!-- T-001 -->
+  <rect x="308" y="201" width="1112" height="34" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="213" class="mono" font-size="10" fill="#c8a84b" font-weight="700">01</text>
+  <text x="348" y="213" class="ui" font-size="11" fill="#ddeeff" font-weight="600">BTG C2 NODE</text>
+  <text x="348" y="228" class="mono" font-size="9" fill="#3a5060">T-001 · GR 448862</text>
+  <text x="500" y="220" class="ui" font-size="10" fill="#b4c8d8">C2 / HQ</text>
+  <text x="600" y="220" class="ui" font-size="10" fill="#b4c8d8">DESTROY</text>
+  <text x="720" y="220" class="ui" font-size="10" fill="#b4c8d8">BDE CDR</text>
+  <rect x="836" y="207" width="44" height="16" fill="rgba(26,205,110,0.1)" stroke="rgba(26,205,110,0.3)" stroke-width="1"/>
+  <text x="858" y="218" class="mono" font-size="9" fill="#1acd6e" text-anchor="middle">CAT I</text>
+  <rect x="896" y="207" width="36" height="16" fill="rgba(26,205,110,0.1)" stroke="rgba(26,205,110,0.3)" stroke-width="1"/>
+  <text x="914" y="218" class="mono" font-size="9" fill="#1acd6e" text-anchor="middle">CONF</text>
+  <text x="960" y="220" class="mono" font-size="9" fill="#b4c8d8">SROE §3</text>
+  <rect x="1046" y="207" width="72" height="16" fill="rgba(26,205,110,0.08)" stroke="rgba(26,205,110,0.25)" stroke-width="1"/>
+  <text x="1082" y="218" class="mono" font-size="9" fill="#1acd6e" text-anchor="middle">APPROVED</text>
+  <text x="1200" y="220" class="mono" font-size="10" fill="#3a5060">PENDING</text>
 
-  <!-- Row 4: Enemy Fuel Depot — FIX -->
-  <rect x="218" y="344" width="1214" height="28" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="362" font-size="9" fill="#c8a84b">HPT-004</text>
-  <text x="280" y="362" font-size="9" fill="#c8dae8">Enemy CSSP / Fuel Point // GRID 38SMB 901 234</text>
-  <text x="460" y="362" font-size="9" fill="#a0b4c8">Logistics Node</text>
-  <rect x="596" y="348" width="100" height="18" fill="rgba(245,158,11,0.1)" stroke="#7a4010" stroke-width="1"/>
-  <text x="646" y="361" text-anchor="middle" font-size="8" fill="#f59e0b" letter-spacing="1">HIGH VALUE TGT</text>
-  <text x="760" y="362" font-size="9" fill="#a0b4c8">Destroy</text>
-  <text x="870" y="362" font-size="9" fill="#a0b4c8">M109A7 Paladin</text>
-  <rect x="1060" y="350" width="10" height="10" fill="#16b960"/>
-  <rect x="1074" y="350" width="10" height="10" fill="#16b960"/>
-  <rect x="1088" y="350" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1102" y="350" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1116" y="350" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1130" y="350" width="10" height="10" fill="#1e2d3d"/>
-  <text x="1150" y="362" font-size="9" fill="#3b82f6">FIX</text>
+  <!-- T-002 -->
+  <rect x="308" y="235" width="1112" height="34" fill="#0c1118" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="247" class="mono" font-size="10" fill="#c8a84b" font-weight="700">02</text>
+  <text x="348" y="247" class="ui" font-size="11" fill="#ddeeff" font-weight="600">SP ARTY BATTERY</text>
+  <text x="348" y="262" class="mono" font-size="9" fill="#3a5060">T-002 · GR 461871</text>
+  <text x="500" y="254" class="ui" font-size="10" fill="#b4c8d8">FA / ARTY</text>
+  <text x="600" y="254" class="ui" font-size="10" fill="#b4c8d8">NEUTRALIZE</text>
+  <text x="720" y="254" class="ui" font-size="10" fill="#b4c8d8">BDE FSO</text>
+  <rect x="836" y="241" width="44" height="16" fill="rgba(26,205,110,0.1)" stroke="rgba(26,205,110,0.3)" stroke-width="1"/>
+  <text x="858" y="252" class="mono" font-size="9" fill="#1acd6e" text-anchor="middle">CAT I</text>
+  <rect x="896" y="241" width="36" height="16" fill="rgba(26,205,110,0.1)" stroke="rgba(26,205,110,0.3)" stroke-width="1"/>
+  <text x="914" y="252" class="mono" font-size="9" fill="#1acd6e" text-anchor="middle">CONF</text>
+  <text x="960" y="254" class="mono" font-size="9" fill="#b4c8d8">SROE §3</text>
+  <rect x="1046" y="241" width="72" height="16" fill="rgba(26,205,110,0.08)" stroke="rgba(26,205,110,0.25)" stroke-width="1"/>
+  <text x="1082" y="252" class="mono" font-size="9" fill="#1acd6e" text-anchor="middle">APPROVED</text>
+  <text x="1200" y="254" class="mono" font-size="10" fill="#1acd6e">34% PHY</text>
 
-  <!-- Row 5: Enemy ATGM Platoon — FIND -->
-  <rect x="218" y="372" width="1214" height="28" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="390" font-size="9" fill="#c8a84b">TAI-005</text>
-  <text x="280" y="390" font-size="9" fill="#c8dae8">Enemy ATGM PLT // Vicin GRID 38SMB 456 789</text>
-  <text x="460" y="390" font-size="9" fill="#a0b4c8">Anti-Armor System</text>
-  <rect x="596" y="376" width="80" height="18" fill="transparent" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="636" y="389" text-anchor="middle" font-size="8" fill="#4a6680" letter-spacing="1">TAI</text>
-  <text x="760" y="390" font-size="9" fill="#a0b4c8">Suppress</text>
-  <text x="870" y="390" font-size="9" fill="#a0b4c8">M109A7 / AH-64E</text>
-  <rect x="1060" y="378" width="10" height="10" fill="#16b960"/>
-  <rect x="1074" y="378" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1088" y="378" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1102" y="378" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1116" y="378" width="10" height="10" fill="#1e2d3d"/>
-  <rect x="1130" y="378" width="10" height="10" fill="#1e2d3d"/>
-  <text x="1150" y="390" font-size="9" fill="#4a6680">FIND</text>
+  <!-- T-003 TST -->
+  <rect x="308" y="269" width="1112" height="34" fill="rgba(200,168,75,0.04)" stroke="#4a3a10" stroke-width="1"/>
+  <text x="320" y="281" class="mono" font-size="10" fill="#c8a84b" font-weight="700">03</text>
+  <text x="348" y="281" class="ui" font-size="11" fill="#ddeeff" font-weight="600">ARMOURED RECON ELEMENT</text>
+  <text x="348" y="296" class="mono" font-size="9" fill="#3a5060">T-003 · MOVING · GR 439858</text>
+  <text x="500" y="288" class="ui" font-size="10" fill="#b4c8d8">ARMD / RECON</text>
+  <text x="600" y="288" class="ui" font-size="10" fill="#b4c8d8">DESTROY</text>
+  <text x="720" y="288" class="ui" font-size="10" fill="#b4c8d8">BDE CDR</text>
+  <rect x="836" y="275" width="44" height="16" fill="rgba(200,168,75,0.1)" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+  <text x="858" y="286" class="mono" font-size="9" fill="#c8a84b" text-anchor="middle">CAT II</text>
+  <rect x="896" y="275" width="36" height="16" fill="rgba(200,168,75,0.1)" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+  <text x="914" y="286" class="mono" font-size="9" fill="#c8a84b" text-anchor="middle">CONF</text>
+  <text x="960" y="288" class="mono" font-size="9" fill="#b4c8d8">SROE §3</text>
+  <rect x="1046" y="275" width="56" height="16" fill="rgba(200,168,75,0.08)" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+  <text x="1074" y="286" class="mono" font-size="9" fill="#c8a84b" text-anchor="middle">TST</text>
+  <text x="1200" y="288" class="mono" font-size="10" fill="#3a5060">PENDING</text>
+  <!-- TST timer badge -->
+  <rect x="1290" y="274" width="120" height="18" fill="rgba(200,168,75,0.06)" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+  <text x="1350" y="287" class="mono" font-size="9" fill="#c8a84b" text-anchor="middle" letter-spacing="1">00:47:12 REMAIN</text>
 
-  <!-- ── ATTACK GUIDANCE MATRIX ─────────────────────────────── -->
-  <rect x="218" y="410" width="1214" height="28" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="424" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">ATTACK GUIDANCE MATRIX (AGM)</text>
-  <text x="440" y="424" font-size="8" fill="#2d4a6a">FM 3-60 &#xA7;4-12 (November 2023)</text>
-  <text x="1380" y="424" text-anchor="end" font-size="8" fill="#4a6680">CDR APPROVED // 042200APR26</text>
+  <!-- T-004 collecting -->
+  <rect x="308" y="303" width="1112" height="34" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="315" class="mono" font-size="10" fill="#3a5060" font-weight="700">04</text>
+  <text x="348" y="315" class="ui" font-size="11" fill="#8099b0">AIR DEFENSE ELEMENT</text>
+  <text x="348" y="330" class="mono" font-size="9" fill="#2a3a4a">T-004 · SUSPECTED · GR 455890</text>
+  <text x="500" y="322" class="ui" font-size="10" fill="#3a5060">AD / SAM</text>
+  <text x="600" y="322" class="ui" font-size="10" fill="#3a5060">SUPPRESS</text>
+  <text x="720" y="322" class="ui" font-size="10" fill="#3a5060">DIV FSE</text>
+  <rect x="836" y="309" width="44" height="16" fill="none" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="858" y="320" class="mono" font-size="9" fill="#3a5060" text-anchor="middle">TBD</text>
+  <rect x="896" y="309" width="36" height="16" fill="rgba(232,69,69,0.08)" stroke="rgba(232,69,69,0.2)" stroke-width="1"/>
+  <text x="914" y="320" class="mono" font-size="9" fill="#e84545" text-anchor="middle">UNREQ</text>
+  <text x="960" y="322" class="mono" font-size="9" fill="#3a5060">PENDING</text>
+  <rect x="1046" y="309" width="80" height="16" fill="none" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="1086" y="320" class="mono" font-size="9" fill="#3a5060" text-anchor="middle">COLLECTING</text>
 
-  <!-- AGM table header -->
-  <rect x="218" y="438" width="1214" height="22" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="230" y="453" font-size="8" fill="#4a6680">PRI</text>
-  <text x="270" y="453" font-size="8" fill="#4a6680">TARGET TYPE</text>
-  <text x="490" y="453" font-size="8" fill="#4a6680">WHEN</text>
-  <text x="650" y="453" font-size="8" fill="#4a6680">DESIRED EFFECT</text>
-  <text x="810" y="453" font-size="8" fill="#4a6680">MEANS</text>
-  <text x="1040" y="453" font-size="8" fill="#4a6680">RESTRICTIONS</text>
+  <!-- T-005 collecting -->
+  <rect x="308" y="337" width="1112" height="34" fill="#0c1118" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="349" class="mono" font-size="10" fill="#3a5060" font-weight="700">05</text>
+  <text x="348" y="349" class="ui" font-size="11" fill="#8099b0">LOG CONVOY ELEMENT</text>
+  <text x="348" y="364" class="mono" font-size="9" fill="#2a3a4a">T-005 · SUSPECTED · GR 480915</text>
+  <text x="500" y="356" class="ui" font-size="10" fill="#3a5060">CSS / LOG</text>
+  <text x="600" y="356" class="ui" font-size="10" fill="#3a5060">INTERDICT</text>
+  <text x="720" y="356" class="ui" font-size="10" fill="#3a5060">BDE CDR</text>
+  <rect x="836" y="343" width="44" height="16" fill="none" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="858" y="354" class="mono" font-size="9" fill="#3a5060" text-anchor="middle">TBD</text>
+  <rect x="896" y="343" width="36" height="16" fill="rgba(232,69,69,0.08)" stroke="rgba(232,69,69,0.2)" stroke-width="1"/>
+  <text x="914" y="354" class="mono" font-size="9" fill="#e84545" text-anchor="middle">UNREQ</text>
+  <text x="960" y="356" class="mono" font-size="9" fill="#3a5060">PENDING</text>
+  <rect x="1046" y="343" width="80" height="16" fill="none" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="1086" y="354" class="mono" font-size="9" fill="#3a5060" text-anchor="middle">COLLECTING</text>
 
-  <!-- AGM Row 1 -->
-  <rect x="218" y="460" width="1214" height="24" fill="rgba(239,68,68,0.05)" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="476" font-size="9" fill="#c8a84b" font-weight="bold">P1</text>
-  <text x="270" y="476" font-size="9" fill="#c8dae8">Air Defense Systems</text>
-  <text x="490" y="476" font-size="9" fill="#a0b4c8">On order // H-hour to H+2</text>
-  <text x="650" y="476" font-size="9" fill="#ef7777">Destroy / Suppress</text>
-  <text x="810" y="476" font-size="9" fill="#a0b4c8">HIMARS ATACMS / Joint Strike</text>
-  <text x="1040" y="476" font-size="9" fill="#4a6680">PID required // CEA approved</text>
+  <!-- F2T2EA kill chain section -->
+  <text x="308" y="400" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">F2T2EA KILL CHAIN STATUS</text>
+  <text x="500" y="400" class="mono" font-size="9" fill="#2a3a4a">FM 3-60 §2-1</text>
+  <text x="1412" y="400" class="mono" font-size="9" fill="#2a3a4a" text-anchor="end">ACTIVE: T-003</text>
 
-  <!-- AGM Row 2 -->
-  <rect x="218" y="484" width="1214" height="24" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="500" font-size="9" fill="#c8a84b" font-weight="bold">P2</text>
-  <text x="270" y="500" font-size="9" fill="#c8dae8">Enemy C2 Nodes</text>
-  <text x="490" y="500" font-size="9" fill="#a0b4c8">H-hour to H+4</text>
-  <text x="650" y="500" font-size="9" fill="#ef7777">Destroy</text>
-  <text x="810" y="500" font-size="9" fill="#a0b4c8">HIMARS GMLRS / JDAM</text>
-  <text x="1040" y="500" font-size="9" fill="#4a6680">No fires in NFA TOWN BRAVO</text>
+  <!-- F2T2EA pills for T-003 TST -->
+  <!-- FIND -->
+  <rect x="308" y="408" width="150" height="48" fill="rgba(26,205,110,0.06)" stroke="rgba(26,205,110,0.2)" stroke-width="1"/>
+  <text x="383" y="425" class="mono" font-size="10" fill="#1acd6e" text-anchor="middle" letter-spacing="2">FIND</text>
+  <text x="383" y="444" class="ui" font-size="10" fill="#8099b0" text-anchor="middle">BFSB · ISR COP</text>
 
-  <!-- AGM Row 3 -->
-  <rect x="218" y="508" width="1214" height="24" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="524" font-size="9" fill="#c8a84b" font-weight="bold">P3</text>
-  <text x="270" y="524" font-size="9" fill="#c8dae8">Enemy Maneuver Forces</text>
-  <text x="490" y="524" font-size="9" fill="#a0b4c8">On contact in EAs</text>
-  <text x="650" y="524" font-size="9" fill="#a0b4c8">Suppress / Neutralize</text>
-  <text x="810" y="524" font-size="9" fill="#a0b4c8">M109A7 (6-tube volley)</text>
-  <text x="1040" y="524" font-size="9" fill="#4a6680">FSCM compliance required</text>
+  <!-- FIX arrow -->
+  <rect x="458" y="408" width="150" height="48" fill="rgba(26,205,110,0.06)" stroke="rgba(26,205,110,0.2)" stroke-width="1"/>
+  <text x="533" y="425" class="mono" font-size="10" fill="#1acd6e" text-anchor="middle" letter-spacing="2">FIX</text>
+  <text x="533" y="444" class="ui" font-size="10" fill="#8099b0" text-anchor="middle">JTAC TGT LOCK</text>
 
-  <!-- AGM Row 4 -->
-  <rect x="218" y="532" width="1214" height="24" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="548" font-size="9" fill="#c8a84b" font-weight="bold">P4</text>
-  <text x="270" y="548" font-size="9" fill="#c8dae8">Enemy Logistics Nodes</text>
-  <text x="490" y="548" font-size="9" fill="#a0b4c8">As acquired beyond CFL</text>
-  <text x="650" y="548" font-size="9" fill="#a0b4c8">Interdict / Destroy</text>
-  <text x="810" y="548" font-size="9" fill="#a0b4c8">M270 MLRS / HIMARS</text>
-  <text x="1040" y="548" font-size="9" fill="#4a6680">1000m min from civilian areas</text>
+  <!-- TRACK -->
+  <rect x="608" y="408" width="150" height="48" fill="rgba(26,205,110,0.06)" stroke="rgba(26,205,110,0.2)" stroke-width="1"/>
+  <text x="683" y="425" class="mono" font-size="10" fill="#1acd6e" text-anchor="middle" letter-spacing="2">TRACK</text>
+  <text x="683" y="444" class="ui" font-size="10" fill="#8099b0" text-anchor="middle">ATKHEL · COP</text>
 
-  <!-- ── FSCM ─────────────────────────────── -->
-  <rect x="218" y="566" width="1214" height="28" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="580" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">FIRE SUPPORT COORDINATION MEASURES (FSCM)</text>
-  <text x="580" y="580" font-size="8" fill="#2d4a6a">FM 3-09 Chapter 5 (April 2023)</text>
+  <!-- TARGET -->
+  <rect x="758" y="408" width="150" height="48" fill="rgba(200,168,75,0.08)" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+  <text x="833" y="425" class="mono" font-size="10" fill="#c8a84b" text-anchor="middle" letter-spacing="2">TARGET</text>
+  <text x="833" y="444" class="ui" font-size="10" fill="#8099b0" text-anchor="middle">BDE CDR APPRVL</text>
 
-  <!-- FSCM items -->
-  <rect x="218" y="594" width="596" height="26" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="610" font-size="9" fill="#a0b4c8">Fire Support Coordination Line (FSCL)</text>
-  <text x="520" y="610" font-size="9" fill="#c8a84b">PL PHANTOM</text>
-  <text x="608" y="610" font-size="8" fill="#4a6680">JFC Auth</text>
+  <!-- ENGAGE -->
+  <rect x="908" y="408" width="150" height="48" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="983" y="425" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="2">ENGAGE</text>
+  <text x="983" y="444" class="ui" font-size="10" fill="#3a5060" text-anchor="middle">AWAITING AUTH</text>
 
-  <rect x="218" y="620" width="596" height="26" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="636" font-size="9" fill="#a0b4c8">Coordinated Fire Line (CFL)</text>
-  <text x="520" y="636" font-size="9" fill="#c8a84b">PL DRAGON</text>
-  <text x="608" y="636" font-size="8" fill="#4a6680">BCT CDR Auth</text>
+  <!-- ASSESS -->
+  <rect x="1058" y="408" width="150" height="48" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="1133" y="425" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="2">ASSESS</text>
+  <text x="1133" y="444" class="ui" font-size="10" fill="#3a5060" text-anchor="middle">BDA PENDING</text>
 
-  <rect x="218" y="646" width="596" height="26" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="662" font-size="9" fill="#a0b4c8">No-Fire Area (NFA) — Hospital TOWN BRAVO</text>
-  <text x="520" y="662" font-size="9" fill="#ef4444">500M RADIUS</text>
-  <text x="608" y="662" font-size="8" fill="#4a6680">BCT CDR Auth</text>
+  <!-- AGM panel -->
+  <text x="308" y="484" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">ATTACK GUIDANCE MATRIX</text>
+  <text x="480" y="484" class="mono" font-size="9" fill="#2a3a4a">FM 3-60 §4-12</text>
 
-  <rect x="218" y="672" width="596" height="26" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="228" y="688" font-size="9" fill="#a0b4c8">Restrictive Fire Line (RFL)</text>
-  <text x="520" y="688" font-size="9" fill="#c8a84b">PL SPECTER</text>
-  <text x="608" y="688" font-size="8" fill="#4a6680">DIV CDR Auth</text>
+  <!-- AGM table -->
+  <rect x="308" y="491" width="1112" height="20" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="320" y="505" class="ui" font-size="9" fill="#8099b0" font-weight="600">TARGET CATEGORY</text>
+  <text x="550" y="505" class="ui" font-size="9" fill="#8099b0" font-weight="600">DESIRED EFFECT</text>
+  <text x="750" y="505" class="ui" font-size="9" fill="#8099b0" font-weight="600">METHOD / ASSET</text>
+  <text x="1000" y="505" class="ui" font-size="9" fill="#8099b0" font-weight="600">TIMING</text>
+  <text x="1200" y="505" class="ui" font-size="9" fill="#8099b0" font-weight="600">ROE REF</text>
 
-  <!-- FA planning panel -->
-  <rect x="822" y="594" width="610" height="104" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="836" y="610" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">FA PLANNING FACTORS // FM 3-09 Tables</text>
-  <rect x="836" y="614" width="580" height="1" fill="#7a6420" opacity="0.4"/>
-  <text x="836" y="629" font-size="9" fill="#4a6680">System:</text><text x="890" y="629" font-size="9" fill="#c8dae8">M109A7 Paladin (x18 tubes, 3 btry)</text>
-  <text x="836" y="644" font-size="9" fill="#4a6680">Max range:</text><text x="908" y="644" font-size="9" fill="#a0b4c8">22,000m (HE) / 36,000m (ERFB)</text>
-  <text x="836" y="659" font-size="9" fill="#4a6680">Excalibur:</text><text x="900" y="659" font-size="9" fill="#a0b4c8">GPS-guided // CEP &lt;10m // 40km range</text>
-  <text x="836" y="674" font-size="9" fill="#4a6680">Rate:</text><text x="868" y="674" font-size="9" fill="#a0b4c8">200 rds/tube/day (sustained)</text>
-  <text x="836" y="689" font-size="9" fill="#4a6680">HIMARS:</text><text x="896" y="689" font-size="9" fill="#a0b4c8">GMLRS 70km // &lt;10m CEP // 6 rnds/ripple</text>
+  <rect x="308" y="511" width="1112" height="20" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="525" class="ui" font-size="11" fill="#b4c8d8">Enemy C2 / HQ</text>
+  <text x="550" y="525" class="ui" font-size="11" fill="#b4c8d8">Destroy ≥70%</text>
+  <text x="750" y="525" class="ui" font-size="11" fill="#b4c8d8">MLRS / ATACMS</text>
+  <text x="1000" y="525" class="ui" font-size="11" fill="#b4c8d8">On order</text>
+  <text x="1200" y="525" class="mono" font-size="10" fill="#b4c8d8">SROE §3</text>
 
-  <!-- Doctrine citations -->
-  <rect x="218" y="706" width="1214" height="28" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="720" font-size="8" fill="#2d4a6a" letter-spacing="1">DOCTRINE BASIS:</text>
-  <text x="330" y="720" font-size="8" fill="#c8a84b">FM 3-60 &#xA7;2-1</text>
-  <text x="400" y="720" font-size="8" fill="#4a6680">|</text>
-  <text x="410" y="720" font-size="8" fill="#c8a84b">FM 3-60 &#xA7;4-1 (HPTL)</text>
-  <text x="520" y="720" font-size="8" fill="#4a6680">|</text>
-  <text x="530" y="720" font-size="8" fill="#c8a84b">FM 3-60 &#xA7;4-12 (AGM)</text>
-  <text x="646" y="720" font-size="8" fill="#4a6680">|</text>
-  <text x="656" y="720" font-size="8" fill="#c8a84b">FM 3-09 Ch.5 (FSCM)</text>
-  <text x="770" y="720" font-size="8" fill="#4a6680">|</text>
-  <text x="780" y="720" font-size="8" fill="#c8a84b">JP 3-60 (Joint Targeting)</text>
-  <text x="912" y="720" font-size="8" fill="#4a6680">|</text>
-  <text x="922" y="720" font-size="8" fill="#c8a84b">ATP 3-09.23 (FA BN)</text>
-  <text x="1380" y="720" text-anchor="end" font-size="8" fill="#2d4a6a">IRONFORGE TRAINING AID</text>
+  <rect x="308" y="531" width="1112" height="20" fill="#0c1118" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="545" class="ui" font-size="11" fill="#b4c8d8">SP Artillery</text>
+  <text x="550" y="545" class="ui" font-size="11" fill="#b4c8d8">Neutralize / suppress</text>
+  <text x="750" y="545" class="ui" font-size="11" fill="#b4c8d8">DS Howitzer / CAS</text>
+  <text x="1000" y="545" class="ui" font-size="11" fill="#b4c8d8">On call / TIS</text>
+  <text x="1200" y="545" class="mono" font-size="10" fill="#b4c8d8">SROE §3</text>
 
-  <!-- CLASSIFICATION BANNER BOTTOM -->
-  <rect y="882" width="1440" height="18" fill="#004d00"/>
-  <text x="720" y="895" text-anchor="middle" font-size="9" fill="#00ee00" font-weight="bold" letter-spacing="3">&#x258C; UNCLASSIFIED &#x258C; IRONFORGE MDMP SIMULATION &#x2014; TRAINING AID ONLY &#x258C; NOT FOR OPERATIONAL USE &#x258C; UNCLASSIFIED &#x258C;</text>
+  <rect x="308" y="551" width="1112" height="20" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="565" class="ui" font-size="11" fill="#b4c8d8">Armoured Recon</text>
+  <text x="550" y="565" class="ui" font-size="11" fill="#b4c8d8">Destroy / attrit</text>
+  <text x="750" y="565" class="ui" font-size="11" fill="#b4c8d8">ATKHEL / CAS</text>
+  <text x="1000" y="565" class="ui" font-size="11" fill="#b4c8d8">TST window</text>
+  <text x="1200" y="565" class="mono" font-size="10" fill="#b4c8d8">SROE §3</text>
+
+  <rect x="308" y="571" width="1112" height="20" fill="#0c1118" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="585" class="ui" font-size="11" fill="#b4c8d8">Log / CSS Convoy</text>
+  <text x="550" y="585" class="ui" font-size="11" fill="#b4c8d8">Interdict LOC</text>
+  <text x="750" y="585" class="ui" font-size="11" fill="#b4c8d8">ATACMS / CAS</text>
+  <text x="1000" y="585" class="ui" font-size="11" fill="#b4c8d8">Shaping phase</text>
+  <text x="1200" y="585" class="mono" font-size="10" fill="#b4c8d8">SROE §3</text>
+
+  <!-- FSCM section -->
+  <text x="308" y="618" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">FIRE SUPPORT COORDINATION MEASURES</text>
+  <text x="590" y="618" class="mono" font-size="9" fill="#2a3a4a">FM 3-09 Ch.5</text>
+
+  <rect x="308" y="625" width="1112" height="20" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="320" y="639" class="ui" font-size="9" fill="#8099b0" font-weight="600">MEASURE</text>
+  <text x="540" y="639" class="ui" font-size="9" fill="#8099b0" font-weight="600">LOCATION / REFERENCE</text>
+  <text x="900" y="639" class="ui" font-size="9" fill="#8099b0" font-weight="600">STATUS</text>
+  <text x="1100" y="639" class="ui" font-size="9" fill="#8099b0" font-weight="600">AUTHORITY</text>
+
+  <rect x="308" y="645" width="1112" height="19" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="658" class="ui" font-size="11" fill="#b4c8d8">CFL — Coordinated Fire Line</text>
+  <text x="540" y="658" class="mono" font-size="10" fill="#b4c8d8">PL IRON GR 440XXX</text>
+  <text x="900" y="658" class="mono" font-size="10" fill="#1acd6e">ACTIVE</text>
+  <text x="1100" y="658" class="ui" font-size="10" fill="#8099b0">BDE FSO</text>
+
+  <rect x="308" y="664" width="1112" height="19" fill="#0c1118" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="677" class="ui" font-size="11" fill="#b4c8d8">RFL — Restrictive Fire Line</text>
+  <text x="540" y="677" class="mono" font-size="10" fill="#b4c8d8">PL STEEL GR 435XXX</text>
+  <text x="900" y="677" class="mono" font-size="10" fill="#1acd6e">ACTIVE</text>
+  <text x="1100" y="677" class="ui" font-size="10" fill="#8099b0">BDE FSO</text>
+
+  <rect x="308" y="683" width="1112" height="19" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="696" class="ui" font-size="11" fill="#b4c8d8">ACA — Airspace Coordination Area</text>
+  <text x="540" y="696" class="mono" font-size="10" fill="#b4c8d8">Vic Kovač · 5km radius</text>
+  <text x="900" y="696" class="mono" font-size="10" fill="#1acd6e">ACTIVE</text>
+  <text x="1100" y="696" class="ui" font-size="10" fill="#8099b0">A2C2</text>
+
+  <rect x="308" y="702" width="1112" height="19" fill="#0c1118" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="715" class="ui" font-size="11" fill="#b4c8d8">NFA — No-Fire Area</text>
+  <text x="540" y="715" class="mono" font-size="10" fill="#b4c8d8">Breza village · GR 449879</text>
+  <text x="900" y="715" class="mono" font-size="10" fill="#e84545">ACTIVE</text>
+  <text x="1100" y="715" class="ui" font-size="10" fill="#8099b0">BDE CDR</text>
+
+  <!-- ROE / CDE info bar -->
+  <rect x="308" y="736" width="1112" height="52" fill="rgba(200,168,75,0.03)" stroke="rgba(200,168,75,0.12)" stroke-width="1"/>
+  <text x="320" y="754" class="ui" font-size="9" fill="#c8a84b" font-weight="700" letter-spacing="2">TARGETING AUTHORITY SUMMARY</text>
+  <text x="320" y="771" class="ui" font-size="11" fill="#8099b0">CDE Authority: CAT I-II BDE CDR · CAT III BDE CDR w/ JAG review · CAT IV DIV CDR req.</text>
+  <text x="320" y="787" class="ui" font-size="11" fill="#8099b0">PID Standard: FM 3-60 §4-8 · ROE: SROE Ch.3 / CJCSI 5810.01D · TST Auth: BDE CDR NTE 60 min</text>
+
+  <!-- classification banner bottom -->
+  <rect y="872" width="1440" height="28" fill="#0a0c12"/>
+  <text x="720" y="890" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="2">UNCLASSIFIED · IRONFORGE MDMP SIMULATION · TRAINING AID ONLY · NOT FOR OPERATIONAL USE · UNCLASSIFIED</text>
 </svg>

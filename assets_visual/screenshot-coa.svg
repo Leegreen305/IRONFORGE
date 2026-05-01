@@ -1,320 +1,266 @@
-<svg width="1440" height="900" xmlns="http://www.w3.org/2000/svg">
-  <defs><style>text { font-family: 'Courier New', 'Liberation Mono', monospace; }</style></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">
+  <defs>
+    <style>
+      .ui  { font-family: 'Inter', system-ui, sans-serif; }
+      .mono{ font-family: 'Courier New', monospace; }
+    </style>
+  </defs>
 
-  <!-- BACKGROUND -->
-  <rect width="1440" height="900" fill="#080d18"/>
+  <!-- background -->
+  <rect width="1440" height="900" fill="#07090f"/>
 
-  <!-- CLASSIFICATION TOP -->
-  <rect y="0" width="1440" height="18" fill="#004d00"/>
-  <text x="720" y="13" text-anchor="middle" font-size="9" fill="#00ee00" font-weight="bold" letter-spacing="3">&#x258C; UNCLASSIFIED &#x258C; IRONFORGE MDMP SIMULATION &#x2014; TRAINING AID ONLY &#x258C; NOT FOR OPERATIONAL USE &#x258C; UNCLASSIFIED &#x258C;</text>
+  <!-- classification banner top -->
+  <rect width="1440" height="28" fill="#0a0c12"/>
+  <text x="720" y="18" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="2">UNCLASSIFIED · IRONFORGE MDMP SIMULATION · TRAINING AID ONLY · NOT FOR OPERATIONAL USE · UNCLASSIFIED</text>
 
-  <!-- SYSTEM HEADER -->
-  <rect y="18" width="1440" height="40" fill="#0a0f1c"/>
-  <rect y="57" width="1440" height="1" fill="#1e2d3d"/>
-  <text x="16" y="44" font-size="15" fill="#c8a84b" font-weight="bold" letter-spacing="5">&#x25C8; IRONFORGE</text>
-  <text x="148" y="44" font-size="10" fill="#4a6680" letter-spacing="3">AI-POWERED MDMP ENGINE</text>
-  <rect x="310" y="27" width="1" height="22" fill="#1e2d3d"/>
-  <text x="322" y="44" font-size="10" fill="#2d4a6a">FM 6-0 &#xB7; FM 2-01.3 &#xB7; FM 3-60 &#xB7; FM 3-09 &#xB7; JP 3-0 &#xB7; JP 3-60</text>
-  <circle cx="1158" cy="38" r="4" fill="#16b960"/>
-  <text x="1168" y="42" font-size="10" fill="#16b960" letter-spacing="2">ONLINE</text>
-  <rect x="1216" y="27" width="1" height="22" fill="#1e2d3d"/>
-  <circle cx="1228" cy="38" r="4" fill="#c8a84b"/>
-  <text x="1238" y="42" font-size="10" fill="#c8a84b" letter-spacing="1">AI ENGINE READY</text>
-  <rect x="1350" y="27" width="1" height="22" fill="#1e2d3d"/>
-  <text x="1362" y="42" font-size="10" fill="#2d4a6a">v1.0.0</text>
+  <!-- system header -->
+  <rect y="28" width="1440" height="44" fill="#080b11"/>
+  <rect y="72" width="1440" height="1" fill="#171f2b"/>
+  <text x="20" y="56" class="mono" font-size="18" fill="#c8a84b" letter-spacing="4" font-weight="700">IRONFORGE</text>
+  <text x="162" y="52" class="ui" font-size="10" fill="#3a5060" letter-spacing="1">MILITARY DECISION MAKING PROCESS</text>
+  <circle cx="1400" cy="50" r="4" fill="#1acd6e"/>
+  <text x="1412" y="54" class="mono" font-size="10" fill="#1acd6e" text-anchor="end" letter-spacing="1">ONLINE</text>
 
-  <!-- LEFT SIDEBAR (compact) -->
-  <rect x="0" y="58" width="210" height="842" fill="#090e1a"/>
-  <rect x="209" y="58" width="1" height="842" fill="#1e2d3d"/>
-  <rect x="8" y="66" width="194" height="96" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="16" y="82" font-size="9" fill="#c8a84b" letter-spacing="3" font-weight="bold">ACTIVE SCENARIO</text>
-  <rect x="16" y="86" width="178" height="1" fill="#7a6420" opacity="0.4"/>
-  <text x="16" y="101" font-size="9" fill="#c8dae8">Brigade Defense &#x2014; Peer</text>
-  <text x="16" y="115" font-size="8" fill="#4a6680">2d BCT // DELIBERATE</text>
-  <circle cx="18" cy="130" r="3" fill="#16b960"/>
-  <text x="26" y="134" font-size="8" fill="#16b960">PIPELINE COMPLETE</text>
-  <text x="16" y="147" font-size="7" fill="#2d4a6a">RUN: 3F8A21C4</text>
+  <!-- sidebar -->
+  <rect x="0" y="72" width="288" height="828" fill="#080b11"/>
+  <rect x="288" y="72" width="1" height="828" fill="#171f2b"/>
 
-  <!-- Compact MDMP steps -->
-  <rect x="8" y="170" width="194" height="250" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="16" y="186" font-size="8" fill="#c8a84b" letter-spacing="3" font-weight="bold">MDMP PIPELINE</text>
-  <rect x="16" y="190" width="178" height="1" fill="#7a6420" opacity="0.4"/>
-  <text x="20" y="205" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="205" font-size="9" fill="#16b960">01. Receipt</text><text x="156" y="205" font-size="7" fill="#16b960">DONE</text>
-  <rect x="23" y="207" width="1" height="6" fill="#16b960" opacity="0.3"/>
-  <text x="20" y="220" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="220" font-size="9" fill="#16b960">02. Analysis</text><text x="156" y="220" font-size="7" fill="#16b960">DONE</text>
-  <rect x="23" y="222" width="1" height="6" fill="#16b960" opacity="0.3"/>
-  <text x="20" y="235" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="235" font-size="9" fill="#16b960">03. COA Dev</text><text x="156" y="235" font-size="7" fill="#16b960">DONE</text>
-  <rect x="23" y="237" width="1" height="6" fill="#16b960" opacity="0.3"/>
-  <text x="20" y="250" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="250" font-size="9" fill="#16b960">04. Analysis</text><text x="156" y="250" font-size="7" fill="#16b960">DONE</text>
-  <rect x="23" y="252" width="1" height="6" fill="#16b960" opacity="0.3"/>
-  <text x="20" y="265" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="265" font-size="9" fill="#16b960">05. Comparison</text><text x="156" y="265" font-size="7" fill="#16b960">DONE</text>
-  <rect x="23" y="267" width="1" height="6" fill="#16b960" opacity="0.3"/>
-  <text x="20" y="280" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="280" font-size="9" fill="#16b960">06. Approval</text><text x="156" y="280" font-size="7" fill="#16b960">DONE</text>
-  <rect x="23" y="282" width="1" height="6" fill="#16b960" opacity="0.3"/>
-  <text x="20" y="295" font-size="9" fill="#16b960">&#x25C8;</text><text x="32" y="295" font-size="9" fill="#16b960">07. Orders</text><text x="156" y="295" font-size="7" fill="#16b960">DONE</text>
-  <rect x="16" y="304" width="178" height="1" fill="#1e2d3d"/>
-  <text x="105" y="318" text-anchor="middle" font-size="8" fill="#16b960" letter-spacing="2">&#x25C8; COMPLETE &#x25C8;</text>
-  <text x="105" y="332" text-anchor="middle" font-size="7" fill="#2d4a6a">00:48 // 042248APR26</text>
-  <text x="105" y="346" text-anchor="middle" font-size="7" fill="#2d4a6a">DELIBERATE MDMP</text>
-  <text x="105" y="360" text-anchor="middle" font-size="7" fill="#2d4a6a">FM 6-0 (MAY 2014)</text>
-  <text x="105" y="374" text-anchor="middle" font-size="7" fill="#2d4a6a">3 COAs // DEFENSE TYPE</text>
-  <text x="105" y="388" text-anchor="middle" font-size="7" fill="#2d4a6a">Rec: COA-B // 3.87/5.00</text>
+  <text x="16" y="104" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">SCENARIO</text>
+  <rect x="16" y="112" width="256" height="32" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="28" y="132" class="ui" font-size="12" fill="#ddeeff">Brigade Defense — Peer Threat</text>
+  <rect x="16" y="150" width="256" height="22" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="28" y="165" class="ui" font-size="10" fill="#8099b0">2d BCT · Peer mechanized BTG · 18-hr</text>
 
-  <!-- ── SECTION TAB NAV ─────────────────────────────── -->
-  <rect x="210" y="58" width="1230" height="30" fill="#090e1a"/>
-  <rect x="210" y="87" width="1230" height="1" fill="#1e2d3d"/>
-  <text x="282" y="78" font-size="10" fill="#4a6680">MISSION ANALYSIS</text>
-  <!-- Active tab -->
-  <rect x="210" y="86" width="160" height="2" fill="#c8a84b"/>
-  <text x="290" y="78" text-anchor="middle" font-size="10" fill="#c8a84b" letter-spacing="1">COURSES OF ACTION</text>
-  <text x="450" y="78" font-size="10" fill="#4a6680">RECOMMENDATION</text>
-  <text x="598" y="78" font-size="10" fill="#4a6680">OPORD</text>
-  <text x="672" y="78" font-size="10" fill="#4a6680">FIRES</text>
-  <circle cx="1350" cy="74" r="3" fill="#16b960"/>
-  <text x="1358" y="78" font-size="9" fill="#16b960" letter-spacing="2">COMPLETE</text>
+  <rect x="16" y="182" width="256" height="30" fill="#0a0f08" stroke="#c8a84b" stroke-width="1"/>
+  <text x="144" y="201" class="mono" font-size="11" fill="#c8a84b" text-anchor="middle" letter-spacing="2">EXECUTE MDMP</text>
 
-  <!-- MAIN AREA HEADER -->
-  <rect x="210" y="88" width="1230" height="792" fill="#080d18"/>
-  <rect x="218" y="96" width="1214" height="36" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="232" y="114" font-size="9" fill="#c8a84b" letter-spacing="4" font-weight="bold">COURSE OF ACTION DEVELOPMENT AND ANALYSIS</text>
-  <text x="560" y="114" font-size="9" fill="#2d4a6a">FM 6-0 &#xA7;9-78 / &#xA7;9-96 / &#xA7;9-117</text>
-  <text x="1380" y="114" text-anchor="end" font-size="9" fill="#4a6680">3 COAs DEVELOPED // DEFENSE</text>
+  <rect x="0" y="222" width="288" height="1" fill="#171f2b"/>
+  <text x="16" y="244" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">MDMP STEPS</text>
 
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- COA-A CARD (ALPHA) — Defense in Depth -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <rect x="218" y="140" width="396" height="640" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <rect x="218" y="140" width="396" height="2" fill="#3b82f6"/>
-  <!-- Header -->
-  <rect x="218" y="142" width="396" height="30" fill="#0a1018"/>
-  <text x="230" y="158" font-size="11" fill="#3b82f6" font-weight="bold" letter-spacing="2">&#x25C8; COA-A</text>
-  <text x="290" y="158" font-size="9" fill="#2d4a6a">//</text>
-  <text x="302" y="158" font-size="9" fill="#3b82f6" letter-spacing="1">ALPHA</text>
-  <rect x="540" y="148" width="66" height="16" fill="rgba(59,130,246,0.1)" stroke="#1e3a5f" stroke-width="1"/>
-  <text x="573" y="160" text-anchor="middle" font-size="7" fill="#3b82f6" letter-spacing="1">WARGAMED</text>
-  <!-- Name -->
-  <text x="230" y="186" font-size="11" fill="#c8dae8" font-weight="bold">DEFENSE IN DEPTH</text>
-  <text x="230" y="199" font-size="8" fill="#2d4a6a" letter-spacing="1">DEFENSE OPERATION</text>
-  <!-- Tabs -->
-  <rect x="218" y="206" width="396" height="24" fill="#090e1a"/>
-  <rect x="218" y="228" width="396" height="1" fill="#1e2d3d"/>
-  <rect x="218" y="228" width="88" height="2" fill="#3b82f6"/>
-  <text x="262" y="222" text-anchor="middle" font-size="9" fill="#3b82f6">CONCEPT</text>
-  <text x="350" y="222" font-size="9" fill="#4a6680">WARGAME</text>
-  <text x="456" y="222" font-size="9" fill="#4a6680">SCORES</text>
-  <!-- Content -->
-  <text x="230" y="247" font-size="8" fill="#c8a84b" letter-spacing="2">CONCEPT OF OPERATIONS</text>
-  <text x="230" y="260" font-size="9" fill="#a0b4c8">Establish successive battle positions to</text>
-  <text x="230" y="273" font-size="9" fill="#a0b4c8">absorb and attrit enemy attack before</text>
-  <text x="230" y="286" font-size="9" fill="#a0b4c8">decisive counterattack into exposed flank.</text>
-  <text x="230" y="304" font-size="8" fill="#3b82f6" letter-spacing="2">DECISIVE OPERATION</text>
-  <rect x="230" y="308" width="374" height="32" fill="rgba(59,130,246,0.05)" stroke="rgba(59,130,246,0.2)" stroke-width="1"/>
-  <text x="238" y="322" font-size="9" fill="#c8dae8">Reserve battalion conducts counterattack into</text>
-  <text x="238" y="334" font-size="9" fill="#c8dae8">flank of committed enemy force at BP TIGER.</text>
-  <text x="230" y="352" font-size="8" fill="#3b82f6" letter-spacing="2">SHAPING OPERATIONS</text>
-  <text x="230" y="366" font-size="9" fill="#a0b4c8">&#x25B8; Security force delays and IDs enemy main effort</text>
-  <text x="230" y="379" font-size="9" fill="#a0b4c8">&#x25B8; Obstacles/indirect fires channel enemy into EAs</text>
-  <text x="230" y="396" font-size="8" fill="#3b82f6" letter-spacing="2">SUSTAINING OPERATION</text>
-  <text x="230" y="410" font-size="9" fill="#a0b4c8">BSA displaces forward to sustain reserve</text>
-  <text x="230" y="423" font-size="9" fill="#a0b4c8">for counterattack. FARP established at FOB.</text>
-  <!-- Risk -->
-  <rect x="218" y="436" width="396" height="1" fill="#1e2d3d"/>
-  <text x="230" y="450" font-size="8" fill="#ef4444" letter-spacing="2">RISK ASSESSMENT</text>
-  <text x="230" y="464" font-size="9" fill="#ef7777">&#x26A0; Moderate &#x2014; Sacrifices terrain initially;</text>
-  <text x="230" y="477" font-size="9" fill="#ef7777">requires disciplined retrograde under fire.</text>
-  <!-- Wargame section -->
-  <rect x="218" y="490" width="396" height="1" fill="#1e2d3d"/>
-  <text x="230" y="504" font-size="8" fill="#3b82f6" letter-spacing="2">WARGAME RESULTS // FM 6-0 &#xA7;9-105</text>
-  <rect x="230" y="508" width="374" height="52" fill="#080d18" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="238" y="521" font-size="8" fill="#3b82f6">SEQ 1:</text>
-  <rect x="230" y="524" width="2" height="30" fill="#3b82f6" opacity="0.5"/>
-  <text x="238" y="535" font-size="8" fill="#4a6680">F:</text><text x="250" y="535" font-size="8" fill="#a0b4c8">Security contact; enemy recon destroyed</text>
-  <text x="238" y="546" font-size="8" fill="#ef4444">E:</text><text x="250" y="546" font-size="8" fill="#a0b4c8">Adjusts main effort to secondary axis</text>
-  <text x="238" y="557" font-size="8" fill="#16b960">C:</text><text x="250" y="557" font-size="8" fill="#a0b4c8">Shift fires; preserve reserve</text>
-  <!-- Scores -->
-  <rect x="218" y="566" width="396" height="1" fill="#1e2d3d"/>
-  <text x="230" y="580" font-size="8" fill="#3b82f6" letter-spacing="2">DECISION CRITERIA SCORES</text>
-  <!-- Score bars -->
-  <text x="230" y="596" font-size="8" fill="#4a6680">Maneuver</text>
-  <rect x="300" y="589" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="300" y="589" width="120" height="6" fill="#3b82f6" opacity="0.7"/>
-  <text x="506" y="596" font-size="8" fill="#3b82f6">3/5</text>
-  <text x="230" y="609" font-size="8" fill="#4a6680">Firepower</text>
-  <rect x="300" y="602" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="300" y="602" width="160" height="6" fill="#3b82f6" opacity="0.7"/>
-  <text x="506" y="609" font-size="8" fill="#3b82f6">4/5</text>
-  <text x="230" y="622" font-size="8" fill="#4a6680">Protection</text>
-  <rect x="300" y="615" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="300" y="615" width="160" height="6" fill="#3b82f6" opacity="0.7"/>
-  <text x="506" y="622" font-size="8" fill="#3b82f6">4/5</text>
-  <text x="230" y="635" font-size="8" fill="#4a6680">Surprise</text>
-  <rect x="300" y="628" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="300" y="628" width="60" height="6" fill="#3b82f6" opacity="0.7"/>
-  <text x="506" y="635" font-size="8" fill="#3b82f6">2/5</text>
-  <!-- Footer -->
-  <rect x="218" y="646" width="396" height="28" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="230" y="659" font-size="8" fill="#4a6680">TOTAL WEIGHTED SCORE</text>
-  <text x="420" y="659" text-anchor="end" font-size="11" fill="#3b82f6" font-weight="bold">3.42 / 5.00</text>
-  <rect x="482" y="650" width="48" height="18" fill="rgba(59,130,246,0.1)" stroke="#1e3a5f" stroke-width="1"/>
-  <text x="506" y="663" text-anchor="middle" font-size="9" fill="#3b82f6">RANK #3</text>
+  <!-- all steps done -->
+  <text x="16" y="268" class="mono" font-size="11" fill="#1acd6e">01</text>
+  <text x="40" y="268" class="ui" font-size="11" fill="#3a5060">Receipt of Mission</text>
+  <text x="272" y="268" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="290" class="mono" font-size="11" fill="#1acd6e">02</text>
+  <text x="40" y="290" class="ui" font-size="11" fill="#3a5060">Mission Analysis</text>
+  <text x="272" y="290" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="312" class="mono" font-size="11" fill="#1acd6e">03</text>
+  <text x="40" y="312" class="ui" font-size="11" fill="#3a5060">COA Development</text>
+  <text x="272" y="312" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="334" class="mono" font-size="11" fill="#1acd6e">04</text>
+  <text x="40" y="334" class="ui" font-size="11" fill="#3a5060">COA Analysis</text>
+  <text x="272" y="334" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="356" class="mono" font-size="11" fill="#1acd6e">05</text>
+  <text x="40" y="356" class="ui" font-size="11" fill="#3a5060">COA Comparison</text>
+  <text x="272" y="356" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="378" class="mono" font-size="11" fill="#1acd6e">06</text>
+  <text x="40" y="378" class="ui" font-size="11" fill="#3a5060">COA Approval</text>
+  <text x="272" y="378" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+  <text x="16" y="400" class="mono" font-size="11" fill="#1acd6e">07</text>
+  <text x="40" y="400" class="ui" font-size="11" fill="#3a5060">Orders Production</text>
+  <text x="272" y="400" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
 
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- COA-B CARD (BRAVO) — Strongpoint Defense — RECOMMENDED -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <rect x="622" y="140" width="396" height="640" fill="#0d1420" stroke="#c8a84b" stroke-width="1"/>
-  <!-- Gold glow effect -->
-  <rect x="622" y="140" width="396" height="640" fill="transparent" stroke="#7a6420" stroke-width="2" opacity="0.3"/>
-  <rect x="622" y="140" width="396" height="2" fill="#c8a84b"/>
-  <!-- Header -->
-  <rect x="622" y="142" width="396" height="30" fill="rgba(200,168,75,0.06)"/>
-  <text x="634" y="158" font-size="11" fill="#c8a84b" font-weight="bold" letter-spacing="2">&#x25C8; COA-B</text>
-  <text x="694" y="158" font-size="9" fill="#7a6420">//</text>
-  <text x="706" y="158" font-size="9" fill="#c8a84b" letter-spacing="1">BRAVO</text>
-  <rect x="840" y="146" width="110" height="18" fill="rgba(200,168,75,0.15)" stroke="#c8a84b" stroke-width="1"/>
-  <text x="895" y="159" text-anchor="middle" font-size="8" fill="#c8a84b" letter-spacing="2">&#x2605; RECOMMENDED</text>
-  <!-- Name -->
-  <text x="634" y="186" font-size="11" fill="#c8dae8" font-weight="bold">STRONGPOINT DEFENSE</text>
-  <text x="634" y="199" font-size="8" fill="#7a6420" letter-spacing="1">DEFENSE OPERATION</text>
-  <!-- Tabs -->
-  <rect x="622" y="206" width="396" height="24" fill="#090e1a"/>
-  <rect x="622" y="228" width="396" height="1" fill="#1e2d3d"/>
-  <rect x="622" y="228" width="88" height="2" fill="#c8a84b"/>
-  <text x="666" y="222" text-anchor="middle" font-size="9" fill="#c8a84b">CONCEPT</text>
-  <text x="754" y="222" font-size="9" fill="#4a6680">WARGAME</text>
-  <text x="860" y="222" font-size="9" fill="#4a6680">SCORES</text>
-  <!-- Content -->
-  <text x="634" y="247" font-size="8" fill="#c8a84b" letter-spacing="2">CONCEPT OF OPERATIONS</text>
-  <text x="634" y="260" font-size="9" fill="#a0b4c8">Concentrate combat power on key terrain</text>
-  <text x="634" y="273" font-size="9" fill="#a0b4c8">HILL 342 with mutually supporting positions</text>
-  <text x="634" y="286" font-size="9" fill="#a0b4c8">and integrated obstacle belts. Hold or die.</text>
-  <text x="634" y="304" font-size="8" fill="#c8a84b" letter-spacing="2">DECISIVE OPERATION</text>
-  <rect x="634" y="308" width="374" height="32" fill="rgba(200,168,75,0.06)" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
-  <text x="642" y="322" font-size="9" fill="#c8dae8">Main effort company team holds HILL 342</text>
-  <text x="642" y="334" font-size="9" fill="#c8dae8">with all available direct/indirect fires.</text>
-  <text x="634" y="352" font-size="8" fill="#c8a84b" letter-spacing="2">SHAPING OPERATIONS</text>
-  <text x="634" y="366" font-size="9" fill="#a0b4c8">&#x25B8; Engineers emplace complex obstacle belts</text>
-  <text x="634" y="379" font-size="9" fill="#a0b4c8">&#x25B8; Artillery plans FPF around strongpoint</text>
-  <text x="634" y="396" font-size="8" fill="#c8a84b" letter-spacing="2">SUSTAINING OPERATION</text>
-  <text x="634" y="410" font-size="9" fill="#a0b4c8">Prestocked ammo and Role-2 medical</text>
-  <text x="634" y="423" font-size="9" fill="#a0b4c8">inside strongpoint. Water and class IX.</text>
-  <!-- Risk -->
-  <rect x="622" y="436" width="396" height="1" fill="#7a6420"/>
-  <text x="634" y="450" font-size="8" fill="#ef4444" letter-spacing="2">RISK ASSESSMENT</text>
-  <text x="634" y="464" font-size="9" fill="#ef7777">&#x26A0; High &#x2014; Enemy may bypass strongpoint;</text>
-  <text x="634" y="477" font-size="9" fill="#ef7777">mass arty suppresses; isolation risk.</text>
-  <!-- Wargame section -->
-  <rect x="622" y="490" width="396" height="1" fill="#1e2d3d"/>
-  <text x="634" y="504" font-size="8" fill="#c8a84b" letter-spacing="2">WARGAME RESULTS // FM 6-0 &#xA7;9-105</text>
-  <rect x="634" y="508" width="374" height="52" fill="#080d18" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="642" y="521" font-size="8" fill="#c8a84b">SEQ 1:</text>
-  <rect x="634" y="524" width="2" height="30" fill="#c8a84b" opacity="0.5"/>
-  <text x="642" y="535" font-size="8" fill="#4a6680">F:</text><text x="654" y="535" font-size="8" fill="#a0b4c8">Obstacles complete; BPs occupied</text>
-  <text x="642" y="546" font-size="8" fill="#ef4444">E:</text><text x="654" y="546" font-size="8" fill="#a0b4c8">Probes obstacle belt; adjusts axis</text>
-  <text x="642" y="557" font-size="8" fill="#16b960">C:</text><text x="654" y="557" font-size="8" fill="#a0b4c8">Execute FPF plan; deny breach</text>
-  <!-- Scores -->
-  <rect x="622" y="566" width="396" height="1" fill="#1e2d3d"/>
-  <text x="634" y="580" font-size="8" fill="#c8a84b" letter-spacing="2">DECISION CRITERIA SCORES</text>
-  <text x="634" y="596" font-size="8" fill="#4a6680">Maneuver</text>
-  <rect x="704" y="589" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="704" y="589" width="80" height="6" fill="#c8a84b" opacity="0.7"/>
-  <text x="910" y="596" font-size="8" fill="#c8a84b">2/5</text>
-  <text x="634" y="609" font-size="8" fill="#4a6680">Firepower</text>
-  <rect x="704" y="602" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="704" y="602" width="160" height="6" fill="#c8a84b" opacity="0.7"/>
-  <text x="910" y="609" font-size="8" fill="#c8a84b">4/5</text>
-  <text x="634" y="622" font-size="8" fill="#4a6680">Protection</text>
-  <rect x="704" y="615" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="704" y="615" width="200" height="6" fill="#c8a84b" opacity="0.7"/>
-  <text x="910" y="622" font-size="8" fill="#c8a84b">5/5</text>
-  <text x="634" y="635" font-size="8" fill="#4a6680">Simplicity</text>
-  <rect x="704" y="628" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="704" y="628" width="200" height="6" fill="#c8a84b" opacity="0.7"/>
-  <text x="910" y="635" font-size="8" fill="#c8a84b">5/5</text>
-  <!-- Footer -->
-  <rect x="622" y="646" width="396" height="28" fill="rgba(200,168,75,0.05)" stroke="#7a6420" stroke-width="1"/>
-  <text x="634" y="659" font-size="8" fill="#4a6680">TOTAL WEIGHTED SCORE</text>
-  <text x="824" y="659" text-anchor="end" font-size="11" fill="#c8a84b" font-weight="bold">3.87 / 5.00</text>
-  <rect x="886" y="650" width="48" height="18" fill="rgba(200,168,75,0.15)" stroke="#c8a84b" stroke-width="1"/>
-  <text x="910" y="663" text-anchor="middle" font-size="9" fill="#c8a84b">RANK #1</text>
+  <rect x="0" y="416" width="288" height="1" fill="#171f2b"/>
+  <text x="16" y="438" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">DOCTRINE</text>
+  <text x="16" y="458" class="mono" font-size="11" fill="#b4c8d8">FM 6-0</text>     <text x="272" y="458" class="ui" font-size="10" fill="#3a5060" text-anchor="end">MDMP</text>
+  <text x="16" y="476" class="mono" font-size="11" fill="#b4c8d8">FM 2-01.3</text>  <text x="272" y="476" class="ui" font-size="10" fill="#3a5060" text-anchor="end">IPB</text>
+  <text x="16" y="494" class="mono" font-size="11" fill="#b4c8d8">FM 3-60</text>    <text x="272" y="494" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Targeting</text>
+  <text x="16" y="512" class="mono" font-size="11" fill="#b4c8d8">FM 3-09</text>    <text x="272" y="512" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Fire Support</text>
+  <text x="16" y="530" class="mono" font-size="11" fill="#b4c8d8">ADRP 5-0</text>  <text x="272" y="530" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Ops Process</text>
+  <text x="16" y="548" class="mono" font-size="11" fill="#b4c8d8">JP 3-60</text>    <text x="272" y="548" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Joint Targeting</text>
 
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- COA-C CARD (CHARLIE) — Mobile Defense -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <rect x="1026" y="140" width="396" height="640" fill="#0d1420" stroke="#1e2d3d" stroke-width="1"/>
-  <rect x="1026" y="140" width="396" height="2" fill="#16b960"/>
-  <!-- Header -->
-  <rect x="1026" y="142" width="396" height="30" fill="#0a1018"/>
-  <text x="1038" y="158" font-size="11" fill="#16b960" font-weight="bold" letter-spacing="2">&#x25C8; COA-C</text>
-  <text x="1100" y="158" font-size="9" fill="#2d4a6a">//</text>
-  <text x="1112" y="158" font-size="9" fill="#16b960" letter-spacing="1">CHARLIE</text>
-  <rect x="1334" y="148" width="78" height="16" fill="rgba(22,185,96,0.1)" stroke="#0a3020" stroke-width="1"/>
-  <text x="1373" y="160" text-anchor="middle" font-size="7" fill="#16b960" letter-spacing="1">WARGAMED</text>
-  <!-- Name -->
-  <text x="1038" y="186" font-size="11" fill="#c8dae8" font-weight="bold">MOBILE DEFENSE</text>
-  <text x="1038" y="199" font-size="8" fill="#2d4a6a" letter-spacing="1">DEFENSE OPERATION</text>
-  <!-- Tabs -->
-  <rect x="1026" y="206" width="396" height="24" fill="#090e1a"/>
-  <rect x="1026" y="228" width="396" height="1" fill="#1e2d3d"/>
-  <rect x="1026" y="228" width="88" height="2" fill="#16b960"/>
-  <text x="1070" y="222" text-anchor="middle" font-size="9" fill="#16b960">CONCEPT</text>
-  <text x="1158" y="222" font-size="9" fill="#4a6680">WARGAME</text>
-  <text x="1264" y="222" font-size="9" fill="#4a6680">SCORES</text>
-  <!-- Content -->
-  <text x="1038" y="247" font-size="8" fill="#16b960" letter-spacing="2">CONCEPT OF OPERATIONS</text>
-  <text x="1038" y="260" font-size="9" fill="#a0b4c8">Use fixing force to hold enemy while</text>
-  <text x="1038" y="273" font-size="9" fill="#a0b4c8">armor-heavy striking force maneuvers to</text>
-  <text x="1038" y="286" font-size="9" fill="#a0b4c8">attack enemy flank and rear.</text>
-  <text x="1038" y="304" font-size="8" fill="#16b960" letter-spacing="2">DECISIVE OPERATION</text>
-  <rect x="1038" y="308" width="374" height="32" fill="rgba(22,185,96,0.05)" stroke="rgba(22,185,96,0.2)" stroke-width="1"/>
-  <text x="1046" y="322" font-size="9" fill="#c8dae8">Armor-heavy striking force attacks enemy</text>
-  <text x="1046" y="334" font-size="9" fill="#c8dae8">flank as they fix on obstacle belt, BP HAWK.</text>
-  <text x="1038" y="352" font-size="8" fill="#16b960" letter-spacing="2">SHAPING OPERATIONS</text>
-  <text x="1038" y="366" font-size="9" fill="#a0b4c8">&#x25B8; Fixing force occupies BPs with obstacles</text>
-  <text x="1038" y="379" font-size="9" fill="#a0b4c8">&#x25B8; Aviation screen/EW on avenues of approach</text>
-  <text x="1038" y="396" font-size="8" fill="#16b960" letter-spacing="2">SUSTAINING OPERATION</text>
-  <text x="1038" y="410" font-size="9" fill="#a0b4c8">FLE prepositioned near striking force AA.</text>
-  <text x="1038" y="423" font-size="9" fill="#a0b4c8">FARP at NAI 04 for aviation.</text>
-  <!-- Risk -->
-  <rect x="1026" y="436" width="396" height="1" fill="#1e2d3d"/>
-  <text x="1038" y="450" font-size="8" fill="#ef4444" letter-spacing="2">RISK ASSESSMENT</text>
-  <text x="1038" y="464" font-size="9" fill="#ef7777">&#x26A0; Moderate &#x2014; Precise timing between</text>
-  <text x="1038" y="477" font-size="9" fill="#ef7777">fixing/striking forces; vulnerable if detected.</text>
-  <!-- Wargame section -->
-  <rect x="1026" y="490" width="396" height="1" fill="#1e2d3d"/>
-  <text x="1038" y="504" font-size="8" fill="#16b960" letter-spacing="2">WARGAME RESULTS // FM 6-0 &#xA7;9-105</text>
-  <rect x="1038" y="508" width="374" height="52" fill="#080d18" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="1046" y="521" font-size="8" fill="#16b960">SEQ 1:</text>
-  <rect x="1038" y="524" width="2" height="30" fill="#16b960" opacity="0.5"/>
-  <text x="1046" y="535" font-size="8" fill="#4a6680">F:</text><text x="1058" y="535" font-size="8" fill="#a0b4c8">Fixing force occupies BPs; striking AA</text>
-  <text x="1046" y="546" font-size="8" fill="#ef4444">E:</text><text x="1058" y="546" font-size="8" fill="#a0b4c8">Commits mass along primary axis</text>
-  <text x="1046" y="557" font-size="8" fill="#16b960">C:</text><text x="1058" y="557" font-size="8" fill="#a0b4c8">Strike force attacks flank at H+4</text>
-  <!-- Scores -->
-  <rect x="1026" y="566" width="396" height="1" fill="#1e2d3d"/>
-  <text x="1038" y="580" font-size="8" fill="#16b960" letter-spacing="2">DECISION CRITERIA SCORES</text>
-  <text x="1038" y="596" font-size="8" fill="#4a6680">Maneuver</text>
-  <rect x="1108" y="589" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="1108" y="589" width="200" height="6" fill="#16b960" opacity="0.7"/>
-  <text x="1314" y="596" font-size="8" fill="#16b960">5/5</text>
-  <text x="1038" y="609" font-size="8" fill="#4a6680">Firepower</text>
-  <rect x="1108" y="602" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="1108" y="602" width="160" height="6" fill="#16b960" opacity="0.7"/>
-  <text x="1314" y="609" font-size="8" fill="#16b960">4/5</text>
-  <text x="1038" y="622" font-size="8" fill="#4a6680">Protection</text>
-  <rect x="1108" y="615" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="1108" y="615" width="120" height="6" fill="#16b960" opacity="0.7"/>
-  <text x="1314" y="622" font-size="8" fill="#16b960">3/5</text>
-  <text x="1038" y="635" font-size="8" fill="#4a6680">Simplicity</text>
-  <rect x="1108" y="628" width="200" height="6" fill="#1e2d3d"/>
-  <rect x="1108" y="628" width="120" height="6" fill="#16b960" opacity="0.7"/>
-  <text x="1314" y="635" font-size="8" fill="#16b960">3/5</text>
-  <!-- Footer -->
-  <rect x="1026" y="646" width="396" height="28" fill="#0a1018" stroke="#1e2d3d" stroke-width="1"/>
-  <text x="1038" y="659" font-size="8" fill="#4a6680">TOTAL WEIGHTED SCORE</text>
-  <text x="1228" y="659" text-anchor="end" font-size="11" fill="#16b960" font-weight="bold">3.71 / 5.00</text>
-  <rect x="1290" y="650" width="48" height="18" fill="rgba(22,185,96,0.1)" stroke="#0a3020" stroke-width="1"/>
-  <text x="1314" y="663" text-anchor="middle" font-size="9" fill="#16b960">RANK #2</text>
+  <rect x="0" y="856" width="288" height="1" fill="#171f2b"/>
+  <text x="16" y="874" class="mono" font-size="9" fill="#1f2d3e" letter-spacing="1">UNCLASSIFIED // TRAINING AID</text>
+  <text x="16" y="888" class="mono" font-size="9" fill="#1f2d3e" letter-spacing="1">ALL REFERENCES PUBLICLY AVAILABLE</text>
 
-  <!-- CLASSIFICATION BANNER BOTTOM -->
-  <rect y="882" width="1440" height="18" fill="#004d00"/>
-  <text x="720" y="895" text-anchor="middle" font-size="9" fill="#00ee00" font-weight="bold" letter-spacing="3">&#x258C; UNCLASSIFIED &#x258C; IRONFORGE MDMP SIMULATION &#x2014; TRAINING AID ONLY &#x258C; NOT FOR OPERATIONAL USE &#x258C; UNCLASSIFIED &#x258C;</text>
+  <!-- tab bar -->
+  <rect x="288" y="72" width="1152" height="40" fill="#07090f"/>
+  <rect x="288" y="112" width="1152" height="1" fill="#171f2b"/>
+  <text x="361" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">Mission Analysis</text>
+  <!-- active tab: COA -->
+  <text x="470" y="97" class="ui" font-size="12" fill="#ddeeff" text-anchor="middle">Courses of Action</text>
+  <rect x="405" y="110" width="130" height="2" fill="#c8a84b"/>
+  <text x="610" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">Recommendation</text>
+  <text x="720" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">OPORD</text>
+  <text x="820" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">Fires &amp; Targeting</text>
+  <!-- run ID -->
+  <text x="1420" y="97" class="mono" font-size="10" fill="#3a5060" text-anchor="end">RUN A14195E0</text>
+  <circle cx="1310" cy="92" r="4" fill="#1acd6e"/>
+  <text x="1322" y="97" class="mono" font-size="10" fill="#1acd6e" letter-spacing="1">COMPLETE</text>
+
+  <!-- ── COA SECTION CONTENT ── -->
+  <!-- COA cards: 3 columns -->
+  <!-- COA 1 header -->
+  <rect x="308" y="124" width="358" height="40" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="320" y="140" class="mono" font-size="9" fill="#4a8fff" letter-spacing="2">COA-1</text>
+  <text x="320" y="156" class="ui" font-size="13" fill="#ddeeff" font-weight="600">Forward Defense</text>
+  <rect x="608" y="124" width="58" height="18" fill="none" stroke="rgba(26,205,110,0.3)" stroke-width="1"/>
+  <text x="637" y="136" class="mono" font-size="9" fill="#1acd6e" text-anchor="middle">VIABLE</text>
+
+  <!-- COA 1 body -->
+  <rect x="308" y="164" width="358" height="280" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="184" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">CONCEPT</text>
+  <text x="320" y="202" class="ui" font-size="11" fill="#b4c8d8">Defend forward on Phase Line IRON.</text>
+  <text x="320" y="219" class="ui" font-size="11" fill="#b4c8d8">Three IN BNs on-line, armour in depth.</text>
+  <text x="320" y="236" class="ui" font-size="11" fill="#b4c8d8">Artillery in general support. Accept risk</text>
+  <text x="320" y="253" class="ui" font-size="11" fill="#b4c8d8">on flanks; mass combat power at FEBA.</text>
+
+  <text x="320" y="282" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">WARGAME RESULTS</text>
+  <text x="320" y="300" class="ui" font-size="11" fill="#b4c8d8">Friendly: 18% strength attrition</text>
+  <text x="320" y="317" class="ui" font-size="11" fill="#b4c8d8">Enemy: 34% strength attrition</text>
+  <text x="320" y="334" class="ui" font-size="11" fill="#b4c8d8">Civilian: 2 incidents possible</text>
+
+  <text x="320" y="363" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">CRITERIA SCORES</text>
+  <!-- score bars -->
+  <text x="320" y="383" class="ui" font-size="10" fill="#8099b0">Flexibility</text>
+  <rect x="390" y="372" width="60" height="10" fill="rgba(74,143,255,0.15)" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="390" y="372" width="36" height="10" fill="#4a8fff"/>
+  <text x="457" y="382" class="mono" font-size="10" fill="#4a8fff">3 / 5</text>
+  <text x="320" y="401" class="ui" font-size="10" fill="#8099b0">Simplicity</text>
+  <rect x="390" y="390" width="60" height="10" fill="rgba(74,143,255,0.15)" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="390" y="390" width="48" height="10" fill="#4a8fff"/>
+  <text x="457" y="400" class="mono" font-size="10" fill="#4a8fff">4 / 5</text>
+  <text x="320" y="419" class="ui" font-size="10" fill="#8099b0">Mass</text>
+  <rect x="390" y="408" width="60" height="10" fill="rgba(74,143,255,0.15)" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="390" y="408" width="48" height="10" fill="#4a8fff"/>
+  <text x="457" y="418" class="mono" font-size="10" fill="#4a8fff">4 / 5</text>
+  <text x="320" y="437" class="ui" font-size="10" fill="#8099b0">Risk</text>
+  <rect x="390" y="426" width="60" height="10" fill="rgba(74,143,255,0.15)" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="390" y="426" width="30" height="10" fill="#4a8fff"/>
+  <text x="457" y="436" class="mono" font-size="10" fill="#4a8fff">2.5/5</text>
+
+  <!-- COA 2 header (RECOMMENDED) -->
+  <rect x="674" y="124" width="358" height="40" fill="#0c1118" stroke="#c8a84b" stroke-width="1"/>
+  <text x="686" y="140" class="mono" font-size="9" fill="#c8a84b" letter-spacing="2">COA-2</text>
+  <text x="686" y="156" class="ui" font-size="13" fill="#ddeeff" font-weight="600">Defense in Depth</text>
+  <rect x="958" y="124" width="74" height="18" fill="rgba(200,168,75,0.1)" stroke="rgba(200,168,75,0.4)" stroke-width="1"/>
+  <text x="995" y="136" class="mono" font-size="9" fill="#c8a84b" text-anchor="middle">RECOMMENDED</text>
+
+  <!-- COA 2 body -->
+  <rect x="674" y="164" width="358" height="280" fill="#07090f" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="686" y="184" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">CONCEPT</text>
+  <text x="686" y="202" class="ui" font-size="11" fill="#b4c8d8">Two IN BNs forward, one in depth as</text>
+  <text x="686" y="219" class="ui" font-size="11" fill="#b4c8d8">counterattack force. Canalise enemy to</text>
+  <text x="686" y="236" class="ui" font-size="11" fill="#b4c8d8">engagement areas. Obstacle plan tied to</text>
+  <text x="686" y="253" class="ui" font-size="11" fill="#b4c8d8">fires. BFSB forward for early warning.</text>
+
+  <text x="686" y="282" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">WARGAME RESULTS</text>
+  <text x="686" y="300" class="ui" font-size="11" fill="#b4c8d8">Friendly: 12% strength attrition</text>
+  <text x="686" y="317" class="ui" font-size="11" fill="#b4c8d8">Enemy: 41% strength attrition</text>
+  <text x="686" y="334" class="ui" font-size="11" fill="#b4c8d8">Civilian: 0 incidents projected</text>
+
+  <text x="686" y="363" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">CRITERIA SCORES</text>
+  <text x="686" y="383" class="ui" font-size="10" fill="#8099b0">Flexibility</text>
+  <rect x="756" y="372" width="60" height="10" fill="rgba(200,168,75,0.15)" stroke="#4a3a10" stroke-width="1"/>
+  <rect x="756" y="372" width="54" height="10" fill="#c8a84b"/>
+  <text x="823" y="382" class="mono" font-size="10" fill="#c8a84b">4.5/5</text>
+  <text x="686" y="401" class="ui" font-size="10" fill="#8099b0">Simplicity</text>
+  <rect x="756" y="390" width="60" height="10" fill="rgba(200,168,75,0.15)" stroke="#4a3a10" stroke-width="1"/>
+  <rect x="756" y="390" width="42" height="10" fill="#c8a84b"/>
+  <text x="823" y="400" class="mono" font-size="10" fill="#c8a84b">3.5/5</text>
+  <text x="686" y="419" class="ui" font-size="10" fill="#8099b0">Mass</text>
+  <rect x="756" y="408" width="60" height="10" fill="rgba(200,168,75,0.15)" stroke="#4a3a10" stroke-width="1"/>
+  <rect x="756" y="408" width="48" height="10" fill="#c8a84b"/>
+  <text x="823" y="418" class="mono" font-size="10" fill="#c8a84b">4 / 5</text>
+  <text x="686" y="437" class="ui" font-size="10" fill="#8099b0">Risk</text>
+  <rect x="756" y="426" width="60" height="10" fill="rgba(200,168,75,0.15)" stroke="#4a3a10" stroke-width="1"/>
+  <rect x="756" y="426" width="54" height="10" fill="#c8a84b"/>
+  <text x="823" y="436" class="mono" font-size="10" fill="#c8a84b">4.5/5</text>
+
+  <!-- COA 3 header -->
+  <rect x="1040" y="124" width="380" height="40" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="1052" y="140" class="mono" font-size="9" fill="#4a8fff" letter-spacing="2">COA-3</text>
+  <text x="1052" y="156" class="ui" font-size="13" fill="#ddeeff" font-weight="600">Mobile Defense</text>
+  <rect x="1352" y="124" width="68" height="18" fill="none" stroke="rgba(26,205,110,0.3)" stroke-width="1"/>
+  <text x="1386" y="136" class="mono" font-size="9" fill="#1acd6e" text-anchor="middle">VIABLE</text>
+
+  <!-- COA 3 body -->
+  <rect x="1040" y="164" width="380" height="280" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="1052" y="184" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">CONCEPT</text>
+  <text x="1052" y="202" class="ui" font-size="11" fill="#b4c8d8">One BN fixing force; two BN strike</text>
+  <text x="1052" y="219" class="ui" font-size="11" fill="#b4c8d8">force. Draw enemy into kill sack then</text>
+  <text x="1052" y="236" class="ui" font-size="11" fill="#b4c8d8">destroy with armored counterattack.</text>
+  <text x="1052" y="253" class="ui" font-size="11" fill="#b4c8d8">High risk / high payoff approach.</text>
+
+  <text x="1052" y="282" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">WARGAME RESULTS</text>
+  <text x="1052" y="300" class="ui" font-size="11" fill="#b4c8d8">Friendly: 22% strength attrition</text>
+  <text x="1052" y="317" class="ui" font-size="11" fill="#b4c8d8">Enemy: 52% strength attrition</text>
+  <text x="1052" y="334" class="ui" font-size="11" fill="#b4c8d8">Civilian: 4 incidents possible</text>
+
+  <text x="1052" y="363" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">CRITERIA SCORES</text>
+  <text x="1052" y="383" class="ui" font-size="10" fill="#8099b0">Flexibility</text>
+  <rect x="1122" y="372" width="60" height="10" fill="rgba(74,143,255,0.15)" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="1122" y="372" width="48" height="10" fill="#4a8fff"/>
+  <text x="1189" y="382" class="mono" font-size="10" fill="#4a8fff">4 / 5</text>
+  <text x="1052" y="401" class="ui" font-size="10" fill="#8099b0">Simplicity</text>
+  <rect x="1122" y="390" width="60" height="10" fill="rgba(74,143,255,0.15)" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="1122" y="390" width="24" height="10" fill="#4a8fff"/>
+  <text x="1189" y="400" class="mono" font-size="10" fill="#4a8fff">2 / 5</text>
+  <text x="1052" y="419" class="ui" font-size="10" fill="#8099b0">Mass</text>
+  <rect x="1122" y="408" width="60" height="10" fill="rgba(74,143,255,0.15)" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="1122" y="408" width="60" height="10" fill="#4a8fff"/>
+  <text x="1189" y="418" class="mono" font-size="10" fill="#4a8fff">5 / 5</text>
+  <text x="1052" y="437" class="ui" font-size="10" fill="#8099b0">Risk</text>
+  <rect x="1122" y="426" width="60" height="10" fill="rgba(74,143,255,0.15)" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="1122" y="426" width="18" height="10" fill="#4a8fff"/>
+  <text x="1189" y="436" class="mono" font-size="10" fill="#4a8fff">1.5/5</text>
+
+  <!-- Decision matrix -->
+  <text x="308" y="472" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">COA COMPARISON MATRIX</text>
+  <text x="1420" y="472" class="mono" font-size="9" fill="#2a3a4a" text-anchor="end">FM 6-0 §9-105</text>
+
+  <!-- table header -->
+  <rect x="308" y="480" width="1112" height="26" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="320" y="497" class="ui" font-size="10" fill="#8099b0" font-weight="600">Evaluation Criterion</text>
+  <text x="680" y="497" class="ui" font-size="10" fill="#8099b0" text-anchor="middle" font-weight="600">COA-1  Forward Def</text>
+  <text x="900" y="497" class="ui" font-size="10" fill="#c8a84b" text-anchor="middle" font-weight="600">COA-2  Def in Depth ★</text>
+  <text x="1200" y="497" class="ui" font-size="10" fill="#8099b0" text-anchor="middle" font-weight="600">COA-3  Mobile Def</text>
+
+  <!-- rows -->
+  <rect x="308" y="506" width="1112" height="22" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="521" class="ui" font-size="11" fill="#b4c8d8">Flexibility</text>
+  <text x="680" y="521" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">3</text>
+  <text x="900" y="521" class="mono" font-size="11" fill="#c8a84b" text-anchor="middle">4.5</text>
+  <text x="1200" y="521" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">4</text>
+
+  <rect x="308" y="528" width="1112" height="22" fill="#0c1118" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="543" class="ui" font-size="11" fill="#b4c8d8">Simplicity</text>
+  <text x="680" y="543" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">4</text>
+  <text x="900" y="543" class="mono" font-size="11" fill="#c8a84b" text-anchor="middle">3.5</text>
+  <text x="1200" y="543" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">2</text>
+
+  <rect x="308" y="550" width="1112" height="22" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="565" class="ui" font-size="11" fill="#b4c8d8">Mass</text>
+  <text x="680" y="565" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">4</text>
+  <text x="900" y="565" class="mono" font-size="11" fill="#c8a84b" text-anchor="middle">4</text>
+  <text x="1200" y="565" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">5</text>
+
+  <rect x="308" y="572" width="1112" height="22" fill="#0c1118" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="587" class="ui" font-size="11" fill="#b4c8d8">Risk to Force</text>
+  <text x="680" y="587" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">2.5</text>
+  <text x="900" y="587" class="mono" font-size="11" fill="#c8a84b" text-anchor="middle">4.5</text>
+  <text x="1200" y="587" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">1.5</text>
+
+  <rect x="308" y="594" width="1112" height="22" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="320" y="609" class="ui" font-size="11" fill="#b4c8d8">Risk to Mission</text>
+  <text x="680" y="609" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">3</text>
+  <text x="900" y="609" class="mono" font-size="11" fill="#c8a84b" text-anchor="middle">4</text>
+  <text x="1200" y="609" class="mono" font-size="11" fill="#b4c8d8" text-anchor="middle">2.5</text>
+
+  <!-- totals row -->
+  <rect x="308" y="616" width="1112" height="24" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="320" y="632" class="ui" font-size="11" fill="#ddeeff" font-weight="700">TOTAL</text>
+  <text x="680" y="632" class="mono" font-size="12" fill="#ddeeff" text-anchor="middle">16.5</text>
+  <text x="900" y="632" class="mono" font-size="12" fill="#c8a84b" text-anchor="middle" font-weight="700">20.5</text>
+  <text x="1200" y="632" class="mono" font-size="12" fill="#ddeeff" text-anchor="middle">15</text>
+
+  <!-- recommendation note -->
+  <rect x="308" y="650" width="1112" height="50" fill="rgba(200,168,75,0.04)" stroke="rgba(200,168,75,0.15)" stroke-width="1"/>
+  <text x="320" y="668" class="ui" font-size="9" fill="#c8a84b" font-weight="700" letter-spacing="2">COMMANDER'S RECOMMENDATION</text>
+  <text x="320" y="685" class="ui" font-size="12" fill="#8099b0">COA-2 Defense in Depth recommended. Superior flexibility and risk management. Obstacle / fires integration</text>
+  <text x="320" y="700" class="ui" font-size="12" fill="#8099b0">enables sustained defense. Counterattack force preserved. Projected civilian incident rate: zero.</text>
+
+  <!-- classification banner bottom -->
+  <rect y="872" width="1440" height="28" fill="#0a0c12"/>
+  <text x="720" y="890" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="2">UNCLASSIFIED · IRONFORGE MDMP SIMULATION · TRAINING AID ONLY · NOT FOR OPERATIONAL USE · UNCLASSIFIED</text>
 </svg>
