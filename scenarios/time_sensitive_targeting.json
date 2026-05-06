@@ -1,0 +1,76 @@
+{
+    "title": "Time Sensitive Targeting of a High Value Individual",
+    "description": "Intelligence indicates a high-value individual (HVI) responsible for coordinating enemy logistics will be at a known safehouse for a limited window. Friendly forces must detect, locate, and engage the target before the window closes, while minimizing collateral damage and civilian casualties.",
+    "mission_type": "TARGETING",
+    "friendly_force": [
+        {
+            "name": "Task Force Hunter",
+            "unit_type": "SPECIAL_OPERATIONS",
+            "echelon": "COMPANY",
+            "size_estimate": "120 pax",
+            "equipment": [
+                "MH-60M",
+                "MQ-1C Gray Eagle",
+                "SOCOM Precision Strike Package"
+            ]
+        },
+        {
+            "name": "Brigade Fires Cell",
+            "unit_type": "ARTILLERY",
+            "echelon": "BRIGADE",
+            "size_estimate": "40 pax",
+            "equipment": [
+                "AFATDS",
+                "Tactical Air Control Party"
+            ]
+        }
+    ],
+    "enemy_force": [
+        {
+            "name": "HVI Security Detail",
+            "threat_category": "IRREGULAR",
+            "disposition": "Dispersed around safehouse in urban environment",
+            "strength_estimate": "15-20 armed fighters",
+            "most_likely_coa": "HVI evacuates via vehicle upon detection of friendly presence.",
+            "most_dangerous_coa": "HVI detonates preplaced IEDs and uses civilian shields.",
+            "known_vulnerabilities": [
+                "Limited night vision capability",
+                "Predictable escape routes"
+            ],
+            "high_value_targets": [
+                "HVI commander",
+                "Communications node"
+            ]
+        }
+    ],
+    "terrain": [
+        {
+            "name": "Urban Safehouse District",
+            "terrain_type": "URBAN",
+            "description": "Dense residential area with narrow streets and limited observation.",
+            "is_key_terrain": true,
+            "avenues_of_approach": [
+                "Main avenue from east",
+                "Secondary route via alley network"
+            ]
+        }
+    ],
+    "weather": {
+        "condition": "CLEAR",
+        "temperature_c": 22,
+        "wind_kph": 5,
+        "visibility_km": 10,
+        "illumination": "night"
+    },
+    "time_available": "4 hours",
+    "civil_considerations": [
+        "High civilian population density",
+        "Local mosque 200m from target",
+        "School zone to south"
+    ],
+    "restrictions": [
+        "No collateral damage to mosque or school",
+        "Positive identification required before engagement"
+    ],
+    "higher_intent": "Disrupt enemy logistics network by removing key coordinator."
+}

@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">
+  <defs>
+    <style>
+      .ui  { font-family: 'Inter', system-ui, sans-serif; }
+      .mono{ font-family: 'Courier New', monospace; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="1440" height="900" fill="#07090f"/>
+
+  <!-- classification banner top -->
+  <rect width="1440" height="28" fill="#0a0c12"/>
+  <text x="720" y="18" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="2">UNCLASSIFIED · IRONFORGE MDMP SIMULATION · TRAINING AID ONLY · NOT FOR OPERATIONAL USE · UNCLASSIFIED</text>
+
+  <!-- system header -->
+  <rect y="28" width="1440" height="44" fill="#080b11"/>
+  <rect y="72" width="1440" height="1" fill="#171f2b"/>
+  <text x="20" y="56" class="mono" font-size="18" fill="#c8a84b" letter-spacing="4" font-weight="700">IRONFORGE</text>
+  <text x="162" y="52" class="ui" font-size="10" fill="#3a5060" letter-spacing="1">MILITARY DECISION MAKING PROCESS</text>
+  <circle cx="1400" cy="50" r="4" fill="#1acd6e"/>
+  <text x="1412" y="54" class="mono" font-size="10" fill="#1acd6e" text-anchor="end" letter-spacing="1">ONLINE</text>
+
+  <!-- sidebar -->
+  <rect x="0" y="72" width="288" height="828" fill="#080b11"/>
+  <rect x="288" y="72" width="1" height="828" fill="#171f2b"/>
+
+  <text x="16" y="104" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">SCENARIO</text>
+  <rect x="16" y="112" width="256" height="32" fill="#0c1118" stroke="#1f2d3e" stroke-width="1"/>
+  <text x="28" y="132" class="ui" font-size="12" fill="#ddeeff">Brigade Defense — Peer Threat</text>
+  <rect x="16" y="150" width="256" height="22" fill="#07090f" stroke="#171f2b" stroke-width="1"/>
+  <text x="28" y="165" class="ui" font-size="10" fill="#8099b0">2d BCT · Peer mechanized BTG · 18-hr</text>
+
+  <rect x="16" y="182" width="256" height="30" fill="#0a0f08" stroke="#c8a84b" stroke-width="1"/>
+  <text x="144" y="201" class="mono" font-size="11" fill="#c8a84b" text-anchor="middle" letter-spacing="2">EXECUTE MDMP</text>
+
+  <rect x="0" y="222" width="288" height="1" fill="#171f2b"/>
+
+  <text x="16" y="244" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">MDMP STEPS</text>
+
+  <!-- step 1 done -->
+  <text x="16" y="268" class="mono" font-size="11" fill="#1acd6e">01</text>
+  <text x="40" y="268" class="ui" font-size="11" fill="#3a5060">Receipt of Mission</text>
+  <text x="272" y="268" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+
+  <!-- step 2 done -->
+  <text x="16" y="290" class="mono" font-size="11" fill="#1acd6e">02</text>
+  <text x="40" y="290" class="ui" font-size="11" fill="#3a5060">Mission Analysis</text>
+  <text x="272" y="290" class="mono" font-size="9" fill="#1acd6e" text-anchor="end">DONE</text>
+
+  <!-- step 3 active -->
+  <rect x="12" y="298" width="264" height="22" fill="rgba(200,168,75,0.06)" stroke="#4a3a10" stroke-width="1"/>
+  <text x="16" y="313" class="mono" font-size="11" fill="#c8a84b">03</text>
+  <text x="40" y="313" class="ui" font-size="11" fill="#ddeeff" font-weight="600">COA Development</text>
+  <text x="272" y="313" class="mono" font-size="9" fill="#c8a84b" text-anchor="end">PROCESSING</text>
+
+  <!-- steps 4-7 pending -->
+  <text x="16" y="335" class="mono" font-size="11" fill="#1f2d3e">04</text>
+  <text x="40" y="335" class="ui" font-size="11" fill="#1f2d3e">COA Analysis</text>
+  <text x="16" y="357" class="mono" font-size="11" fill="#1f2d3e">05</text>
+  <text x="40" y="357" class="ui" font-size="11" fill="#1f2d3e">COA Comparison</text>
+  <text x="16" y="379" class="mono" font-size="11" fill="#1f2d3e">06</text>
+  <text x="40" y="379" class="ui" font-size="11" fill="#1f2d3e">COA Approval</text>
+  <text x="16" y="401" class="mono" font-size="11" fill="#1f2d3e">07</text>
+  <text x="40" y="401" class="ui" font-size="11" fill="#1f2d3e">Orders Production</text>
+
+  <rect x="0" y="416" width="288" height="1" fill="#171f2b"/>
+
+  <text x="16" y="438" class="ui" font-size="9" fill="#8099b0" font-weight="700" letter-spacing="2">DOCTRINE</text>
+  <text x="16" y="458" class="mono" font-size="11" fill="#b4c8d8">FM 6-0</text>     <text x="272" y="458" class="ui" font-size="10" fill="#3a5060" text-anchor="end">MDMP</text>
+  <text x="16" y="476" class="mono" font-size="11" fill="#b4c8d8">FM 2-01.3</text>  <text x="272" y="476" class="ui" font-size="10" fill="#3a5060" text-anchor="end">IPB</text>
+  <text x="16" y="494" class="mono" font-size="11" fill="#b4c8d8">FM 3-60</text>    <text x="272" y="494" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Targeting</text>
+  <text x="16" y="512" class="mono" font-size="11" fill="#b4c8d8">FM 3-09</text>    <text x="272" y="512" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Fire Support</text>
+  <text x="16" y="530" class="mono" font-size="11" fill="#b4c8d8">ADRP 5-0</text>  <text x="272" y="530" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Ops Process</text>
+  <text x="16" y="548" class="mono" font-size="11" fill="#b4c8d8">JP 3-0</text>     <text x="272" y="548" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Joint Ops</text>
+  <text x="16" y="566" class="mono" font-size="11" fill="#b4c8d8">JP 3-60</text>    <text x="272" y="566" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Joint Targeting</text>
+  <text x="16" y="584" class="mono" font-size="11" fill="#b4c8d8">ADP 3-0</text>    <text x="272" y="584" class="ui" font-size="10" fill="#3a5060" text-anchor="end">Operations</text>
+
+  <rect x="0" y="856" width="288" height="1" fill="#171f2b"/>
+  <text x="16" y="874" class="mono" font-size="9" fill="#1f2d3e" letter-spacing="1">UNCLASSIFIED // TRAINING AID</text>
+  <text x="16" y="888" class="mono" font-size="9" fill="#1f2d3e" letter-spacing="1">ALL REFERENCES PUBLICLY AVAILABLE</text>
+
+  <!-- ── MAIN: tab bar ── -->
+  <rect x="288" y="72" width="1152" height="40" fill="#07090f"/>
+  <rect x="288" y="112" width="1152" height="1" fill="#171f2b"/>
+
+  <!-- active tab -->
+  <text x="361" y="97" class="ui" font-size="12" fill="#ddeeff" text-anchor="middle">Mission Analysis</text>
+  <rect x="296" y="110" width="130" height="2" fill="#c8a84b"/>
+
+  <text x="470" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">Courses of Action</text>
+  <text x="610" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">Recommendation</text>
+  <text x="720" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">OPORD</text>
+  <text x="820" y="97" class="ui" font-size="12" fill="#3a5060" text-anchor="middle">Fires &amp; Targeting</text>
+
+  <!-- MDMP pipeline executing status -->
+  <text x="1420" y="97" class="mono" font-size="10" fill="#c8a84b" text-anchor="end" letter-spacing="1">MDMP PIPELINE EXECUTING</text>
+
+  <!-- ── RUNNING SCREEN CONTENT ── -->
+  <!-- centered MDMP pipeline progress -->
+  <text x="864" y="200" class="mono" font-size="11" fill="#c8a84b" text-anchor="middle" letter-spacing="3">MDMP PIPELINE EXECUTING</text>
+
+  <!-- step rows -->
+  <!-- 1 done -->
+  <rect x="564" y="218" width="600" height="34" fill="rgba(26,205,110,0.04)" stroke="#1a3520" stroke-width="1"/>
+  <text x="584" y="240" class="mono" font-size="11" fill="#1acd6e">01</text>
+  <text x="614" y="240" class="ui" font-size="13" fill="#3a5060">Receipt of Mission</text>
+  <text x="1154" y="240" class="mono" font-size="10" fill="#1acd6e" text-anchor="end">DONE</text>
+
+  <!-- 2 done -->
+  <rect x="564" y="258" width="600" height="34" fill="rgba(26,205,110,0.04)" stroke="#1a3520" stroke-width="1"/>
+  <text x="584" y="280" class="mono" font-size="11" fill="#1acd6e">02</text>
+  <text x="614" y="280" class="ui" font-size="13" fill="#3a5060">Mission Analysis</text>
+  <text x="1154" y="280" class="mono" font-size="10" fill="#1acd6e" text-anchor="end">DONE</text>
+
+  <!-- 3 active -->
+  <rect x="564" y="298" width="600" height="34" fill="rgba(200,168,75,0.06)" stroke="#4a3a10" stroke-width="1"/>
+  <text x="584" y="320" class="mono" font-size="11" fill="#c8a84b">03</text>
+  <text x="614" y="320" class="ui" font-size="13" fill="#ddeeff" font-weight="600">COA Development</text>
+  <text x="1154" y="320" class="mono" font-size="10" fill="#c8a84b" text-anchor="end">PROCESSING</text>
+
+  <!-- 4 pending -->
+  <rect x="564" y="338" width="600" height="34" fill="transparent" stroke="#171f2b" stroke-width="1"/>
+  <text x="584" y="360" class="mono" font-size="11" fill="#1f2d3e">04</text>
+  <text x="614" y="360" class="ui" font-size="13" fill="#1f2d3e">COA Analysis — Wargaming</text>
+
+  <!-- 5 pending -->
+  <rect x="564" y="378" width="600" height="34" fill="transparent" stroke="#171f2b" stroke-width="1"/>
+  <text x="584" y="400" class="mono" font-size="11" fill="#1f2d3e">05</text>
+  <text x="614" y="400" class="ui" font-size="13" fill="#1f2d3e">COA Comparison</text>
+
+  <!-- 6 pending -->
+  <rect x="564" y="418" width="600" height="34" fill="transparent" stroke="#171f2b" stroke-width="1"/>
+  <text x="584" y="440" class="mono" font-size="11" fill="#1f2d3e">06</text>
+  <text x="614" y="440" class="ui" font-size="13" fill="#1f2d3e">COA Approval</text>
+
+  <!-- 7 pending -->
+  <rect x="564" y="458" width="600" height="34" fill="transparent" stroke="#171f2b" stroke-width="1"/>
+  <text x="584" y="480" class="mono" font-size="11" fill="#1f2d3e">07</text>
+  <text x="614" y="480" class="ui" font-size="13" fill="#1f2d3e">Orders Production</text>
+
+  <!-- scenario metadata below pipeline -->
+  <text x="864" y="540" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="1">SCENARIO: BRIGADE DEFENSE — PEER THREAT</text>
+  <text x="864" y="558" class="mono" font-size="10" fill="#2a3a4a" text-anchor="middle" letter-spacing="1">FM 6-0 · FM 2-01.3 · FM 3-60 · FM 3-09 · ADRP 5-0 · JP 3-0 · JP 3-60 · CJCSI 3160.01A</text>
+
+  <!-- classification banner bottom -->
+  <rect y="872" width="1440" height="28" fill="#0a0c12"/>
+  <text x="720" y="890" class="mono" font-size="10" fill="#3a5060" text-anchor="middle" letter-spacing="2">UNCLASSIFIED · IRONFORGE MDMP SIMULATION · TRAINING AID ONLY · NOT FOR OPERATIONAL USE · UNCLASSIFIED</text>
+</svg>
